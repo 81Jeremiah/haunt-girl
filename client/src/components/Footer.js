@@ -1,5 +1,5 @@
 import React from 'react';
-
+import Social from './Social'
 
 const Footer =() => {
 
@@ -17,19 +17,16 @@ return (
       </a>
       <ul class="main-menu footer-menu">
         <li><a href="">Home</a></li>
-        <li><a href="">Games</a></li>
-        <li><a href="">Reviews</a></li>
+        <li><a href="">Haunt Reviews</a></li>
+        <li><a href="">Escape Rooms</a></li>
         <li><a href="">News</a></li>
         <li><a href="">Contact</a></li>
       </ul>
       <div class="footer-social d-flex justify-content-center">
-        <a href="#"><i class="fa fa-pinterest"></i></a>
-        <a href="#"><i class="fa fa-facebook"></i></a>
-        <a href="#"><i class="fa fa-twitter"></i></a>
-        <a href="#"><i class="fa fa-dribbble"></i></a>
-        <a href="#"><i class="fa fa-behance"></i></a>
+         <Social />
+      
       </div>
-      <div class="copyright"><a href="">Colorlib</a> 2018 @ All rights reserved</div>
+      <div class="copyright"><a href="">The Haunt Girl</a> 2019 @ All rights reserved</div>
     </div>
   </footer>
  );
