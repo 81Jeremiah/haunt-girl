@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 import PostsList from '../components/PostsList';
 
 class Posts extends Component {
-  componentWillMount(){
+  componentDidMount(){
 
     this.props.fetchPosts()
 
@@ -22,7 +22,7 @@ class Posts extends Component {
 const mapStateToProps = state => {
   console.log(state)
   return {
-    posts: state.posts
+    posts: state.posts.posts
   }
 }
 
