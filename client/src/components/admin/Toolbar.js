@@ -1,8 +1,7 @@
 import React from "react";
-import { render } from "react-dom";
 import ReactQuill, { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import "./styles.css";
+import  "./style.css";
 
 const CustomHeart = () => <span>♥</span>;
 
@@ -65,51 +64,3 @@ Quill.register(Font, true);
 /*
  * Editor component with custom toolbar and content containers
  */
-class Editor extends React.Component {
-  state = { editorHtml: "" };
-
-  handleChange = html => {
-    this.setState({ editorHtml: html });
-  };
-
-  static modules = {
-    toolbar: {
-      container: "#toolbar",
-      handlers: {
-        insertHeart: insertHeart
-      }
-    }
-  };
-
-  static formats = [
-    "header",
-    "font",
-    "size",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-    "color"
-  ];
-
-  render() {
-    return (
-      <div className="text-editor">
-        <CustomToolbar />
-        <ReactQuill
-          value={this.state.editorHtml}
-          onChange={this.handleChange}
-          placeholder={this.props.placeholder}
-          modules={Editor.modules}
-          formats={Editor.formats}
-        />
-      </div>
-    );
-  }
-}
