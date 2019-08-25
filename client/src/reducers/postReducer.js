@@ -1,6 +1,7 @@
 export default ( state =
   { loading: false,
-    posts: []
+    posts: [],
+    post: {}
 
 }
 , action) => {
@@ -11,6 +12,13 @@ export default ( state =
 
     case 'FETCH_POSTS':
     return {...state, loading:false, posts: action.posts}
+
+    case 'LOADING_POST':
+    return {...state, loading: true}
+
+    case 'FETCH_POST':
+    return {...state, loading:false, post: action.post}
+
 
     default:
       return state
