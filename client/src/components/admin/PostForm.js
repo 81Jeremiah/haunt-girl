@@ -16,6 +16,7 @@ class PostForm extends Component {
     this.setState({
       [name]: value
     })
+    console.log(this.state.category)
   }
 
   handleSubmit = () =>{
@@ -34,9 +35,9 @@ class PostForm extends Component {
         <Form.Group controlId="exampleForm.ControlSelect1">
           <Form.Label>Category</Form.Label>
           <Form.Control as="select" value={this.state.category} onChange={this.handleChange} name="category">
-            <option>Haunts</option>
-            <option>Escape Rooms</option>
-            <option>Oddities</option>
+            <option value="Haunts">Haunts</option>
+            <option value="Escape Rooms">Escape Rooms</option>
+            <option value="Oddities">Oddities</option>
           </Form.Control>
         </Form.Group>
         <Form.Group controlId="">
