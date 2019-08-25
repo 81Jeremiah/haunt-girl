@@ -25,11 +25,11 @@ const Navbar = () =>{
               <li><a href="home.html">Home</a></li>
               <li><a href="games.html">Haunt Reviews</a>
                 <ul class="sub-menu">
-                  <li><a href="game-single.html">Game Singel</a></li>
+                  <li><a href="game-single.html"></a></li>
                 </ul>
               </li>
               <li><a href="review.html">Escape Rooms</a></li>
-              <li><a href="blog.html">News</a></li>
+            <li><a href="blog.html">Oddities</a></li>
               <li><a href="contact.html">Contact</a></li>
             </ul>
           </nav>
