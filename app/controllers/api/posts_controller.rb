@@ -2,7 +2,8 @@ class Api::PostsController < ApplicationController
   before_action :set_post, only: [:update, :show]
 
   def index
-    @posts = Post.all
+    category = Category.find_by_name(params[:category])
+    @posts = Post.by_category(caegory.name)
     render json: @posts
   end
 
@@ -18,7 +19,7 @@ class Api::PostsController < ApplicationController
   def escape_rooms
     # @escape_rooms = Post.find_by(category:)
   end
-  
+
   def new
 
   end
