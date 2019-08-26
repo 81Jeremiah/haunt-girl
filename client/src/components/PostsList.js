@@ -1,4 +1,8 @@
 import React from 'react';
+import doubleArrow from '../img/icons/double-arrow.png';
+import { Link } from 'react-router-dom';
+
+
 
 const PostsList = (props) =>{
   console.log(props)
@@ -17,10 +21,10 @@ const PostsList = (props) =>{
 							<div class="rating">
 								<h5><i>Rating</i><span>4.5</span> / 5</h5>
 							</div>
-							<div class="top-meta">11.11.18  /  in <a href="">Haunts</a></div>
+							<div class="top-meta">10.11.19  /  in <Link to="/haunts">Haunts</Link></div>
               <h3>{post.title}</h3>
               <p>{post.content}</p>
-              <a href="#" class="read-more">Read More  <img src="img/icons/double-arrow.png" alt="#"/></a>
+              <Link to={`/haunts/${post.id}`} class="read-more">Read More  <img src={doubleArrow} alt=""/></Link>
           </div>
         </div>
       </div>

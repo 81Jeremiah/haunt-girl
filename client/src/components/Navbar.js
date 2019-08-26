@@ -1,6 +1,8 @@
 import React from 'react';
 import hauntGirlLogo from '../img/haunt-girl-logo.jpg'
 import Social from './Social'
+import { Link } from 'react-router-dom';
+
 
 const Navbar = () =>{
   return (
@@ -18,19 +20,19 @@ const Navbar = () =>{
           </a>
           <nav class="top-nav-area w-100">
             <div class="user-panel">
-              <a href="">Login</a> / <a href="">Register</a>
+              <Link to="login">Login</Link> / <Link to="register">Register</Link>
             </div>
           {/*  Menu */}
             <ul class="main-menu primary-menu">
-              <li><a href="home.html">Home</a></li>
-              <li><a href="games.html">Haunt Reviews</a>
-                <ul class="sub-menu">
-                  <li><a href="game-single.html"></a></li>
-                </ul>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/haunts">Haunt Reviews</Link>
+                {/*// <ul class="sub-menu">
+                //   <li><a href="game-single.html"></a></li>
+                // </ul> */}
               </li>
-              <li><a href="review.html">Escape Rooms</a></li>
-            <li><a href="blog.html">Oddities</a></li>
-              <li><a href="contact.html">Contact</a></li>
+              <li><Link to="/escaperooms">Escape Rooms</Link></li>
+              <li><Link to="/oddities">Oddities</Link></li>
+              <li><Link to="contact">Contact</Link></li>
             </ul>
           </nav>
         </div>
