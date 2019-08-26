@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_09_042222) do
+ActiveRecord::Schema.define(version: 2019_08_25_222453) do
 
   create_table "admins", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -18,6 +18,12 @@ ActiveRecord::Schema.define(version: 2019_08_09_042222) do
   end
 
   create_table "authors", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -39,7 +45,9 @@ ActiveRecord::Schema.define(version: 2019_08_09_042222) do
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "categories_id"
     t.index ["author_id"], name: "index_posts_on_author_id"
+    t.index ["categories_id"], name: "index_posts_on_categories_id"
     t.index ["city_id"], name: "index_posts_on_city_id"
     t.index ["state_id"], name: "index_posts_on_state_id"
   end
