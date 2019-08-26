@@ -1,15 +1,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Splash from './containers/Splash'
-import About from './components/Static/About'
+import Splash from './containers/Splash';
+import About from './components/Static/About';
+import Posts from './containers/Posts';
+import PostForm from './components/admin/PostForm';
+import Toolbar from './components/admin/Toolbar';
+import Post from './components/Post';
+import Contact from './components/Static/Contact';
 
-const Routes = props => {
+
+const Routes = () => {
 
   return (
     <Router>
       <Switch>
         <Route exact path="/" component={ Splash }/>
-        <Route exact path="/about" component={ About }/>
+        <Route exact path="/admin/posts/new" component={ PostForm} />
+        <Route exact path="/posts/:id" component={Post} />
+        <Route exact path="/posts" component={ Posts } />
+        <Route exact path="/contact" component={ Contact } />
       </Switch>
     </Router>
   )
