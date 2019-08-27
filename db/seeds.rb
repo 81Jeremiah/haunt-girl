@@ -6,4 +6,5 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-posts = Post.create([{title:'title1', content: "stuff stuff stuff"},{title:'title2', content: "stuff stuff stuff"}  ])
+# posts = Post.create([{title:'title1', content: "stuff stuff stuff"},{title:'title2', content: "stuff stuff stuff"}  ])
+categories = Category.create([{name: 'Escape Rooms'}, {name: 'Haunts'}, {name: 'Oddities'}])
