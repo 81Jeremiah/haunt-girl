@@ -28,16 +28,16 @@ class PostForm extends Component {
     return(
       <div className = "post-form">
       <Form onSubmit={this.handleSubmit}>
-        <Form.Group controlId="exampleForm.ControlInput1">
-          <Form.Label>Title</Form.Label>
+        <Form.Group controlId="">
+          <Form.Label column sm={2}>Title</Form.Label>
           <Form.Control size="lg" type="text" value={this.state.title} onChange={this.handleChange} name="title"/>
         </Form.Group>
-        <Form.Group controlId="exampleForm.ControlSelect1">
+        <Form.Group controlId="">
           <Form.Label>Category</Form.Label>
           <Form.Control as="select" value={this.state.category} onChange={this.handleChange} name="category">
-            <option value="Haunts">Haunts</option>
-            <option value="Escape Rooms">Escape Rooms</option>
-            <option value="Oddities">Oddities</option>
+            <option value="2">Haunts</option>
+            <option value="1">Escape Rooms</option>
+            <option value="3">Oddities</option>
           </Form.Control>
         </Form.Group>
         <Form.Group controlId="">
