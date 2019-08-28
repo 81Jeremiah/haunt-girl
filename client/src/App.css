@@ -1790,3 +1790,12 @@ ol {
 		margin-bottom: 20px;
 	}
 }
+
+.post-form {
+	width: 400px;
+  height: 400px;
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
