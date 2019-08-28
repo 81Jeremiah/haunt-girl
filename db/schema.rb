@@ -45,9 +45,9 @@ ActiveRecord::Schema.define(version: 2019_08_25_222453) do
     t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "categories_id"
+    t.integer "category_id"
     t.index ["author_id"], name: "index_posts_on_author_id"
-    t.index ["categories_id"], name: "index_posts_on_categories_id"
+    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["city_id"], name: "index_posts_on_city_id"
     t.index ["state_id"], name: "index_posts_on_state_id"
   end

@@ -35,7 +35,7 @@ class Api::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).premit(:title, :category_id, :content)
+    params.require(:post).permit(:title, :category, :content)
   end
 
 
