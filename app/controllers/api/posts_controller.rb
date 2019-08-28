@@ -3,7 +3,7 @@ class Api::PostsController < ApplicationController
 
   def index
     category = Category.find_by_name(params[:category])
-    @posts = Post.by_category(caegory.name)
+    @posts = Post.by_category(category.name)
     render json: @posts
   end
 
@@ -13,7 +13,7 @@ class Api::PostsController < ApplicationController
 
   def create
     @post= Post.create!(post_params)
-
+    render json: @post
   end
 
   def escape_rooms
@@ -35,7 +35,7 @@ class Api::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).premit(:title, :category, :content)
+    params.require(:post).premit(:title, :category_id, :content)
   end
 
 
