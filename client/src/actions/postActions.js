@@ -23,3 +23,18 @@ export const getPost = (postId) => {
     });
   }
 }
+
+export const createPost = (newPost) => {
+  return (dispatch) => {
+    dispatch({type: 'SENDING_POST'});
+      return fetch('/api/posts', {
+        method: "POST",
+
+        body: newPost
+      })
+    .then(response => response.json())
+    .then(post => {
+      dispatch({type:'CREATE_POST', post:post});
+    });
+  }
+}
