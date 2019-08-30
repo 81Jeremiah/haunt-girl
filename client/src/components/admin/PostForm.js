@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import Form from 'react-bootstrap/Form';
 import Toolbar from './Toolbar';
 import Button from 'react-bootstrap/Button';
+import { createPost } from '../../actions/postActions';
+import { connect } from 'react-redux'
 
 class PostForm extends Component {
   state = {
@@ -20,6 +22,9 @@ class PostForm extends Component {
   }
 
   handleSubmit = () =>{
+    const post = this.state
+    this.createPost(post)
+    
 
   }
 
@@ -54,4 +59,4 @@ class PostForm extends Component {
   }
 }
 
-export default PostForm
+export default connect(null, {createPost})(PostForm)
