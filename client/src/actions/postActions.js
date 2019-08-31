@@ -1,8 +1,8 @@
 
-export const fetchPosts = () => {
+export const fetchPosts = (category) => {
   return (dispatch) => {
     dispatch({type: 'LOADING_POSTS'});
-    return fetch('/api/posts')
+    return fetch('/api/categories' + category)
 
     .then(response => response.json())
     .then(posts => {
