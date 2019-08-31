@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :category
-  scope :by_category, -> (category_name){joins(:categories).where("categories.name=?", category_name)}
+  belongs_to :state
+  scope :by_category, -> (category_id){joins(:category).where("category_id=?", category_id)}
 
 end
