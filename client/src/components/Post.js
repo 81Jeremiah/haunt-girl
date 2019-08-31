@@ -1,6 +1,7 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import {getPost} from '../actions/postActions'
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
+import { getPost } from '../actions/postActions';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import NewsletterSection from './NewsletterSection';
@@ -10,14 +11,19 @@ class Post extends Component {
   componentDidMount(){
     const postId = this.props.match.params.id
     this.props.getPost(postId)
+
   }
 
 
 
+
   render(){
+    const post = this.props.post
+    const category = this.props.post.category || " "
 
     return(
       <>
+
       <Navbar />
       <section className="games-single-page">
         <div className="container">
@@ -26,8 +32,10 @@ class Post extends Component {
           </div>
           <div class="row">
             <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
-              <div class="gs-meta">9.27.19  /  in <a href="">Haunts</a></div>
-              <h2 class="gs-title">{this.props.post.title}</h2>
+
+
+              <div class="gs-meta">9.27.19  /  in <Link to="/escaperooms"> {category.name}</Link></div>
+              <h2 class="gs-title">{post.title}</h2>
               <h4>Summary</h4>
               <p> We did stuff</p>
               <h4>Overall Review</h4>
@@ -50,7 +58,7 @@ class Post extends Component {
                       <li>Set Design<span>4.5/5</span></li>
                       <li>Jump Scares<span>3.5/5</span></li>
                       <li>Intensity<span>4.5/5</span></li>
-                      
+
                     </ul>
                     <div class="rating">
                       <h5><i>Overall Rating</i><span>4.5</span> / 5</h5>
@@ -94,6 +102,7 @@ const mapStateToProps = state => {
   console.log(state.posts.post)
 
   return { post: state.posts.post}
+
 
 }
 

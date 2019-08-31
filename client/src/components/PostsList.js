@@ -5,10 +5,13 @@ import { Link } from 'react-router-dom';
 
 
 const PostsList = (props) =>{
-  console.log(props)
-  const listPosts = props.posts.map( post => {
 
+  const listPosts = props.posts.map( post => {
+    // const category = post.category.name
+    // debugger
+    // const categoryRoute = category.trim()
     return(
+
       <li className="review-item" key={post.id}>
         <div class="row">
 					<div class="col-lg-4">
@@ -21,10 +24,10 @@ const PostsList = (props) =>{
 							<div class="rating">
 								<h5><i>Rating</i><span>4.5</span> / 5</h5>
 							</div>
-							<div class="top-meta">10.11.19  /  in <Link to="/haunts">Haunts</Link></div>
+							<div class="top-meta">10.11.19  /  in <Link to={props.categoryRoute}>{post.category.name}</Link></div>
               <h3>{post.title}</h3>
               <p>{post.content}</p>
-              <Link to={`/haunts/${post.id}`} class="read-more">Read More  <img src={doubleArrow} alt=""/></Link>
+              <Link to={`${props.categoryRoute}/${post.id}`} class="read-more">Read More  <img src={doubleArrow} alt=""/></Link>
           </div>
         </div>
       </div>

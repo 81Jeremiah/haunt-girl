@@ -8,8 +8,10 @@ import Footer from '../components/Footer';
 
 class Posts extends Component {
   componentDidMount(){
+    const category = this.props.match.path
+    console.log(category)
 
-    this.props.fetchPosts()
+    this.props.fetchPosts(category)
 
   }
   render(){
@@ -56,7 +58,7 @@ class Posts extends Component {
                 <li><a href="">Z</a></li>
               </ul>
 
-             <PostsList posts={this.props.posts} />
+             <PostsList posts={this.props.posts} categoryRoute={this.props.match.path} />
           </div>
         </section>
         <NewsletterSection />
