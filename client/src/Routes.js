@@ -18,6 +18,12 @@ const Routes = () => {
         <Route exact path="/admin/posts/new" component={ PostForm} />
         <Route exact path="/posts/:id" component={Post} />
         <Route exact path="/posts" component={ Posts } />
+        <Route exact path="/haunts" component={ Posts } />
+        <Route exact path="/haunts/:id" component={ Post } />
+        <Route exact path="/escaperooms" component={ Posts } />
+        <Route exact path="/escaperooms/:id" component={ Post } />
+        <Route exact path="/oddities" component={ Posts } />
+        <Route exact path="/oddities/:id" component={ Post } />
         <Route exact path="/contact" component={ Contact } />
       </Switch>
     </Router>
