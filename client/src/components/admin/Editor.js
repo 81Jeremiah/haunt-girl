@@ -1,54 +1,97 @@
-import React from 'react';
-import {CustomToolbar} from './Toolbar'
-import ReactQuill, { Quill } from "react-quill";
 
-class Editor extends React.Component {
 
-  state = { editorHtml: "" };
 
-  handleChange = html => {
-    this.setState({ editorHtml: html });
-  };
+import React, { Component } from 'react';
+import ReactQuill from 'react-quill'; // ES6
 
-  static modules = {
-    toolbar: {
-      container: "#toolbar",
+import 'react-quill/dist/quill.snow.css'; // ES6
+import PropTypes from 'prop-types';
+
+
+export default class Editor extends Component {
+
+    constructor (props) {
+      super(props)
+      this.state = { editorHtml: '', theme: 'snow' }
+      this.handleChange = this.handleChange.bind(this)
     }
-  };
 
-  static formats = [
-    "header",
-    "font",
-    "size",
-    "bold",
-    "italic",
-    "underline",
-    "strike",
-    "blockquote",
-    "list",
-    "bullet",
-    "indent",
-    "link",
-    "image",
-    "color"
-  ];
+    handleChange (html) {
 
+    	this.setState({ editorHtml: html });
+      this.sendTextToForm()
+      console.log(this.state.editorHtml)
+    }
 
+    sendTextToForm = () =>{
+      const formText= this.state.editorHtml
+      this.props.getEditorText(formText)
+    }
 
-  render() {
-    return (
-      <div className="text-editor">
-        <CustomToolbar />
-        <ReactQuill
-          value={this.state.editorHtml}
-          onChange={this.handleChange}
-          placeholder={this.props.placeholder}
-          modules={Editor.modules}
-          formats={Editor.formats}
-        />
-      </div>
-    );
+    handleThemeChange (newTheme) {
+      if (newTheme === "core") newTheme = null;
+      this.setState({ theme: newTheme })
+    }
+
+    render () {
+      return (
+        <div>
+          <ReactQuill
+            theme={this.state.theme}
+            onChange={this.handleChange}
+            value={this.state.editorHtml}
+            modules={Editor.modules}
+            formats={Editor.formats}
+            bounds={'.app'}
+            placeholder={this.props.placeholder}
+           />
+          <div className="themeSwitcher">
+            <label>Theme </label>
+            <select onChange={(e) =>
+                this.handleThemeChange(e.target.value)}>
+              <option value="snow">Snow</option>
+              <option value="bubble">Bubble</option>
+              <option value="core">Core</option>
+            </select>
+          </div>
+         </div>
+       )
+    }
   }
-}
 
-export default  Editor
+  /*
+   * Quill modules to attach to editor
+   * See https://quilljs.com/docs/modules/ for complete options
+   */
+Editor.modules = {
+    toolbar: [
+      [{ 'header': '1'}, {'header': '2'}, { 'font': [] }],
+      [{size: []}],
+      ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+      [{'list': 'ordered'}, {'list': 'bullet'},
+       {'indent': '-1'}, {'indent': '+1'}],
+      ['link', 'image', 'video'],
+      ['clean']
+    ],
+    clipboard: {
+      // toggle to add extra line breaks when pasting HTML:
+      matchVisual: false,
+    }
+  }
+  /*
+   * Quill editor formats
+   * See https://quilljs.com/docs/formats/
+   */
+Editor.formats = [
+    'header', 'font', 'size',
+    'bold', 'italic', 'underline', 'strike', 'blockquote',
+    'list', 'bullet', 'indent',
+    'link', 'image', 'video'
+  ]
+
+  /*
+   * PropType validation
+   */
+Editor.propTypes = {
+    placeholder: PropTypes.string,
+  }
