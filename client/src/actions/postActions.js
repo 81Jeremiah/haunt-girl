@@ -29,12 +29,27 @@ export const createPost = (newPost) => {
     dispatch({type: 'SENDING_POST'});
       return fetch('/api/posts', {
         method: "POST",
-
-        body: newPost
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify( newPost )
+        // body: newPost
       })
     .then(response => response.json())
     .then(post => {
       dispatch({type:'CREATE_POST', post:post});
+    });
+  }
+}
+
+export const fetchStates = () => {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_STATES'});
+      return fetch('/api/states')
+
+    .then(response => response.json())
+    .then(states => {
+        return dispatch({type: 'FETCH_STATES', states:states})
     });
   }
 }
