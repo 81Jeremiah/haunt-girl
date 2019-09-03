@@ -29,11 +29,11 @@ export const createPost = (newPost) => {
     dispatch({type: 'SENDING_POST'});
       return fetch('/api/posts', {
         method: "POST",
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify( newPost )
-        // body: newPost
+        // headers: {
+        //   'Content-Type': 'application/json'
+        // },
+        // body: JSON.stringify( newPost )
+        body: newPost
       })
     .then(response => response.json())
     .then(post => {
