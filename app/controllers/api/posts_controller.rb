@@ -17,10 +17,10 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-
+    debugger
     @post= Post.create!(post_params)
     @post.published_at = @post.created_at.strftime("%m-%d-%Y")
-
+    @post.city_id = City.check_for_city(params[:post][:city])
     @post.save
     render json: @post
   end
@@ -44,7 +44,7 @@ class Api::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :category_id, :content, :image, :state_id, :city_id)
+    params.require(:post).permit(:title, :category_id, :content, :image, :state_id, :city_id, :video, :city)
   end
 
 
