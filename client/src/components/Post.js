@@ -5,6 +5,7 @@ import { getPost } from '../actions/postActions';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import NewsletterSection from './NewsletterSection';
+import ReactPlayer from 'react-player'
 
 class Post extends Component {
 
@@ -28,19 +29,16 @@ class Post extends Component {
       <section className="games-single-page">
         <div className="container">
           <div className="game-single-preview">
-            <img src="img/games/big.jpg" alt=""/>
+            <ReactPlayer url={post.video}  />
+            {/*// <img src="img/games/big.jpg" alt=""/>*/}
           </div>
           <div class="row">
             <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
 
 
-              <div class="gs-meta">9.27.19  /  in <Link to="/escaperooms"> {category.name}</Link></div>
+              <div class="gs-meta">{post.published_at} /  in <Link to="/escaperooms"> {category.name}</Link></div>
               <h2 class="gs-title">{post.title}</h2>
-              <h4>Summary</h4>
-              <p> We did stuff</p>
-              <h4>Overall Review</h4>
-              <p>It was scary.
-              </p>
+              {post.content}
               <div class="geme-social-share pt-5 d-flex">
                 <p>Share:</p>
                 <a href="#"><i class="fa fa-instagram"></i></a>
