@@ -4,7 +4,6 @@ import Splash from './containers/Splash';
 import About from './components/Static/About';
 import Posts from './containers/Posts';
 import PostForm from './components/admin/PostForm';
-import Toolbar from './components/admin/Toolbar';
 import Post from './components/Post';
 import Contact from './components/Static/Contact';
 
