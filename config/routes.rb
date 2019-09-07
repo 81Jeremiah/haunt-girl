@@ -5,7 +5,7 @@ Rails.application.routes.draw do
    resources :admin, :posts
    resources :categories, only: [:show]
    resources :states, only: [:index]
-
+   get '/states/with_posts', to: 'states#states_with_posts'
  end
 
 

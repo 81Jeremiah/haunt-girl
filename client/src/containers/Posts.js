@@ -5,7 +5,7 @@ import PostsList from '../components/PostsList';
 import Navbar from '../components/Navbar';
 import NewsletterSection from '../components/NewsletterSection';
 import Footer from '../components/Footer';
-import { fetchStates } from '../actions/postActions';
+import { fetchStatesWithPosts } from '../actions/stateActions';
 import StatesList from '../components/StatesList';
 import { Link } from 'react-router-dom';
 
@@ -15,9 +15,14 @@ class Posts extends Component {
     console.log(category)
 
     this.props.fetchPosts(category)
-    this.props.fetchStates()
+    this.props.fetchStatesWithPosts()
   }
 
+  handleStateClick = (event) => {
+    event.preventDefault()
+    this.props.narrowByState(event.value)
+
+  }
 
   render(){
     return(
@@ -34,35 +39,8 @@ class Posts extends Component {
         	</section>
           <section class="review-section">
             <div class="container">
-            <StatesList states={this.props.states} />
-            {/*  // <ul class="game-filter">
-              //   <li><a href="">A</a></li>
-              //   <li><a href="">B</a></li>
-              //   <li><a href="">C</a></li>
-              //   <li><a href="">D</a></li>
-              //   <li><a href="">E</a></li>
-              //   <li><a href="">F</a></li>
-              //   <li><a href="">G</a></li>
-              //   <li><a href="">H</a></li>
-              //   <li><a href="">I</a></li>
-              //   <li><a href="">J</a></li>
-              //   <li><a href="">K</a></li>
-              //   <li><a href="">L</a></li>
-              //   <li><a href="">M</a></li>
-              //   <li><a href="">N</a></li>
-              //   <li><a href="">O</a></li>
-              //   <li><a href="">P</a></li>
-              //   <li><a href="">Q</a></li>
-              //   <li><a href="">R</a></li>
-              //   <li><a href="">S</a></li>
-              //   <li><a href="">T</a></li>
-              //   <li><a href="">U</a></li>
-              //   <li><a href="">V</a></li>
-              //   <li><a href="">W</a></li>
-              //   <li><a href="">X</a></li>
-              //   <li><a href="">Y</a></li>
-              //   <li><a href="">Z</a></li>
-              // </ul> */}
+            <StatesList states={this.props.states} handleStateClick={this.handleStateClick} />
+
 
              <PostsList posts={this.props.posts} categoryRoute={this.props.match.path} />
           </div>
@@ -83,4 +61,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchPosts, fetchStates })(Posts);
+export default connect(mapStateToProps, { fetchPosts, fetchStatesWithPosts })(Posts);

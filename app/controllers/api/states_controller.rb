@@ -5,4 +5,10 @@ class Api::StatesController < ApplicationController
      render json: states
   end
 
+  def states_with_posts
+    states = State.has_posts
+    render json: states
+
+  end
+
 end
