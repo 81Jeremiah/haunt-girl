@@ -53,3 +53,16 @@ export const fetchStates = () => {
     });
   }
 }
+
+//list the posts by stateclicked
+export const narrowByState = (state) => {
+  debugger
+  return(dispatch) => {
+    dispatch({type:'LOADING_POSTS'});
+      return fetch('api/states/'+ state)
+      .then(resp => resp.json())
+      .then(posts => {
+        dispatch({type:'FETCH_POSTS', posts: posts})
+      });
+  }
+}
