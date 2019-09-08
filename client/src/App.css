@@ -398,7 +398,7 @@ ol {
 	height: 20px;
 	right: 0;
 	top: 1px;
-	background-image: url("./img/icons/arrow-down.png");
+	/* background-image: url("./img/icons/arrow-down.png"); */
 	background-repeat: no-repeat;
 	background-position: right center;
 }
@@ -413,7 +413,7 @@ ol {
 }
 
 .main-menu li a:hover:after {
-	background-image: url("./img/icons/arrow-down-color.png");
+	/* background-image: url("./img/icons/arrow-down-color.png"); */
 }
 
 .main-menu li a:hover i {
@@ -431,7 +431,7 @@ ol {
 }
 
 .main-menu li:hover>a:after {
-	background-image: url("./img/icons/arrow-down-color.png");
+	/* background-image: url("./img/icons/arrow-down-color.png"); */
 }
 
 .main-menu li .sub-menu {
@@ -1139,13 +1139,15 @@ ol {
 
 .game-filter {
 	list-style: none;
-	margin-bottom: 82px;
+	margin-bottom: 80px;
 }
 
 .game-filter li {
 	display: inline-block;
 	width: 40px;
-	height: 34px;
+	height: 38px;
+	/* font-size: 15px;
+	font-weight: 400; */
 	background: #503c6e;
 	border-radius: 17px;
 	-webkit-transition: all 0.3s;
@@ -1166,7 +1168,23 @@ ol {
 	height: 100%;
 	text-align: center;
 	padding-top: 7px;
+	/* border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer; */
+	/* border: none;
+  outline: none; */
 }
+
+/* .reset-style {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  } */
 
 .game-item {
 	margin-bottom: 80px;
@@ -1792,10 +1810,12 @@ ol {
 }
 
 .post-form {
-	width: 400px;
+	width: 800px;
   height: 400px;
   position: fixed;
-  top: 30%;
+  top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+	overflow-y: scroll;
+	max-height: 100%;
 }
