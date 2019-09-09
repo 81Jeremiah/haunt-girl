@@ -310,6 +310,7 @@ ol {
 	color: #9190a5;
 	font-size: 16px;
 	padding-top: 4px;
+
 }
 
 .header-social a,
@@ -334,12 +335,14 @@ ol {
 	-webkit-transition: all 0.3s;
 	-o-transition: all 0.3s;
 	transition: all 0.3s;
+
 }
 
 .header-social a:hover,
 .footer-social a:hover,
 .geme-social-share a:hover {
 	background: #b01ba5;
+	
 }
 
 .header-bar-warp {
