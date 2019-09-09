@@ -6,10 +6,12 @@ import Navbar from '../components/Navbar';
 import NewsletterSection from '../components/NewsletterSection';
 import Footer from '../components/Footer';
 import { fetchStatesWithPosts } from '../actions/stateActions';
+import { narrowByState } from '../actions/postActions';
 import StatesList from '../components/StatesList';
 import { Link } from 'react-router-dom';
 
 class Posts extends Component {
+
   componentDidMount(){
     const category = this.props.match.path
     console.log(category)
@@ -20,9 +22,11 @@ class Posts extends Component {
 
   handleStateClick = (event) => {
     event.preventDefault()
-    this.props.narrowByState(event.value)
+    debugger
+    this.props.narrowByState(event.target.innerText)
 
   }
+
 
   render(){
     return(
@@ -61,4 +65,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { fetchPosts, fetchStatesWithPosts })(Posts);
+export default connect(mapStateToProps, { fetchPosts, fetchStatesWithPosts, narrowByState })(Posts);
