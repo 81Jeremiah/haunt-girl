@@ -1,5 +1,6 @@
 import React from 'react';
 import Social from './Social'
+import HGLogo from '../img/IMG_2792.png'
 
 const Footer =() => {
 
@@ -13,7 +14,7 @@ return (
         <img src="img/footer-right-pic.png" alt=""/>
       </div>
       <a href="#" class="footer-logo">
-        <img src="./img/logo.png" alt=""/>
+        <img src={HGLogo} alt="" widtch="120" height="120" />
       </a>
       <ul class="main-menu footer-menu">
         <li><a href="">Home</a></li>
@@ -24,7 +25,7 @@ return (
       </ul>
       <div class="footer-social d-flex justify-content-center">
          <Social />
-      
+
       </div>
       <div class="copyright"><a href="">The Haunt Girl</a> 2019 @ All rights reserved</div>
     </div>

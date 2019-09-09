@@ -15,7 +15,13 @@ class PostForm extends Component {
     state_id: "1",
     image: null,
     video: "",
-    city: ""
+    city: "",
+    recommended_players:"",
+    price: "",
+    difficulty:"",
+    public_or_private:"",
+    recommended_age: "",
+    scarefactor:"",
   }
 
   componentDidMount(){
@@ -47,6 +53,13 @@ class PostForm extends Component {
     post.append('[post]image', this.state.image)
     post.append('[post]video', this.state.video)
     post.append('[post]city', this.state.city)
+    post.append('[post]recommended_players', this.state.recommended_players)
+    post.append('[post]price', this.state.price)
+    post.append('[post]difficulty', this.state.difficulty)
+    post.append('[post]public_or_private', this.state.public_or_private)
+    post.append('[post]recommended_age', this.state.recommended_age)
+    post.append('[post]scarefactor', this.state.scarefactor)
+
 
     console.log(post)
     this.props.createPost(post)
@@ -105,6 +118,36 @@ class PostForm extends Component {
           <Form.Label column sm={2}>Video Link</Form.Label>
           <Form.Control size="lg" type="text" value={this.state.video} onChange={this.handleChange} name="video"/>
         </Form.Group>
+        <Form.Row>
+          <Form.Group as={Form.Col} controlId="">
+          <Form.Label>Recommended Players</Form.Label>
+          <Form.Control size="lg" type="text" value={this.state.recommended_players} onChange={this.handleChange} name="recommended_players"/>
+          </Form.Group>
+          <Form.Group as={Form.Col} controlId="">
+          <Form.Label>Price</Form.Label>
+          <Form.Control size="lg" type="text" value={this.state.price} onChange={this.handleChange} name="price"/>
+          </Form.Group>
+          <Form.Group as={Form.Col} controlId="">
+          <Form.Label>Difficulty</Form.Label>
+          <Form.Control size="lg" type="text" value={this.state.difficulty} onChange={this.difficulty} name="difficulty"/>
+          </Form.Group>
+        </Form.Row>
+
+        <Form.Row>
+          <Form.Group as={Form.Col} controlId="">
+          <Form.Label>Public or Private</Form.Label>
+          <Form.Control size="lg" type="text" value={this.state.public_or_private} onChange={this.handleChange} name="public_or_private"/>
+          </Form.Group>
+          <Form.Group as={Form.Col} controlId="">
+          <Form.Label>Recommended Age</Form.Label>
+          <Form.Control size="lg" type="text" value={this.state.recommended_age} onChange={this.handleChange} name="recommended_age"/>
+          </Form.Group>
+          <Form.Group as={Form.Col} controlId="">
+          <Form.Label>Scare Factor</Form.Label>
+          <Form.Control size="lg" type="text" value={this.state.scarefactor} onChange={this.scarefactor} name="scarefactor"/>
+          </Form.Group>
+        </Form.Row>
+
         <Form.Group >
           <Form.Label>Blog Post</Form.Label>
           <Editor getEditorText={this.getEditorText} />
