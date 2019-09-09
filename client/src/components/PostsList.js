@@ -1,6 +1,7 @@
 import React from 'react';
 import doubleArrow from '../img/icons/double-arrow.png';
 import { Link } from 'react-router-dom';
+import ReactHtmlParser from 'react-html-parser';
 
 
 
@@ -10,6 +11,7 @@ const PostsList = (props) =>{
     // const category = post.category.name
     // debugger
     // const categoryRoute = category.trim()
+
     return(
 
       <li className="review-item" key={post.id}>
@@ -24,9 +26,12 @@ const PostsList = (props) =>{
 							<div class="rating">
 								<h5><i>Rating</i><span>4.5</span> / 5</h5>
 							</div>
-							<div class="top-meta">10.11.19  /  in <Link to={props.categoryRoute}>{post.category.name}</Link></div>
+							<div class="top-meta">{post.published_at}  /  in <Link to={props.categoryRoute}>{post.category.name}</Link></div>
               <h3>{post.title}</h3>
-              <p>{post.content}</p>
+                  <div class="review-content text-box text-white">
+                    {ReactHtmlParser(post.content)}
+                  </div>
+                   <br/>
               <Link to={`${props.categoryRoute}/${post.id}`} class="read-more">Read More  <img src={doubleArrow} alt=""/></Link>
           </div>
         </div>
