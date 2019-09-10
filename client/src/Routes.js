@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Splash from './containers/Splash';
-import About from './components/Static/About';
+import ProfilePage from './components/Static/About';
 import Posts from './containers/Posts';
 import PostForm from './components/admin/PostForm';
 import Post from './components/Post';
@@ -24,6 +24,7 @@ const Routes = () => {
         <Route exact path="/oddities" component={ Posts } />
         <Route exact path="/oddities/:id" component={ Post } />
         <Route exact path="/contact" component={ Contact } />
+        <Route exact path="/about" component={ ProfilePage } />
       </Switch>
     </Router>
   )
