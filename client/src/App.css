@@ -296,6 +296,7 @@ ol {
 	top: 0;
 	z-index: 99;
 	padding: 15px 15px 0;
+	background-color: purple
 }
 
 .header-warp {
@@ -342,7 +343,7 @@ ol {
 .footer-social a:hover,
 .geme-social-share a:hover {
 	background: #b01ba5;
-	
+
 }
 
 .header-bar-warp {
@@ -1821,4 +1822,8 @@ ol {
   transform: translate(-50%, -50%);
 	overflow-y: scroll;
 	max-height: 100%;
+}
+
+.splash-carousel{
+	margin-top: 150px;
 }
