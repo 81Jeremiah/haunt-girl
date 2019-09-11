@@ -2,9 +2,7 @@ export default ( state =
   { loading: false,
     posts: [],
     post: {}
-
-}
-, action) => {
+  }, action) => {
   switch(action.type){
 
     case 'LOADING_POSTS':
