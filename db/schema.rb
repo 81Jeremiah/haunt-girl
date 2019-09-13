@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_08_231842) do
+ActiveRecord::Schema.define(version: 2019_09_13_130025) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -62,7 +62,6 @@ ActiveRecord::Schema.define(version: 2019_09_08_231842) do
     t.string "video"
     t.integer "author_id"
     t.integer "state_id"
-    t.integer "city_id"
     t.string "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -75,7 +74,6 @@ ActiveRecord::Schema.define(version: 2019_09_08_231842) do
     t.string "scarefactor"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
-    t.index ["city_id"], name: "index_posts_on_city_id"
     t.index ["state_id"], name: "index_posts_on_state_id"
   end
 
@@ -84,6 +82,8 @@ ActiveRecord::Schema.define(version: 2019_09_08_231842) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "abbreviation"
+    t.integer "city_id"
+    t.index ["city_id"], name: "index_states_on_city_id"
   end
 
 end
