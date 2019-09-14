@@ -1,6 +1,8 @@
 class City < ApplicationRecord
-  has_many :posts
   belongs_to :state
+  has_many :posts
+  accepts_nested_attributes_for :posts
+
 
   # scope :has_posts, -> {(select("*")
   #   .joins(:posts)
