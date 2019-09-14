@@ -10,12 +10,12 @@ import Dropzone from 'react-dropzone'
 class PostForm extends Component {
   state = {
     title:"",
-    content:"test",
+    content:"",
     category_id: "1",
     state_id: "1",
     image: null,
     video: "",
-    city: "",
+    city_name: "",
     recommended_players:"",
     price: "",
     difficulty:"",
@@ -49,10 +49,10 @@ class PostForm extends Component {
     post.append('[post]title', this.state.title)
     post.append('[post]content', this.state.content)
     post.append('[post]category_id', this.state.category_id)
-    post.append('[post]state_id', this.state.state_id)
+    post.append('[post]state', this.state.state_id)
     post.append('[post]image', this.state.image)
     post.append('[post]video', this.state.video)
-    post.append('[post]city', this.state.city)
+    post.append('[post]city_name', this.state.city)
     post.append('[post]recommended_players', this.state.recommended_players)
     post.append('[post]price', this.state.price)
     post.append('[post]difficulty', this.state.difficulty)
