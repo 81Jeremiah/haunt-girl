@@ -18,11 +18,12 @@ class Api::PostsController < ApplicationController
 
   def create
 
-    @post= Post.create!(post_params)
-    @post.published_at = @post.created_at.strftime("%B %-d %Y")
-    @post.city_id = City.check_for_city(params[:post][:city]).id
-    @post.save
-    render json: @post
+
+    post= Post.new(post_params)
+    post.city.state_id = params[:post][:state]
+    post.save
+    # post.published_at = post.created_at.strftime("%B %-d %Y")
+    render json: post
   end
 
   def escape_rooms
@@ -44,7 +45,7 @@ class Api::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :category_id, :content, :image, :state_id, :video )
+    params.require(:post).permit(:title, :category_id, :content, :image,  :video, :city_name )
   end
 
 
