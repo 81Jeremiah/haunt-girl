@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_13_130025) do
+ActiveRecord::Schema.define(version: 2019_09_14_182220) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 2019_09_13_130025) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "state_id"
+    t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
   create_table "posts", force: :cascade do |t|
@@ -61,7 +63,6 @@ ActiveRecord::Schema.define(version: 2019_09_13_130025) do
     t.text "content"
     t.string "video"
     t.integer "author_id"
-    t.integer "state_id"
     t.string "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -72,9 +73,10 @@ ActiveRecord::Schema.define(version: 2019_09_13_130025) do
     t.string "public_or_private"
     t.string "recommended_age"
     t.string "scarefactor"
+    t.integer "city_id"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
-    t.index ["state_id"], name: "index_posts_on_state_id"
+    t.index ["city_id"], name: "index_posts_on_city_id"
   end
 
   create_table "states", force: :cascade do |t|
@@ -82,8 +84,6 @@ ActiveRecord::Schema.define(version: 2019_09_13_130025) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "abbreviation"
-    t.integer "city_id"
-    t.index ["city_id"], name: "index_states_on_city_id"
   end
 
 end
