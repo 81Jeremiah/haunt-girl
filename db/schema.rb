@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_14_182220) do
+ActiveRecord::Schema.define(version: 2019_09_15_193244) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -58,12 +58,19 @@ ActiveRecord::Schema.define(version: 2019_09_14_182220) do
     t.index ["state_id"], name: "index_cities_on_state_id"
   end
 
+  create_table "countries", force: :cascade do |t|
+    t.string "name", default: "United States"
+    t.string "country_code", default: "USA"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
     t.string "video"
     t.integer "author_id"
-    t.string "published_at"
+    t.datetime "published_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "category_id"
@@ -72,8 +79,9 @@ ActiveRecord::Schema.define(version: 2019_09_14_182220) do
     t.string "difficulty"
     t.string "public_or_private"
     t.string "recommended_age"
-    t.string "scarefactor"
+    t.integer "scarefactor"
     t.integer "city_id"
+    t.string "company_website"
     t.index ["author_id"], name: "index_posts_on_author_id"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["city_id"], name: "index_posts_on_city_id"
@@ -84,6 +92,8 @@ ActiveRecord::Schema.define(version: 2019_09_14_182220) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "abbreviation"
+    t.integer "country_id", default: 1
+    t.index ["country_id"], name: "index_states_on_country_id"
   end
 
 end
