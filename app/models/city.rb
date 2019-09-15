@@ -1,7 +1,8 @@
 class City < ApplicationRecord
   belongs_to :state
+  has_one :country, through: :state
   has_many :posts
-  accepts_nested_attributes_for :posts
+
 
 
   # scope :has_posts, -> {(select("*")
