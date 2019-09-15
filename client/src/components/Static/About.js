@@ -1,23 +1,3 @@
-// import React from 'react';
-// import christineHg from '../../img/Christine_HG.png';
-// const About = () =>{
-//   return(
-//     <div className="about-section">
-//      <img src={christineHg} alt="christine haunt girl" />
-//      <h1>Welcome to my blog </h1>
-//      <p>I’m Christine, a gal obsessed with haunts, escape rooms and other oddities.
-//      <br/>
-//      <br/>
-//      This blog is a passion project of mine. The fact that I personally do all of the reviews here and on my YouTube channel is what really makes TheHauntGirl.com stand out from other review sites. There is no team, just me. Most of my entries are about the west coast since that is where I live, however I also love to travel. In 2018 I was approached by USA Today to be one of their Ten Best List experts for haunted attractions & escape rooms. Please subscribe to my YouTube channel & sign up for my newsletter for updates & discount codes.
-//      <br/>
-//      </p>Thanks for stopping by!
-//     </div>
-//   );
-// }
-//
-//
-// export default About
-
 import React from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -39,19 +19,9 @@ import NavPills from "../NavPills/NavPills.js";
 import Parallax from "../Parallax/Parallax.js";
 
 
-import profile from "../../assets/img/faces/christian.jpg";
 import christineHg from '../../img/Christine_HG.png';
 
-import studio1 from "../../assets/img/examples/studio-1.jpg";
-import studio2 from "../../assets/img/examples/studio-2.jpg";
-import studio3 from "../../assets/img/examples/studio-3.jpg";
-import studio4 from "../../assets/img/examples/studio-4.jpg";
-import studio5 from "../../assets/img/examples/studio-5.jpg";
-import work1 from "../../assets/img/examples/olu-eletu.jpg";
-import work2 from "../../assets/img/examples/clem-onojeghuo.jpg";
-import work3 from "../../assets/img/examples/cynthia-del-rio.jpg";
-import work4 from "../../assets/img/examples/mariya-georgieva.jpg";
-import work5 from "../../assets/img/examples/clem-onojegaw.jpg";
+
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import NewsletterSection from "../../components/NewsletterSection";
@@ -79,7 +49,7 @@ export default function ProfilePage(props) {
         color="transparent"
         // brand="Material Kit React"
         // rightLinks={<HeaderLinks />}
-        
+
         fixed
         changeColorOnScroll={{
           height: 200,
@@ -87,7 +57,7 @@ export default function ProfilePage(props) {
         }}
         {...rest}
       />
-      <Parallax small filter image={require("../../assets/img/UNADJUSTEDNONRAW_thumb_3.jpg")} />
+      <Parallax small filter image={require("../../img/UNADJUSTEDNONRAW_thumb_3.jpg")} />
       <div className={classNames(classes.main, classes.mainRaised)}>
         <div>
           <div className={classes.container}>

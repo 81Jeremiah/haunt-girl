@@ -45,9 +45,10 @@ class Api::PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :category_id, :content, :image,  :video, :city_name )
+    params.require(:post).permit(:title, :category_id, :content, :image,
+      :video, :city_name, :published_at, :company_website, :recommended_players,
+      :public_or_private, :recommended_age, :scarefactor)
   end
-
 
 
 end
