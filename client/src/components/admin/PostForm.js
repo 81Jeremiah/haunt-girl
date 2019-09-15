@@ -15,22 +15,21 @@ class PostForm extends Component {
     state_id: "1",
     image: null,
     video: "",
-    city_name: "",
+    city: "",
     recommended_players:"",
     price: "",
     difficulty:"",
     public_or_private:"",
     recommended_age: "",
     scarefactor:"",
+    published_at: "",
+    company_website: ""
+
   }
 
   componentDidMount(){
     this.props.fetchStates()
   }
-
-
-
-
 
   handleChange = event => {
     const {name, value } = event.target;
@@ -59,11 +58,28 @@ class PostForm extends Component {
     post.append('[post]public_or_private', this.state.public_or_private)
     post.append('[post]recommended_age', this.state.recommended_age)
     post.append('[post]scarefactor', this.state.scarefactor)
-
+    post.append('[post]published_at:', this.state.published_at)
+    post.append('[post]company_website:', this.state.company_website)
 
     console.log(post)
     this.props.createPost(post)
-
+    this.setState({
+      title:"",
+      content:"",
+      category_id: "1",
+      state_id: "1",
+      image: null,
+      video: "",
+      city: "",
+      recommended_players:"",
+      price: "",
+      difficulty:"",
+      public_or_private:"",
+      recommended_age: "",
+      scarefactor:"",
+      published_at: "",
+      company_website: "",
+    })
   }
 
   getEditorText = (editorText) =>{
@@ -129,7 +145,7 @@ class PostForm extends Component {
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Difficulty</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.difficulty} onChange={this.difficulty} name="difficulty"/>
+          <Form.Control size="lg" type="text" value={this.state.difficulty} onChange={this.handleChange} name="difficulty"/>
           </Form.Group>
         </Form.Row>
 
@@ -144,9 +160,19 @@ class PostForm extends Component {
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Scare Factor</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.scarefactor} onChange={this.scarefactor} name="scarefactor"/>
+          <Form.Control size="lg" type="text" value={this.state.scarefactor} onChange={this.handleChange} name="scarefactor"/>
           </Form.Group>
         </Form.Row>
+
+        <Form.Group>
+          <Form.Label>Published-DD-MM-YYYY</Form.Label>
+          <Form.Control size="lg" type="text" value={this.state.published_at} onChange={this.handleChange} name="published_at"/>
+        </Form.Group>
+
+        <Form.Group>
+          <Form.Label>Company Website</Form.Label>
+          <Form.Control size="lg" type="text" value={this.state.company_website} onChange={this.handleChange} name="company_website"/>
+        </Form.Group>
 
         <Form.Group >
           <Form.Label>Blog Post</Form.Label>
