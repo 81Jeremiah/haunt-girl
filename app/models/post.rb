@@ -10,7 +10,7 @@ class Post < ApplicationRecord
   scope :search, ->(query) {where( 'creator_name LIKE ?', "%#{query}%")}
 
 
-  def city_name=(name) 
+  def city_name=(name)
     self.city = City.find_or_create_by(name: name.titleize)
   end
 
