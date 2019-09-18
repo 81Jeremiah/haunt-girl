@@ -44,25 +44,25 @@ class PostForm extends Component {
     // const post = this.state
 
 
-    const post = new FormData();
-    post.append('[post]title', this.state.title)
-    post.append('[post]content', this.state.content)
-    post.append('[post]category_id', this.state.category_id)
-    post.append('[post]state', this.state.state_id)
-    post.append('[post]image', this.state.image)
-    post.append('[post]video', this.state.video)
-    post.append('[post]city_name', this.state.city)
-    post.append('[post]recommended_players', this.state.recommended_players)
-    post.append('[post]price', this.state.price)
-    post.append('[post]difficulty', this.state.difficulty)
-    post.append('[post]public_or_private', this.state.public_or_private)
-    post.append('[post]recommended_age', this.state.recommended_age)
-    post.append('[post]scarefactor', this.state.scarefactor)
-    post.append('[post]published_at:', this.state.published_at)
-    post.append('[post]company_website:', this.state.company_website)
+    // const post = new FormData();
+    // post.append('[post]title', this.state.title)
+    // post.append('[post]content', this.state.content)
+    // post.append('[post]category_id', this.state.category_id)
+    // post.append('[post]state', this.state.state_id)
+    // post.append('[post]image', this.state.image)
+    // post.append('[post]video', this.state.video)
+    // post.append('[post]city_name', this.state.city)
+    // post.append('[post]recommended_players', this.state.recommended_players)
+    // post.append('[post]price', this.state.price)
+    // post.append('[post]difficulty', this.state.difficulty)
+    // post.append('[post]public_or_private', this.state.public_or_private)
+    // post.append('[post]recommended_age', this.state.recommended_age)
+    // post.append('[post]scarefactor', this.state.scarefactor)
+    // post.append('[post]published_at:', this.state.published_at)
+    // post.append('[post]company_website:', this.state.company_website)
 
-    console.log(post)
-    this.props.createPost(post)
+    // console.log(post)
+    this.props.createPost(this.state)
     this.setState({
       title:"",
       content:"",
