@@ -215,7 +215,6 @@ class EditForm extends Component {
         </div>
 
 
-
         <Button variant="primary" type="submit" value="New Entry">New Entry</Button>
 
         </Form>
