@@ -1,6 +1,6 @@
 
 class Api::PostsController < ApplicationController
-  before_action :set_post, only: [:update, :show]
+  before_action :set_post, only: [:update, :show, :edit]
 
   def index
     category_id = Category.find_category_id(params[:id])
@@ -20,10 +20,10 @@ class Api::PostsController < ApplicationController
 
 
     post= Post.new(post_params)
-    post.city.state_id = params.require(:post).permit(:state)
+    post.city.state_id = params[:post][:state]
     post.save
     # post.published_at = post.created_at.strftime("%B %-d %Y")
-    # render json: post
+    render json: post
   end
 
   def escape_rooms
@@ -35,7 +35,14 @@ class Api::PostsController < ApplicationController
   end
 
   def update
+    @post.update(post_params)
+    flash[:message]="Post updated!"
+    render json: @post
 
+  end
+
+  def edit
+    render json: @post
   end
 
   private
@@ -47,7 +54,7 @@ class Api::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :category_id, :content, :image,
       :video, :city_name, :published_at, :company_website, :recommended_players,
-      :public_or_private, :recommended_age, :scarefactor, :price, :difficulty) 
+      :public_or_private, :recommended_age, :scarefactor, :price, :difficulty)
   end
 
 

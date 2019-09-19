@@ -7,7 +7,7 @@ import { fetchStates } from '../../actions/postActions';
 import Editor from './Editor'
 import Dropzone from 'react-dropzone'
 
-class PostForm extends Component {
+class EditForm extends Component {
   state = {
     title:"",
     content:"",
@@ -230,4 +230,4 @@ const mapStateToProps = state => {
 
 }
 
-export default connect(mapStateToProps, {createPost, fetchStates})(PostForm)
+export default connect(mapStateToProps, {createPost, fetchStates})(EditForm)
