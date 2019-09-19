@@ -1,6 +1,6 @@
 
 class Api::PostsController < ApplicationController
-  before_action :set_post, only: [:update, :show, :edit]
+  before_action :set_post, only: [:update, :show, :edit, :destroy]
 
   def index
     category_id = Category.find_category_id(params[:id])
@@ -43,6 +43,10 @@ class Api::PostsController < ApplicationController
 
   def edit
     render json: @post
+  end
+
+  def destroy
+    @post.destroy
   end
 
   private
