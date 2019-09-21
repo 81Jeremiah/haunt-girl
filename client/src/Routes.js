@@ -5,6 +5,7 @@ import ProfilePage from './components/Static/About';
 import Posts from './containers/Posts';
 import PostForm from './components/admin/PostForm';
 import Post from './components/Post';
+import EditForm from './components/admin/EditForm';
 import Contact from './components/Static/Contact';
 
 
@@ -15,6 +16,7 @@ const Routes = () => {
       <Switch>
         <Route exact path="/" component={ Splash }/>
         <Route exact path="/admin/posts/new" component={ PostForm} />
+        <Route exact path="/admin/posts/:id/edit" component={ EditForm} />
         <Route exact path="/posts/:id" component={Post} />
         <Route exact path="/posts" component={ Posts } />
         <Route exact path="/haunts" component={ Posts } />
