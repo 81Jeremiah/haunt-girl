@@ -4,32 +4,47 @@ import Button from 'react-bootstrap/Button';
 import { createPost } from '../../actions/postActions';
 import { connect } from 'react-redux';
 import { fetchStates } from '../../actions/postActions';
+import { getPost } from '../../actions/postActions';
 import Editor from './Editor'
 import Dropzone from 'react-dropzone'
 
 class EditForm extends Component {
-  state = {
-    title:"",
-    content:"",
-    category_id: "1",
-    state_id: "1",
-    image: null,
-    video: "",
-    city: "",
-    recommended_players:"",
-    price: "",
-    difficulty:"",
-    public_or_private:"",
-    recommended_age: "",
-    scarefactor:"",
-    published_at: "",
-    company_website: ""
 
+  constructor(props) {
+
+    super(props);
+    console.log(props)
+    this.state = {
+      title: this.props.post.title,
+      content: this.props.post.content,
+
+      image: null,
+      video: this.props.post.video,
+
+      recommended_players: this.props.post.recommended_players,
+      price: this.props.post.price,
+      difficulty: this.props.post.difficulty,
+      public_or_private: this.props.post.public_or_private,
+      recommended_age: this.props.post.recommended_age,
+      scarefactor: this.props.post.scarefactor,
+      published_at: this.props.post.published_at,
+      company_website: this.props.post.company_website
+    }
   }
 
   componentDidMount(){
+    const postId = this.props.match.params.id
+    this.props.getPost(postId)
     this.props.fetchStates()
+
   }
+
+  componentDidUpdate(){
+
+
+  }
+
+
 
   handleChange = event => {
     const {name, value } = event.target;
@@ -103,8 +118,11 @@ class EditForm extends Component {
   }
 
   render(){
+    console.log(this.props)
     const statesList = this.props.states.map(state => {
+
         return(
+
           <option key={state.id} value={state.id}>{state.abbreviation}</option>
         );
     });
@@ -114,7 +132,8 @@ class EditForm extends Component {
       <Form onSubmit={this.handleSubmit}>
         <Form.Group controlId="">
           <Form.Label column sm={2}>Title</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.title} onChange={this.handleChange} name="title"/>
+          <Form.Control size="lg" type="text" value={this.state.title} onChange={this.handleChange} name="title" />
+
         </Form.Group>
         <Form.Row>
           <Form.Group as={Form.Col} controlId="">
@@ -224,9 +243,10 @@ class EditForm extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {states: state.states.states}
+const mapStateToProps = state => ({
+     states: state.states.states,
+     post: state.posts.post
+});
 
-}
 
-export default connect(mapStateToProps, {createPost, fetchStates})(EditForm)
+export default connect(mapStateToProps, {createPost, fetchStates, getPost})(EditForm)
