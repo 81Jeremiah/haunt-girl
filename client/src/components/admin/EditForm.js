@@ -15,34 +15,45 @@ class EditForm extends Component {
     super(props);
     console.log(props)
     this.state = {
-      title: this.props.post.title,
-      content: this.props.post.content,
-
-      image: null,
-      video: this.props.post.video,
-
-      recommended_players: this.props.post.recommended_players,
-      price: this.props.post.price,
-      difficulty: this.props.post.difficulty,
-      public_or_private: this.props.post.public_or_private,
-      recommended_age: this.props.post.recommended_age,
-      scarefactor: this.props.post.scarefactor,
-      published_at: this.props.post.published_at,
-      company_website: this.props.post.company_website
+      title: this.props.title || "",
+      // content: props.post.content,
+      //
+      // image: null,
+      // video: props.post.video,
+      //
+      // recommended_players: props.post.recommended_players,
+      // price: props.post.price,
+      // difficulty: this.props.post.difficulty,
+      // public_or_private: props.post.public_or_private,
+      // recommended_age: props.post.recommended_age,
+      // scarefactor: props.post.scarefactor,
+      // published_at: props.post.published_at,
+      // company_website: props.post.company_website
     }
   }
 
   componentDidMount(){
-    const postId = this.props.match.params.id
-    this.props.getPost(postId)
     this.props.fetchStates()
-
+    // this.setState({
+    //   title: this.props.postData.title,
+    //   content: this.props.post.content,
+    //
+    //   image: null,
+    //   video: this.props.post.video,
+    //
+    //   recommended_players: this.props.post.recommended_players,
+    //   price: this.props.post.price,
+    //   difficulty: this.props.post.difficulty,
+    //   public_or_private: this.props.post.public_or_private,
+    //   recommended_age: this.props.post.recommended_age,
+    //   scarefactor: this.props.post.scarefactor,
+    //   published_at: this.props.post.published_at,
+    //   company_website: this.props.post.company_website
+    //
+    // })
   }
 
-  componentDidUpdate(){
 
-
-  }
 
 
 
@@ -51,7 +62,7 @@ class EditForm extends Component {
     this.setState({
       [name]: value
     })
-    console.log(this.state.content)
+
   }
 
   handleSubmit = event =>{
@@ -130,6 +141,7 @@ class EditForm extends Component {
     return(
       <div className = "post-form">
       <Form onSubmit={this.handleSubmit}>
+         {this.state.title}
         <Form.Group controlId="">
           <Form.Label column sm={2}>Title</Form.Label>
           <Form.Control size="lg" type="text" value={this.state.title} onChange={this.handleChange} name="title" />
@@ -245,7 +257,7 @@ class EditForm extends Component {
 
 const mapStateToProps = state => ({
      states: state.states.states,
-     post: state.posts.post
+
 });
 
 

@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
-import { getPost } from '../../actions/postActions';
+import { getPost } from '../../../actions/postActions';
 import { connect } from 'react-redux';
 import EditForm from '../EditForm';
 
 class EditContainer extends Component {
 
   componentDidMount(){
-    
+    const postId = this.props.match.params.id
+    this.props.getPost(postId)
   }
 
   render(){
+    const title = this.props.post.title
+    console.log(title)
     return(
-      <EditForm postData ={this.props.post} />
+      <EditForm title ={title} />
     )
   }
 }
