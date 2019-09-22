@@ -1,4 +1,5 @@
 class Api::CategoriesController < ApplicationController
+  skip_before_action :authorized, only: [:get_cities_in_state]
 
 
   def get_cities_in_state

@@ -1,6 +1,9 @@
 
 class Api::PostsController < ApplicationController
+  skip_before_action :authorized, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   before_action :set_post, only: [:update, :show, :edit, :destroy]
+
+
 
   def index
     category_id = Category.find_category_id(params[:id])

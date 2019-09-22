@@ -1,4 +1,5 @@
 class Api::StatesController < ApplicationController
+  skip_before_action :authorized, only: [:index, :states_with_posts, :show]
 
   def index
      states = State.all
