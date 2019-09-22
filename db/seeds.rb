@@ -8,6 +8,7 @@
 
 # posts = Post.create([{title:'title1', content: "stuff stuff stuff"},{title:'title2', content: "stuff stuff stuff"}  ])
 # categories = Category.create([{name: 'Escape Rooms'}, {name: 'Haunts'}, {name: 'Oddities'}])
+
 states = State.create([
   {abbreviation:'AL', name:'Alabama'},
   {abbreviation:'AK', name:'Alaska'},
