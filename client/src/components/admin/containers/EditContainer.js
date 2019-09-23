@@ -12,9 +12,13 @@ class EditContainer extends Component {
 
   render(){
     const title = this.props.post.title
-    console.log(title)
+    console.log(this.props.post)
     return(
-      <EditForm title ={title} />
+      <EditForm
+        post ={this.props.post}
+        category={this.props.post.category}
+        state={this.props.post.state}
+        city={this.props.post.city} />
     )
   }
 }

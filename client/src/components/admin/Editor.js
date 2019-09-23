@@ -12,7 +12,7 @@ export default class Editor extends Component {
 
     constructor (props) {
       super(props)
-      this.state = { editorHtml: '', theme: 'snow' }
+      this.state = { editorHtml: '' , theme: 'snow' }
       this.handleChange = this.handleChange.bind(this)
     }
 
@@ -34,12 +34,13 @@ export default class Editor extends Component {
     }
 
     render () {
+      console.log(this.props.content)
       return (
         <div>
           <ReactQuill
             theme={this.state.theme}
             onChange={this.handleChange}
-            value={this.state.editorHtml}
+            defaultValue={this.props.content || this.state.editorHtml }
             modules={Editor.modules}
             formats={Editor.formats}
             bounds={'.app'}

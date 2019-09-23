@@ -8,14 +8,33 @@ import { getPost } from '../../actions/postActions';
 import Editor from './Editor'
 import Dropzone from 'react-dropzone'
 
+
+
 class EditForm extends Component {
 
-  constructor(props) {
+  state = {};
 
+  static getDerivedStateFromProps(nextProps){
+
+    return{
+      state: nextProps.title
+
+    }
+
+  }
+
+
+
+  // const intitalState = {
+  //   title: this.props.title
+  // }
+
+  constructor(props) {
     super(props);
     console.log(props)
     this.state = {
-      title: this.props.title || "",
+
+      // title: ""
       // content: props.post.content,
       //
       // image: null,
@@ -32,8 +51,13 @@ class EditForm extends Component {
     }
   }
 
+
+
+
+
   componentDidMount(){
     this.props.fetchStates()
+
     // this.setState({
     //   title: this.props.postData.title,
     //   content: this.props.post.content,
@@ -69,6 +93,7 @@ class EditForm extends Component {
 
     event.preventDefault()
     // const post = this.state
+
 
 
     const post = new FormData();
@@ -129,7 +154,10 @@ class EditForm extends Component {
   }
 
   render(){
-    console.log(this.props)
+    const category = this.props.category || ""
+    const postState = this.props.state || ""
+    const city = this.props.city || ""
+
     const statesList = this.props.states.map(state => {
 
         return(
@@ -137,20 +165,20 @@ class EditForm extends Component {
           <option key={state.id} value={state.id}>{state.abbreviation}</option>
         );
     });
-
+    console.log(this.props)
     return(
       <div className = "post-form">
       <Form onSubmit={this.handleSubmit}>
-         {this.state.title}
+
         <Form.Group controlId="">
           <Form.Label column sm={2}>Title</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.title} onChange={this.handleChange} name="title" />
+          <Form.Control size="lg" type="text" defaultValue={this.props.post.title ||this.state.title } onChange={this.handleChange} name="title" />
 
         </Form.Group>
         <Form.Row>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Category</Form.Label>
-          <Form.Control as="select" value={this.state.category_id} onChange={this.handleChange} name="category_id">
+          <Form.Control as="select" defaultValue={this.state.category_id || category.id } onChange={this.handleChange} name="category_id">
             <option value="1">Escape Rooms</option>
             <option value="2">Haunts</option>
             <option value="3">Oddities</option>
@@ -158,14 +186,14 @@ class EditForm extends Component {
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
             <Form.Label>State</Form.Label>
-            <Form.Control as="select" value={this.state.state_id} onChange={this.handleChange} name="state_id">
+            <Form.Control as="select" defaultValue={this.state.state_id || postState.abbreviation} onChange={this.handleChange} name="state_id">
               {statesList}
             </Form.Control>
           </Form.Group>
         </Form.Row>
         <Form.Group controlId="">
           <Form.Label column sm={2}>City</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.city} onChange={this.handleChange} name="city"/>
+          <Form.Control size="lg" type="text" defaultValue={this.state.city || city.name } onChange={this.handleChange} name="city"/>
         </Form.Group>
         <Form.Group controlId="">
           <Form.Label column sm={2}>Video Link</Form.Label>
@@ -213,7 +241,7 @@ class EditForm extends Component {
 
         <Form.Group >
           <Form.Label>Blog Post</Form.Label>
-          <Editor getEditorText={this.getEditorText} />
+          <Editor defaultValue={this.props.post.content} getEditorText={this.getEditorText} content={this.props.post.content} />
 
 
            {/* <Form.Control as="textarea" rows="15" value={this.state.content} onChange={this.handleChange} name="content"
