@@ -3,7 +3,12 @@ class PostSerializer < ActiveModel::Serializer
   attributes :id, :title, :content, :image, :published_at
 
   belongs_to :category
-  belongs_to :state
+  # belongs_to :state
+
+
+  belongs_to :city
+  has_one :state, through: :city
+  has_one :country, through: :state
 
   def image
     return unless object.image.attached?
