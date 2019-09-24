@@ -7,7 +7,7 @@ import PostForm from './components/admin/PostForm';
 import Post from './components/Post';
 import EditContainer from './components/admin/containers/EditContainer';
 import Contact from './components/Static/Contact';
-
+import Login from './components/admin/Login'
 
 const Routes = () => {
 
@@ -27,6 +27,7 @@ const Routes = () => {
         <Route exact path="/oddities/:id" component={ Post } />
         <Route exact path="/contact" component={ Contact } />
         <Route exact path="/about" component={ ProfilePage } />
+        <Route exact path="/admin/login" component={ Login } />
       </Switch>
     </Router>
   )
