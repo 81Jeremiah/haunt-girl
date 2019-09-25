@@ -1,13 +1,38 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
-import Routes from './Routes'
+import Routes from './Routes';
+import AdminRoutes from './AdminRoutes';
+import {connect} from 'react-redux';
+import {getProfileFetch} from './actions/adminActions'
 
-function App() {
-  return (
-    <div className="App">
-        <Routes />
-    </div>
-  );
+
+class App extends Component {
+  componentWillMount = () => {
+    this.props.getProfileFetch()
+  }
+
+
+ render() {
+
+    if (localStorage.token) {
+      console.log(localStorage.token)
+      return (
+      <div className="App">
+        <>
+          <Routes />
+          <AdminRoutes />
+        </>
+       </div>
+     );
+    }else{
+      return(
+        <div>
+          <Routes />
+        </div>
+      );
+    }
+  }
 }
 
-export default App;
+
+export default connect(null, {getProfileFetch})(App);
