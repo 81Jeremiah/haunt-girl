@@ -14,8 +14,8 @@ class App extends Component {
 
  render() {
 
-    if (localStorage.token) {
-      console.log(localStorage.token)
+    if (this.props.user && this.props.user.authorized) {
+
       return (
       <div className="App">
         <>
@@ -34,5 +34,9 @@ class App extends Component {
   }
 }
 
+const mapStateToProps = state => {
+  console.log(state)
+  return {user: state.admin}
+}
 
-export default connect(null, {getProfileFetch})(App);
+export default connect(mapStateToProps, {getProfileFetch})(App);

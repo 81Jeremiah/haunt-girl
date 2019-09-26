@@ -6,7 +6,7 @@ Rails.application.routes.draw do
    get  'posts/search' => 'posts#search'
    resources :admins, only: [:create]
    post '/login', to: 'auth#create'
-   get '/profile', to: 'admin#profile'
+   get '/profile', to: 'admins#profile'
    resources :posts
    get 'posts/:id/edit' => 'posts#edit'
    resources :categories, only: [:show]
