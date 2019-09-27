@@ -17,6 +17,11 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.adminLoginFetch(this.state)
+    if (this.props.admin.authorized){
+      this.props.history.push("/admin/home")
+    } else {
+      window.alert("Sorry, something went wrong. Please try logging in again.")
+    }
   }
 
   render() {
