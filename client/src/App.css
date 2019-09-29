@@ -288,6 +288,15 @@ ol {
 /*------------------
   Header section
 ---------------------*/
+.header-logo {
+	font-family: 'Covered By Your Grace', cursive;
+	float: left;
+	font-size: 40px;
+	font-weight: 500;
+	color: #fff;
+	padding-top: 3px;
+}
+
 
 .header-section {
 	position: absolute;
