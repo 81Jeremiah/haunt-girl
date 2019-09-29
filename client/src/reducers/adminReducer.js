@@ -13,6 +13,9 @@
       case 'LOGIN_ERROR':
         return {...state, error: action.error}
 
+      case 'LOGOUT_USER':
+        return {currentUser: {}, authorized: false}
+
       default:
         return state
     }
