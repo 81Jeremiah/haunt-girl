@@ -26,6 +26,7 @@ const Routes = () => {
         <Route exact path="/contact" component={ Contact } />
         <Route exact path="/about" component={ ProfilePage } />
         <Route exact path="/admin/login" component={ Login } />
+        {/* <Route render={ () => <h1>404 Error</h1> } /> */}
       </Switch>
     </Router>
   )
