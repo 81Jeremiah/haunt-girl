@@ -1,11 +1,11 @@
 import React from 'react';
-import Link from 'react-router-dom';
 
 const StatesList = props => {
+  console.log(props)
   const listStates = props.states.map(state => {
     return(
-      <li key={state.id} onClick={props.handleStateClick}> 
-      <Link to= {`/states/${state.abbreviation}`}>{state.abbreviation} </Link> </li>
+      <li key={state.id} onClick={props.handleStateClick}>
+      <a href="filter-by-state">{state.abbreviation} </a> </li>
     )
   })
 
