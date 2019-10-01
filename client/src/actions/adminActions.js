@@ -27,13 +27,13 @@ export const adminLoginFetch = admin => {
 const loginUser = userObj => ({
     type: 'LOGIN_USER',
     user: userObj
-})
+});
 
 const handleError = msg => ({
     type: 'LOGIN_ERROR',
     error: msg
 
-})
+});
 
 
 export const getProfileFetch = () => {
@@ -59,7 +59,12 @@ export const getProfileFetch = () => {
             console.log(data)
             dispatch(loginUser(data.admin))
           }
-        })
+      });
     }
   }
 }
+
+export const logout = () => ({
+  type: 'LOGOUT_USER'
+
+});
