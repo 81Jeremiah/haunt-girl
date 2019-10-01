@@ -20,7 +20,7 @@ class App extends Component {
       <div className="App">
         <>
           <Routes />
-          <AdminRoutes />
+        <AdminRoutes authorized={this.props.user.authorized} />
         </>
        </div>
      );
