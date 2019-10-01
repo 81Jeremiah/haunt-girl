@@ -50,7 +50,6 @@ class PostForm extends Component {
     post.append('[post]title', this.state.title)
     post.append('[post]content', this.state.content)
     post.append('[post]category_id', this.state.category_id)
-    post.append('[post]state', this.state.state_id)
     post.append('[post]video', this.state.video)
     post.append('[post]city_name', this.state.city)
     post.append('[post]recommended_players', this.state.recommended_players)
@@ -61,6 +60,7 @@ class PostForm extends Component {
     post.append('[post]scarefactor', this.state.scarefactor)
     post.append('[post]published_at:', this.state.published_at)
     post.append('[post]company_website:', this.state.company_website)
+    post.append('[post]state', this.state.state_id)
 
 
     if(this.state.image !== null){
