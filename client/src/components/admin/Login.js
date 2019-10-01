@@ -3,11 +3,13 @@ import {connect} from 'react-redux';
 import {adminLoginFetch} from '../../actions/adminActions';
 
 class Login extends Component {
-  state = {
-    username: "",
-    password: ""
+  constructor(props){
+    super(props)
+    this.state = {
+      username: "",
+      password: ""
+    }
   }
-
   handleChange = event => {
     this.setState({
       [event.target.name]: event.target.value
@@ -16,8 +18,8 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    this.props.adminLoginFetch(this.state)
-    if (this.props.admin.authorized){
+  
+    if (this.props.adminLoginFetch(this.state)){
       this.props.history.push("/admin/home")
     } else {
       window.alert("Sorry, something went wrong. Please try logging in again.")
@@ -48,9 +50,12 @@ class Login extends Component {
 
         <input type='submit'/>
       </form>
-    )
+    );
   }
 }
 
+// const mapStateToProps = state => ({
+//   admin: state.admin
+// })
 
 export default connect(null, {adminLoginFetch})(Login)
