@@ -2,6 +2,7 @@ class Api::AdminsController < ApplicationController
   skip_before_action :authorized, only: [:create]
 
   def profile
+
     render json: { admin: AdminSerializer.new(current_admin) }, status: :accepted
   end
 
