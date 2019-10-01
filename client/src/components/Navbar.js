@@ -24,15 +24,16 @@ const Navbar = () =>{
             </div>*/}
           {/*  Menu */}
             <ul class="main-menu primary-menu">
+              <li className="header-logo">THE HAUNT GIRL</li>
               <li><Link to="/"><img src={hauntGirlLogo} alt="log" height="80" width="80"/></Link></li>
-              <li><Link to="/haunts">Haunts </Link>
-                {/*// <ul class="sub-menu">
-                //   <li><a href="game-single.html"></a></li>
-                // </ul> */}
+              <li><Link to="/">Reviews </Link>
+                   <ul class="sub-menu">
+                     <li><Link to="/haunts">Haunts </Link></li>
+                     <li><Link to="/escaperooms">Escape Rooms</Link></li>
+                     <li><Link to="/oddities">Oddities</Link></li>
+                     <li><Link to="/immersives">Immersives</Link></li>
+                   </ul>
               </li>
-              <li><Link to="/escaperooms">Escape Rooms</Link></li>
-              <li><Link to="/oddities">Oddities</Link></li>
-              <li><Link to="/immersives">Immersives</Link></li>
               <li><Link to="/interviews">Interviews</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="contact">Contact</Link></li>
