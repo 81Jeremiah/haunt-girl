@@ -4,9 +4,7 @@ import classNames from "classnames";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
-import Camera from "@material-ui/icons/Camera";
-import Palette from "@material-ui/icons/Palette";
-import Favorite from "@material-ui/icons/Favorite";
+
 // core components
 
 import Header from "../Header/Header.js"
@@ -14,8 +12,7 @@ import Header from "../Header/Header.js"
 import Button from "../CustomButtons/Button.js";
 import GridContainer from "../Grid/GridContainer.js";
 import GridItem from "../Grid/GridItem.js";
-import HeaderLinks from "../Header/HeaderLinks.js";
-import NavPills from "../NavPills/NavPills.js";
+
 import Parallax from "../Parallax/Parallax.js";
 
 
@@ -25,7 +22,7 @@ import christineHg from '../../img/Christine_HG.png';
 import Navbar from "../../components/Navbar";
 import Footer from "../../components/Footer";
 import NewsletterSection from "../../components/NewsletterSection";
-import Social from "../../components/Social";
+
 
 import styles from "../../assets/jss/material-kit-react/views/profilePage.js";
 
@@ -104,125 +101,5 @@ export default function ProfilePage(props) {
       <Footer />
     </div>
 
-        );
-      }
-      //       <GridContainer justify="center">
-      //         <GridItem xs={12} sm={12} md={8} className={classes.navWrapper}>
-      //           <NavPills
-      //             alignCenter
-      //             color="primary"
-      //             tabs={[
-      //               {
-      //                 tabButton: "Studio",
-      //                 tabIcon: Camera,
-      //                 tabContent: (
-      //                   <GridContainer justify="center">
-      //                     <GridItem xs={12} sm={12} md={4}>
-      //                       <img
-      //                         alt="..."
-      //                         src={studio1}
-      //                         className={navImageClasses}
-      //                       />
-      //                       <img
-      //                         alt="..."
-      //                         src={studio2}
-      //                         className={navImageClasses}
-      //                       />
-      //                     </GridItem>
-      //                     <GridItem xs={12} sm={12} md={4}>
-      //                       <img
-      //                         alt="..."
-      //                         src={studio5}
-      //                         className={navImageClasses}
-      //                       />
-      //                       <img
-      //                         alt="..."
-      //                         src={studio4}
-      //                         className={navImageClasses}
-      //                       />
-      //                     </GridItem>
-      //                   </GridContainer>
-      //                 )
-      //               },
-      //               {
-      //                 tabButton: "Work",
-      //                 tabIcon: Palette,
-      //                 tabContent: (
-      //                   <GridContainer justify="center">
-      //                     <GridItem xs={12} sm={12} md={4}>
-      //                       <img
-      //                         alt="..."
-      //                         src={work1}
-      //                         className={navImageClasses}
-      //                       />
-      //                       <img
-      //                         alt="..."
-      //                         src={work2}
-      //                         className={navImageClasses}
-      //                       />
-      //                       <img
-      //                         alt="..."
-      //                         src={work3}
-      //                         className={navImageClasses}
-      //                       />
-      //                     </GridItem>
-      //                     <GridItem xs={12} sm={12} md={4}>
-      //                       <img
-      //                         alt="..."
-      //                         src={work4}
-      //                         className={navImageClasses}
-      //                       />
-      //                       <img
-      //                         alt="..."
-      //                         src={work5}
-      //                         className={navImageClasses}
-      //                       />
-      //                     </GridItem>
-      //                   </GridContainer>
-      //                 )
-      //               },
-      //               {
-      //                 tabButton: "Favorite",
-      //                 tabIcon: Favorite,
-      //                 tabContent: (
-      //                   <GridContainer justify="center">
-      //                     <GridItem xs={12} sm={12} md={4}>
-      //                       <img
-      //                         alt="..."
-      //                         src={work4}
-      //                         className={navImageClasses}
-      //                       />
-      //                       <img
-      //                         alt="..."
-      //                         src={studio3}
-      //                         className={navImageClasses}
-      //                       />
-      //                     </GridItem>
-      //                     <GridItem xs={12} sm={12} md={4}>
-      //                       <img
-      //                         alt="..."
-      //                         src={work2}
-      //                         className={navImageClasses}
-      //                       />
-      //                       <img
-      //                         alt="..."
-      //                         src={work1}
-      //                         className={navImageClasses}
-      //                       />
-      //                       <img
-      //                         alt="..."
-      //                         src={studio1}
-      //                         className={navImageClasses}
-      //                       />
-      //                     </GridItem>
-      //                   </GridContainer>
-      //                 )
-      //               }
-      //             ]}
-      //           />
-      //         </GridItem>
-      //       </GridContainer>
-      //     </div>
-      //   </div>
-      // </div>
-      // <Footer />
+    );
+  }      
