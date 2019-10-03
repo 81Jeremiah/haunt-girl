@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
 
    get '/states/with_posts', to: 'states#states_with_posts'
+   get 'cities/cities_in_state', to: 'cities#cities_in_state'
    get  'posts/search' => 'posts#search'
    resources :admins, only: [:create]
    post '/login', to: 'auth#create'

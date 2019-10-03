@@ -1,10 +1,13 @@
-class Api::CategoriesController < ApplicationController
-  skip_before_action :authorized, only: [:get_cities_in_state]
+class Api::CitiesController < ApplicationController
+  skip_before_action :authorized, only: [:cities_in_state]
 
 
-  def get_cities_in_state
-    state = State.find(params: id)
-    cities = City.retrieve_cities(state)
+  def cities_in_state
+    state = State.find(params[:id])
+
+    @cities = state.cities
+
+    render json: @cities
   end
 
 end
