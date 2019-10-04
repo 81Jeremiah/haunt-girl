@@ -23,8 +23,8 @@ class Post < ApplicationRecord
   end
 
 
-  def self.unique_states
-    Post.all.collect{ |post| post.state }.uniq
+  def self.unique_states(category_id)
+    Post.where('category_id =?',category_id ).collect{ |post| post.state }.uniq
   end
   # def state=(state_id)
   #   debugger
