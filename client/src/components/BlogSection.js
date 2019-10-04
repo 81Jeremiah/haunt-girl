@@ -4,6 +4,8 @@ import add from '../img/add.jpg'
 import blogThumb2 from '../img/blog-widget/2.jpg'
 import blogThumb1 from '../img/blog-widget/1.jpg'
 import blogThumb4 from '../img/blog-widget/4.jpg'
+import InstaGrid from '../components/Instafeed';
+// import Instafeed from '../components/Instafeed';
 
 const BlogSection = () => {
 
@@ -27,6 +29,7 @@ return(
             <img src="./img/blog/1.jpg" alt=""/>
           </div>
           <div class="blog-text text-box text-white">
+
             <div class="top-meta">Today  in <a href="">Escape Rooms</a></div>
             <h3>This Game Was So Much Fun!</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eius-mod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consecte-tur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
@@ -58,21 +61,25 @@ return(
           </div>
         </div>
       </div>
+
       <div class="col-xl-3 col-lg-4 col-md-5 sidebar">
         <div id="stickySidebar">
           <div class="widget-item">
-            <h4 class="widget-title">Trending</h4>
+            <h4 class="widget-title">The Haunt Girl on Instagram</h4>
             <div class="trending-widget">
               <div class="tw-item">
-                <div class="tw-thumb">
+                {/*<Instafeed /> */}
+                 <InstaGrid account="thehauntgirl" numberOfMediaElements={3} />
+
+                {/* <div class="tw-thumb">
                   <img src={ blogThumb1 } alt="#"/>
                 </div>
                 <div class="tw-text">
                   <div class="tw-meta">Oct 5 2019  /  in <a href="">Haunts</a></div>
                   <h5>Queen Mary!</h5>
-                </div>
+                </div> */}
               </div>
-              <div class="tw-item">
+              {/*<div class="tw-item">
                 <div class="tw-thumb">
                   <img src={ blogThumb2 } alt="#"/>
                 </div>
@@ -115,8 +122,10 @@ return(
           <div class="widget-item">
           <a href="#" class="add">
             <img src='' alt=""/>
-          </a>
-        </div>
+          </a> */}
+          </div>
+
+            </div>
         </div>
       </div>
     </div>
