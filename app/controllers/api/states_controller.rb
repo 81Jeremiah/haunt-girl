@@ -7,9 +7,12 @@ class Api::StatesController < ApplicationController
   end
 
   def states_with_posts
-    category_id = Category.find_category_id(params[:id])
+
+     category_id = Category.find_category_id(params[:id][1..-1])
+
      @states = Post.unique_states(category_id)
     # states = State.has_posts
+    debugger
     render json: @states
   end
 
