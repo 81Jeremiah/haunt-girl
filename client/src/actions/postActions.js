@@ -68,3 +68,38 @@ export const narrowByState = (state) => {
       });
   }
 }
+
+export const updatePost = post => {
+  return (dispatch) => {
+    return fetch(`/api/posts/${post}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": 'application/json',
+        "Authorization": `Bearer ${localStorage.auth_token}`
+      },
+      body: JSON.stringify( post )
+    })
+    .then(response => response.json())
+    .then(post => {
+      dispatch({type:'EDIT_POSTS', post: post})
+    })
+    .catch(error => console.log(error))
+  }
+}
+
+export const deletePost = postId => {
+  return (dispatch) => {
+    return fetch(`/api/recipes/${postId}`, {
+      method: "DELETE",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${localStorage.auth_token}`
+      }
+    })
+    .then(response => response.json())
+    .then(post => {
+      dispatch({type:'EDIT_POSTS', post: post})
+    })
+    .catch(error => console.log(error))
+  }
+}
