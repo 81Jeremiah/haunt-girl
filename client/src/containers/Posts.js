@@ -8,7 +8,9 @@ import Footer from '../components/Footer';
 import { fetchStatesWithPosts } from '../actions/stateActions';
 import { narrowByState } from '../actions/postActions';
 import StatesList from '../components/StatesList';
+import {fetchCities}  from '../actions/cityActions';
 import { Link } from 'react-router-dom';
+import CitiesList from '../components/CitiesList';
 
 class Posts extends Component {
 
@@ -17,15 +19,26 @@ class Posts extends Component {
     console.log(category)
 
     this.props.fetchPosts(category)
-    this.props.fetchStatesWithPosts()
+    this.props.fetchStatesWithPosts(category)
   }
 
   handleStateClick = (event) => {
     event.preventDefault()
-    debugger
-    this.props.narrowByState(event.target.innerText)
+
+    const chosenState = event.target.innerText
+    this.props.narrowByState(chosenState)
+    this.props.fetchCities(chosenState)
+    if (this.props.cities){
+        const cities = <CitiesList cities={this.props.cities} handleCityClick={this.handleCityClick}/>
+      }
 
   }
+
+  handleCityClick = (event) => {
+    event.preventDefault()
+
+  }
+
 
 
   render(){
@@ -43,7 +56,9 @@ class Posts extends Component {
         	</section>
           <section class="review-section">
             <div class="container">
-            <StatesList states={this.props.states} handleStateClick={this.handleStateClick} />
+             <StatesList states={this.props.states} handleStateClick={this.handleStateClick} />
+
+              
 
 
              <PostsList posts={this.props.posts} categoryRoute={this.props.match.path} />
@@ -58,11 +73,11 @@ class Posts extends Component {
 }
 
 const mapStateToProps = state => {
-  console.log(state)
   return {
     posts: state.posts.posts,
-    states: state.states.states
+    states: state.states.states,
+    cities: state.cities.cities
   }
 }
 
-export default connect(mapStateToProps, { fetchPosts, fetchStatesWithPosts, narrowByState })(Posts);
+export default connect(mapStateToProps, { fetchCities, fetchPosts, fetchStatesWithPosts, narrowByState })(Posts);
