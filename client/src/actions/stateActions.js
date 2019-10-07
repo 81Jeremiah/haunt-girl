@@ -3,7 +3,7 @@ export const fetchStatesWithPosts = (category) =>{
     dispatch({type:'LOADING_STATES'});
     return fetch('api/states/with_posts/?id='+ category)
 
-    .then(resp => console.log(resp))
+    .then(resp => resp.json())
     // resp.json()
     .then(states => {
       dispatch({type:'FETCH_STATES', states: states})
