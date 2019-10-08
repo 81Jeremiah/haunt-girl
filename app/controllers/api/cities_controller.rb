@@ -2,7 +2,8 @@ class Api::CitiesController < ApplicationController
   skip_before_action :authorized, only: [:cities_in_state]
 
   def cities_in_state
-    state = State.find_by(abbreviation: params[:id][1..-1] )
+    
+    state = State.find_by(abbreviation: params[:id])
 
 
     @cities = state.cities
