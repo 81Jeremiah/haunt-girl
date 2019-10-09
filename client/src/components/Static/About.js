@@ -44,9 +44,7 @@ export default function ProfilePage(props) {
 
       <Header
         color="transparent"
-        // brand="Material Kit React"
-        // rightLinks={<HeaderLinks />}
-
+        
         fixed
         changeColorOnScroll={{
           height: 200,
@@ -102,4 +100,4 @@ export default function ProfilePage(props) {
     </div>
 
     );
-  }      
+  }
