@@ -14,8 +14,5 @@ export default (state =
 
     default:
       return state
-  }
-
-
-
+   }
  }
