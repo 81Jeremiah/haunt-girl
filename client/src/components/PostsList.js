@@ -29,7 +29,7 @@ const PostsList = (props) =>{
 							<div class="top-meta">{post.published_at}  /  in <Link to={props.categoryRoute}>{post.category.name}</Link></div>
               <h3>{post.title}</h3>
                   <div class="review-content text-box text-white">
-                    {ReactHtmlParser(post.content)}
+                    {ReactHtmlParser(post.content.substring(0,250))}
                   </div>
                    <br/>
               <Link to={`${props.categoryRoute}/${post.id}`} class="read-more">Read More  <img src={doubleArrow} alt=""/></Link>
