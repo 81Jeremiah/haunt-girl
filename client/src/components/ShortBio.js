@@ -1,10 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 import doubleArrow from '../img/icons/double-arrow.png'
 import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
+import fetchRecentPosts from '../actions/postActions';
 
-const ShortBio = () =>{
-  return(
+class ShortBio extends Component{
 
+
+   componentDidMount(){
+
+   }
+  render(){
+    return(
           <section class="intro-section">
             <div class="container">
               <div class="row">
@@ -35,7 +42,8 @@ const ShortBio = () =>{
               </div>
             </div>
           </section>
-  );
+      );
+    }
 }
 
-export default ShortBio
+export default connect(null,{fetchRecentPosts})(ShortBio)
