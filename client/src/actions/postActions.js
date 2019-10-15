@@ -103,3 +103,15 @@ export const deletePost = postId => {
     .catch(error => console.log(error))
   }
 }
+
+export const fetchRecentPosts = category =>{
+  return(dispatch) => {
+      dispatch({type: 'LOADING_POSTS'});
+      return fetch('/api/recentposts' + category)
+
+      .then(response => response.json())
+      .then(posts => {
+        return dispatch({ type: 'FETCH_POSTS', posts: posts })
+      });
+  }
+}
