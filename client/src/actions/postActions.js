@@ -89,7 +89,7 @@ export const updatePost = post => {
 
 export const deletePost = postId => {
   return (dispatch) => {
-    return fetch(`/api/recipes/${postId}`, {
+    return fetch(`/api/posts/${postId}`, {
       method: "DELETE",
       headers: {
         "Accept": "application/json",
@@ -107,7 +107,7 @@ export const deletePost = postId => {
 export const fetchRecentPosts = category =>{
   return(dispatch) => {
       dispatch({type: 'LOADING_POSTS'});
-      return fetch('/api/recentposts' + category)
+      return fetch('/api/posts/recentposts')
 
       .then(response => response.json())
       .then(posts => {
