@@ -4,7 +4,8 @@ Rails.application.routes.draw do
 
    get '/states/with_posts', to: 'states#states_with_posts'
    get 'cities/cities_in_state', to: 'cities#cities_in_state'
-   get  'posts/search' => 'posts#search'
+   get  'posts/search', to: 'posts#search'
+   get 'posts/recentposts', to: 'posts#recent_posts'
    resources :admins, only: [:create]
    post '/login', to: 'auth#create'
    get '/profile', to: 'admins#profile'

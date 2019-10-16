@@ -52,6 +52,12 @@ class Api::PostsController < ApplicationController
     @post.destroy
   end
 
+  def recent_posts
+    @posts = Post.recent_post_each_category
+    render json: @posts
+
+  end
+
   private
 
   def set_post
