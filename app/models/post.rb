@@ -31,4 +31,13 @@ class Post < ApplicationRecord
   #   self.city.state_id = state_id
   # end
 
+  def self.recent_post_each_category
+
+    escaperoom = Post.where(["category_id = ?",1]).last
+    haunt = Post.where(["category_id = ?",2]).last
+    oddities = Post.where(["category_id = ?",3]).last
+    
+    recent_posts = [escaperoom, haunt,oddities ]
+  end
+
 end
