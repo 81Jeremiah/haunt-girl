@@ -8,6 +8,7 @@ class ShortBio extends Component{
 
 
    componentDidMount(){
+     fetchRecentPosts()
 
    }
   render(){
