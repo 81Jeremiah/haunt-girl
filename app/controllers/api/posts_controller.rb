@@ -53,6 +53,7 @@ class Api::PostsController < ApplicationController
   end
 
   def recent_posts
+    debugger
     @posts = Post.recent_post_each_category
     render json: @posts
 

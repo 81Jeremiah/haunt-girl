@@ -36,8 +36,9 @@ class Post < ApplicationRecord
     escaperoom = Post.where(["category_id = ?",1]).last
     haunt = Post.where(["category_id = ?",2]).last
     oddities = Post.where(["category_id = ?",3]).last
-    
+
     recent_posts = [escaperoom, haunt,oddities ]
+    recent_posts
   end
 
 end
