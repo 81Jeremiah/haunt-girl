@@ -12,12 +12,13 @@ class Api::StatesController < ApplicationController
 
      @states = Post.unique_states(category_id)
     # states = State.has_posts
-    debugger
+
     render json: @states
   end
 
   def show
     state = State.find_by(abbreviation: params[:id] )
+    
     state_id = state.id
 
     # category = Category.find_by(id: category_id)
