@@ -104,7 +104,7 @@ export const deletePost = postId => {
   }
 }
 
-export const fetchRecentPosts = category =>{
+export const fetchRecentPosts = () =>{
   return(dispatch) => {
       dispatch({type: 'LOADING_POSTS'});
       return fetch('/api/posts/recentposts')
