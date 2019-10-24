@@ -1,6 +1,6 @@
 
 class Api::PostsController < ApplicationController
-  skip_before_action :authorized, only: [:index, :show, :new, :create, :edit, :update, :destroy]
+  skip_before_action :authorized, only: [:index, :show, :new, :create, :edit, :update, :destroy, :recent_posts]
   before_action :set_post, only: [:update, :show, :edit, :destroy]
 
 
@@ -53,7 +53,7 @@ class Api::PostsController < ApplicationController
   end
 
   def recent_posts
-    debugger
+    
     @posts = Post.recent_post_each_category
     render json: @posts
 
