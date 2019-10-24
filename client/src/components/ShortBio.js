@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import doubleArrow from '../img/icons/double-arrow.png'
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import fetchRecentPosts from '../actions/postActions';
+import {fetchRecentPosts} from '../actions/postActions';
 
 class ShortBio extends Component{
 
@@ -11,7 +11,11 @@ class ShortBio extends Component{
      fetchRecentPosts()
 
    }
+
+
   render(){
+    const recentHaunt = this.props.recentPosts
+    console.log(recentHaunt)
     return(
           <section class="intro-section">
             <div class="container">
@@ -47,4 +51,9 @@ class ShortBio extends Component{
     }
 }
 
-export default connect(null,{fetchRecentPosts})(ShortBio)
+const mapStateToProps = state => {
+  console.log(state)
+  return {recentPosts: state.posts.posts}
+}
+
+export default connect(mapStateToProps ,{fetchRecentPosts})(ShortBio)
