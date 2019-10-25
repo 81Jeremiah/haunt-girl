@@ -8,17 +8,29 @@ class ShortBio extends Component{
 
 
    componentDidMount(){
-     fetchRecentPosts()
+     this.props.fetchRecentPosts()
 
    }
 
 
   render(){
-    const recentHaunt = this.props.recentPosts
+    const recentPosts = this.props.recentPosts
+
+    debugger
+    // function findHaunts(post) {
+    //   return post.category_id === 2;
+    // }
+    // const recentHaunt = recentPosts.find(findHaunts)
+
+    const recentHaunt = recentPosts.find( ({ category_id }) => category_id === '2' );
+
     console.log(recentHaunt)
     return(
+
           <section class="intro-section">
+
             <div class="container">
+
               <div class="row">
                 <div class="col-md-4">
                   <div class="intro-text-box text-box text-white">
