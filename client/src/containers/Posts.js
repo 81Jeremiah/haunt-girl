@@ -28,9 +28,7 @@ class Posts extends Component {
     const chosenState = event.target.innerText
     this.props.narrowByState(chosenState)
     this.props.fetchCities(chosenState)
-    if (this.props.cities){
-        const cities = <CitiesList cities={this.props.cities} handleCityClick={this.handleCityClick}/>
-      }
+
 
   }
 
@@ -42,6 +40,13 @@ class Posts extends Component {
 
 
   render(){
+    const cityList = () => {
+        if (this.props.cities){
+          const cities = <CitiesList cities={this.props.cities} handleCityClick={this.handleCityClick}/>
+          return cities
+       }
+     }
+
     return(
       <div>
         <Navbar />
@@ -58,7 +63,7 @@ class Posts extends Component {
             <div class="container">
              <StatesList states={this.props.states} handleStateClick={this.handleStateClick} />
 
-              
+              {cityList}
 
 
              <PostsList posts={this.props.posts} categoryRoute={this.props.match.path} />
