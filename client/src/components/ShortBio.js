@@ -3,6 +3,7 @@ import doubleArrow from '../img/icons/double-arrow.png'
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {fetchRecentPosts} from '../actions/postActions';
+import MostRecentPosts from './MostRecentPosts'
 
 class ShortBio extends Component{
 
@@ -32,7 +33,8 @@ class ShortBio extends Component{
             <div class="container">
 
               <div class="row">
-                <div class="col-md-4">
+                <MostRecentPosts recentPosts={this.props.recentposts}/>
+                {/* <div class="col-md-4">
                   <div class="intro-text-box text-box text-white">
                     <div class="top-meta"> <Link to="/haunts">Haunts</Link></div>
                     <h3>2019 Haunt Reviews</h3>
@@ -55,7 +57,7 @@ class ShortBio extends Component{
                     <p></p>
                     <Link to="#" class="read-more">Read More  <img src={ doubleArrow } alt="#"/></Link>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </section>
