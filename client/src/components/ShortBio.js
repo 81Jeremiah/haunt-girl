@@ -15,26 +15,30 @@ class ShortBio extends Component{
 
 
   render(){
-    const recentPosts = this.props.recentPosts
-
-    debugger
+    // const recentPosts = this.props.recentPosts
+    //
+    // debugger
     // function findHaunts(post) {
     //   return post.category_id === 2;
     // }
     // const recentHaunt = recentPosts.find(findHaunts)
 
-    const recentHaunt = recentPosts.find( ({ category_id }) => category_id === '2' );
+    // const recentHaunt = recentPosts.find( ({ category_id }) => category_id === '2' );
 
-    console.log(recentHaunt)
+    // console.log(recentHaunt)
+
     return(
+
 
           <section class="intro-section">
 
             <div class="container">
-
+                {console.log(this.props.recentPosts)}
               <div class="row">
-                <MostRecentPosts recentPosts={this.props.recentposts}/>
-                {/* <div class="col-md-4">
+                  <MostRecentPosts recentPosts={this.props.recentPosts}/>
+                {
+                  /* <div class="col-md-4">
+
                   <div class="intro-text-box text-box text-white">
                     <div class="top-meta"> <Link to="/haunts">Haunts</Link></div>
                     <h3>2019 Haunt Reviews</h3>
