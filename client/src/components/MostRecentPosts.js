@@ -5,8 +5,9 @@ import ReactHtmlParser from 'react-html-parser';
 
 
 const MostRecentPosts = props =>{
+  console.log(props)
   const recentPostsList = props.recentPosts.map( post => {
-   const category = props.recentPost.category
+   const category = props.recentPosts.category || {}
     return(
       <div class="col-md-4">
         <div class="intro-text-box text-box text-white">
@@ -19,7 +20,9 @@ const MostRecentPosts = props =>{
   )}
 )
   return(
+    <div>
     {recentPostsList}
+    </div>
   )
 }
 
