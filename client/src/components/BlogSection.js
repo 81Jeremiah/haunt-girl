@@ -5,6 +5,7 @@ import blogThumb2 from '../img/blog-widget/2.jpg'
 import blogThumb1 from '../img/blog-widget/1.jpg'
 import blogThumb4 from '../img/blog-widget/4.jpg'
 import InstaGrid from '../components/Instafeed';
+import {Link} from 'react-router-dom'
 // import Instafeed from '../components/Instafeed';
 
 const BlogSection = () => {
@@ -18,10 +19,11 @@ return(
           <h2>Latest News</h2>
         </div>
         <ul class="blog-filter">
-          <li><a href="#">Escape Rooms</a></li>
-          <li><a href="#">Haunts</a></li>
-          <li><a href="#">Immersives</a></li>
-          <li><a href="#">Intersting Finds</a></li>
+          <li><Link to="/haunts">Haunts </Link></li>
+          <li><Link to="/escaperooms">Escape Rooms</Link></li>
+          <li><Link to="/oddities">Oddities</Link></li>
+          <li><Link to="/immersives">Immersives</Link></li>
+          
         </ul>
 
         <div class="blog-item">
