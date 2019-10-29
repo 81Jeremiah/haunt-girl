@@ -742,10 +742,15 @@ ol {
 	font-style: italic;
 	padding-left: 38px;
 	margin-bottom: 48px;
+
 }
 
 .trending-widget .tw-item {
 	margin-bottom: 38px;
+	width: 510px;
+	height: 575px;
+	overflow: scroll;
+
 }
 
 .trending-widget .tw-item:last-child {
