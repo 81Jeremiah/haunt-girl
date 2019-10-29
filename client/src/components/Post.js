@@ -6,6 +6,7 @@ import Navbar from './Navbar';
 import Footer from './Footer';
 import NewsletterSection from './NewsletterSection';
 import ReactPlayer from 'react-player'
+import ReactHtmlParser from 'react-html-parser';
 
 class Post extends Component {
 
@@ -38,12 +39,12 @@ class Post extends Component {
 
               <div class="gs-meta">{post.published_at} /  in <Link to="/escaperooms"> {category.name}</Link></div>
               <h2 class="gs-title">{post.title}</h2>
-              {post.content}
+            <p>{ReactHtmlParser(post.content)}</p>
               <div class="geme-social-share pt-5 d-flex">
                 <p>Share:</p>
-                <a href="#"><i class="fa fa-instagram"></i></a>
-                <a href="#"><i class="fa fa-facebook"></i></a>
-                <a href="#"><i class="fa fa-twitter"></i></a>
+
+              <a href="https://www.facebook.com/sharer/sharer.php?u=thehauntgirl.com/posts/${post.id}"><i class="fa fa-facebook"></i></a>
+                <a href="https://twitter.com/home?status=thehauntgirl.com/posts/${post.id} "><i class="fa fa-twitter"></i></a>
               </div>
             </div>
             <div class="col-xl-3 col-lg-4 col-md-5 sidebar game-page-sideber">
