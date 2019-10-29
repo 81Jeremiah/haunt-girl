@@ -30,11 +30,9 @@ class ShortBio extends Component{
     return(
 
 
-          <section class="intro-section">
+          <section className="intro-section">
 
-            <div class="container">
-                {console.log(this.props.recentPosts)}
-              <div class="row">
+            <div className="container">
                   <MostRecentPosts recentPosts={this.props.recentPosts}/>
                 {
                   /* <div class="col-md-4">
@@ -63,7 +61,7 @@ class ShortBio extends Component{
                   </div>
                 </div> */}
               </div>
-            </div>
+
           </section>
       );
     }
