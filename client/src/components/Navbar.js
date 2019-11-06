@@ -24,7 +24,7 @@ const Navbar = () =>{
             </div>*/}
           {/*  Menu */}
             <ul class="main-menu primary-menu">
-              <li className="header-logo">THE HAUNT GIRL</li>
+              <li className="header-logo"><Link to="/" >THE HAUNT GIRL</Link></li>
               <li><Link to="/"><img src={hauntGirlLogo} alt="log" height="80" width="80"/></Link></li>
               <li><Link to="/">Reviews </Link>
                    <ul class="sub-menu">
