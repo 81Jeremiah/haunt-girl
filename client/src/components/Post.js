@@ -42,12 +42,12 @@ class Post extends Component {
             <p>{ReactHtmlParser(post.content)}</p>
               <div class="geme-social-share pt-5 d-flex">
                 <p>Share:</p>
+                <Link to={`https://www.facebook.com/sharer/sharer.php?u=thehauntgirl.com/posts/${post.id}`}><i class="fa fa-facebook"></i></Link>
+                <Link to={`https://twitter.com/home?status=thehauntgirl.com/posts/${post.id} `}><i class="fa fa-twitter"></i></Link>
 
-              <a href="https://www.facebook.com/sharer/sharer.php?u=thehauntgirl.com/posts/${post.id}"><i class="fa fa-facebook"></i></a>
-                <a href="https://twitter.com/home?status=thehauntgirl.com/posts/${post.id} "><i class="fa fa-twitter"></i></a>
               </div>
             </div>
-            <div class="col-xl-3 col-lg-4 col-md-5 sidebar game-page-sideber">
+            {/* <div class="col-xl-3 col-lg-4 col-md-5 sidebar game-page-sideber">
               <div id="stickySidebar">
                 <div class="widget-item">
                   <div class="rating-widget">
@@ -74,7 +74,7 @@ class Post extends Component {
                   </div>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </section>
