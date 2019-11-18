@@ -53,8 +53,9 @@ class Api::PostsController < ApplicationController
   end
 
   def recent_posts
-    
+
     @posts = Post.recent_post_each_category
+    
     render json: @posts
 
   end
