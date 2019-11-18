@@ -16,15 +16,15 @@ return(
     <div class="row">
       <div class="col-xl-9 col-lg-8 col-md-7">
         <div class="section-title text-white">
-          <h2>Latest News</h2>
+          <h2>Top 5 by City</h2>
         </div>
-        <ul class="blog-filter">
-          <li><Link to="/haunts">Haunts </Link></li>
-          <li><Link to="/escaperooms">Escape Rooms</Link></li>
-          <li><Link to="/oddities">Oddities</Link></li>
-          <li><Link to="/immersives">Immersives</Link></li>
-          
-        </ul>
+        {/*// <ul class="blog-filter">
+        //   <li><Link to="/haunts">Haunts </Link></li>
+        //   <li><Link to="/escaperooms">Escape Rooms</Link></li>
+        //   <li><Link to="/oddities">Oddities</Link></li>
+        //   <li><Link to="/immersives">Immersives</Link></li>
+        //
+        // </ul> */}
 
         <div class="blog-item">
           <div class="blog-thumb">
