@@ -19,7 +19,9 @@ return(
         <div class="section-title text-white">
           <h2>Top 5 by City</h2>
         </div>
-  
+        <TopFive />
+        <TopFive />
+        <TopFive />
 
         {/*// <ul class="blog-filter">
         //   <li><Link to="/haunts">Haunts </Link></li>
@@ -65,8 +67,8 @@ return(
       //       <a href="#" class="read-more">Read More  <img src={ doubleArrow } alt="#"/></a>
       //     </div>
       //   </div>
-      // </div> */}
-
+      // */}
+     </div>
       <div class="col-xl-3 col-lg-4 col-md-5 sidebar">
         <div id="stickySidebar">
           <div class="widget-item">
@@ -134,7 +136,7 @@ return(
       </div>
     </div>
   </div>
-</div>
+
 </section>
  )
 }
