@@ -18,8 +18,10 @@ class Login extends Component {
 
   handleSubmit = event => {
     event.preventDefault()
-  
-    if (this.props.adminLoginFetch(this.state)){
+    this.props.adminLoginFetch(this.state)
+    
+    if (this.props.admin.authorized){
+      debugger
       this.props.history.push("/admin/home")
     } else {
       window.alert("Sorry, something went wrong. Please try logging in again.")
@@ -54,8 +56,8 @@ class Login extends Component {
   }
 }
 
-// const mapStateToProps = state => ({
-//   admin: state.admin
-// })
+const mapStateToProps = state => ({
+  admin: state.admin
+})
 
-export default connect(null, {adminLoginFetch})(Login)
+export default connect(mapStateToProps, {adminLoginFetch})(Login)
