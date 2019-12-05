@@ -1,5 +1,6 @@
 export const adminLoginFetch = admin => {
   return dispatch => {
+    dispatch({type: 'LOADING_USER'});
     return fetch("/api/login", {
       method: "POST",
       headers: {
