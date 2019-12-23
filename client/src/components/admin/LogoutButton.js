@@ -12,8 +12,9 @@ class LogoutButton extends Component {
     localStorage.removeItem("token")
     this.props.logout()
     console.log(this.props)
+    window.location.href = "/admin/login"
 
-    this.props.history.replace('/admin/login')
+    // this.props.history.replace('/admin/login')
   }
 
   render(){
