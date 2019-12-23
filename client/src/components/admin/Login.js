@@ -19,14 +19,31 @@ class Login extends Component {
   handleSubmit = event => {
     event.preventDefault()
     this.props.adminLoginFetch(this.state)
-    
-    if (this.props.admin.authorized){
-      debugger
-      this.props.history.push("/admin/home")
-    } else {
+    // console.log(this.props.admin)
+    //
+    // //add component update to check if authorized
+    // if (this.props.admin.authorized){
+    //   window.alert("You're logged in.")
+    //   debugger
+    //   this.props.history.push("/admin/home")
+    // } else {
+    //   window.alert("Sorry, something went wrong. Please try logging in again.")
+    // }
+  }
+
+  componentDidUpdate = (prevProps) => {
+  //
+  if (this.props.admin !== prevProps.admin ) {
+    console.log(this.props.user)
+    if (this.props.admin.authorized) {
+      window.location.href = "/admin/home"
+      // this.props.history.push('/admin/home')
+      window.alert("You're Logged In!")
+    } else if(this.props.admin.error) {
       window.alert("Sorry, something went wrong. Please try logging in again.")
     }
-  }
+ }
+}
 
   render() {
     return (
