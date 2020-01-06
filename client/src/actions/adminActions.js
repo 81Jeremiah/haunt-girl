@@ -1,3 +1,35 @@
+// export const authenticate = (credentials) => {
+//   console.log("calling function")
+//   return dispatch => {
+//     dispatch(authRequest())
+//     return fetch(`/api/auth/login`, {
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       body: JSON.stringify( credentials )
+//     })
+//     .then(response => response.json())
+//     .then(({ auth_token }) => {
+//       if (!auth_token) return false
+//       localStorage.setItem('auth_token', auth_token);
+//       return getUser(credentials)
+//     })
+//     .then((user) => {
+//       if (user === false) return false
+//         dispatch(authSuccess(user, localStorage.auth_token))
+//     })
+//     .catch((errors) => {
+//       dispatch(authFailure(errors))
+//       localStorage.clear()
+//     })
+//   }
+// }
+
+
+
+
+
 export const adminLoginFetch = admin => {
   return dispatch => {
     dispatch({type: 'LOADING_USER'});
@@ -20,6 +52,7 @@ export const adminLoginFetch = admin => {
         } else {
           localStorage.setItem("token", data.jwt)
           dispatch(loginUser(data.admin))
+
         }
       })
   }
