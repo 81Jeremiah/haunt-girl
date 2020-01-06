@@ -6,11 +6,12 @@ class Api::PostsController < ApplicationController
 
 
   def index
-    category_id = Category.find_category_id(params[:id])
+    #category_id = Category.find_category_id(params[:id])
 
     # category = Category.find_by(id: category_id)
 
-    @posts = Post.by_category(category_id)
+    #@posts = Post.by_category(category_id)
+    @posts = Post.all
     render json: @posts
   end
 
@@ -20,7 +21,6 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-
 
     post= Post.new(post_params)
     post.city.state_id = params[:post][:state]
@@ -55,7 +55,7 @@ class Api::PostsController < ApplicationController
   def recent_posts
 
     @posts = Post.recent_post_each_category
-    
+
     render json: @posts
 
   end
