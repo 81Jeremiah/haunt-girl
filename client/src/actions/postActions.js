@@ -11,6 +11,19 @@ export const fetchPosts = (category) => {
   }
 }
 
+export const fetchAllPosts = () => {
+  return(dispatch) => {
+    dispatch({type: 'LOADING_POSTS'});
+    return fetch('/api/posts')
+
+    .then(response => response.json())
+    .then(posts => {
+      return dispatch({type:'FETCH_POSTS', posts: posts})
+    });
+
+  }
+}
+
 
 export const getPost = (postId) => {
   return (dispatch) => {
@@ -108,9 +121,9 @@ export const fetchRecentPosts = () =>{
   return(dispatch) => {
       dispatch({type: 'LOADING_POSTS'});
       return fetch('/api/posts/recentposts')
-
       .then(response => response.json())
       .then(posts => {
+
         return dispatch({ type: 'FETCH_POSTS', posts: posts })
       });
   }
