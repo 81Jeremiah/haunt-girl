@@ -8,10 +8,10 @@ const AdminHeader = () => {
         <ul class="main-menu primary-menu">
           <li className="header-logo">THE HAUNT GIRL</li>
           <li><Link to="/admin/posts/new">Add New Review </Link></li>
-          <li><Link to="admin/interviews/new">Add New Interviews</Link></li>
-          <li><Link to="admin/TopLists/new">Add New Top Lists</Link></li>
-          <li><Link to="admin/about">About</Link></li>
-          <li><Link to="contact">Contact</Link></li>
+          <li><Link to="/admin/interviews/new">Add New Interviews</Link></li>
+          <li><Link to="/admin/TopLists/new">Add New Top Lists</Link></li>
+          <li><Link to="/admin/about">About</Link></li>
+          <li><Link to="admin/contact">Contact</Link></li>
         </ul>
       </nav>
     </div>
