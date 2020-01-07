@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from 'react-redux';
+import Reviews from './Reviews'
 
 import {fetchAllPosts} from '../../actions/postActions'
 class ListReviews extends Component {
@@ -11,10 +12,14 @@ class ListReviews extends Component {
   render(){
     return(
       <div>
+        <Reviews post={this.props.posts}/>
       </div>
     )
   }
-
 }
 
-export default connect(null, {fetchAllPosts})(ListReviews)
+const mapStateToProps = (state) =>{
+  console.log(state)
+  return {posts: state.posts.posts}
+}
+export default connect(mapStateToProps, {fetchAllPosts})(ListReviews)
