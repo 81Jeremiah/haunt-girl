@@ -1,8 +1,8 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import Reviews from './Reviews'
+import Reviews from './Reviews';
+import {fetchAllPosts} from '../../actions/postActions';
 
-import {fetchAllPosts} from '../../actions/postActions'
 class ListReviews extends Component {
 
   componentDidMount(){
@@ -12,7 +12,7 @@ class ListReviews extends Component {
   render(){
     return(
       <div>
-        <Reviews post={this.props.posts}/>
+        <Reviews posts={this.props.posts}/>
       </div>
     )
   }
