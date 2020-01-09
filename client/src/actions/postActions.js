@@ -18,6 +18,7 @@ export const fetchAllPosts = () => {
 
     .then(response => response.json())
     .then(posts => {
+      debugger
       return dispatch({type:'FETCH_POSTS', posts: posts})
     });
 
@@ -84,7 +85,7 @@ export const narrowByState = (state) => {
 
 export const updatePost = post => {
   return (dispatch) => {
-    return fetch(`/api/posts/${post}`, {
+    return fetch(`/api/posts/${post.id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": 'application/json',
