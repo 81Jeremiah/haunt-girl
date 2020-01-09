@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { createPost } from '../../actions/postActions';
+import { updatePost } from '../../actions/postActions';
 import { connect } from 'react-redux';
 import { fetchStates } from '../../actions/postActions';
 import { getPost } from '../../actions/postActions';
@@ -92,7 +92,6 @@ class EditForm extends Component {
   handleSubmit = event =>{
 
     event.preventDefault()
-    // const post = this.state
 
 
 
@@ -119,7 +118,8 @@ class EditForm extends Component {
     }
 
     console.log(this.state)
-    this.props.createPost(post)
+    this.props.updatePost(post)
+    window.alert('you updated the post')
     this.setState({
       title:"",
       content:"",
@@ -137,6 +137,7 @@ class EditForm extends Component {
       published_at: "",
       company_website: "",
     })
+
   }
 
   getEditorText = (editorText) =>{
@@ -289,4 +290,4 @@ const mapStateToProps = state => ({
 });
 
 
-export default connect(mapStateToProps, {createPost, fetchStates, getPost})(EditForm)
+export default connect(mapStateToProps, {updatePost, fetchStates, getPost})(EditForm)
