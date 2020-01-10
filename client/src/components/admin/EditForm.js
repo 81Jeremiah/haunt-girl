@@ -8,6 +8,7 @@ import { getPost } from '../../actions/postActions';
 import Editor from './Editor'
 import Dropzone from 'react-dropzone'
 
+// check on what props are loading( no website, but there are others too)
 
 
 class EditForm extends Component {
@@ -168,7 +169,8 @@ class EditForm extends Component {
     });
     console.log(this.props)
     return(
-      <div className = "post-form">
+      // <div className = "post-form">
+      <div>
       <Form onSubmit={this.handleSubmit}>
 
         <Form.Group controlId="">
@@ -237,7 +239,7 @@ class EditForm extends Component {
 
         <Form.Group>
           <Form.Label>Company Website</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.company_website} onChange={this.handleChange} name="company_website"/>
+        <Form.Control size="lg" type="text" value={this.props.company_website} onChange={this.handleChange} name="company_website"/>
         </Form.Group>
 
         <Form.Group >
