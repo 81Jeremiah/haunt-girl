@@ -12,7 +12,8 @@ export default class Editor extends Component {
 
     constructor (props) {
       super(props)
-      this.state = { editorHtml: '' , theme: 'snow' }
+      console.log(props)
+      this.state = { editorHtml:props.content ||  "" , theme: 'snow' }
       this.handleChange = this.handleChange.bind(this)
     }
 
@@ -33,19 +34,28 @@ export default class Editor extends Component {
       this.setState({ theme: newTheme })
     }
 
+     componentDidUpdate(prevProps){
+       if (prevProps.content !== this.props.content){
+         this.setState({ editorHtml: this.props.content })
+       }
+     }
+
     render () {
       console.log(this.props.content)
+      const content = this.props.content
+      console.log(content)
       return (
         <div>
           <ReactQuill
             theme={this.state.theme}
             onChange={this.handleChange}
-            defaultValue={this.props.content || this.state.editorHtml }
+            defaultValue={ this.state.editorHtml || content}
             modules={Editor.modules}
             formats={Editor.formats}
             bounds={'.app'}
             placeholder={this.props.placeholder}
            />
+
           <div className="themeSwitcher">
             <label>Theme </label>
             <select onChange={(e) =>
