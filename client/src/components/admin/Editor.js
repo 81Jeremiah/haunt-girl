@@ -6,15 +6,25 @@ import ReactQuill from 'react-quill'; // ES6
 
 import 'react-quill/dist/quill.snow.css'; // ES6
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { getPost } from '../../actions/postActions';
 
 
-export default class Editor extends Component {
+ class Editor extends Component {
 
     constructor (props) {
       super(props)
       console.log(props)
-      this.state = { editorHtml:props.content ||  "" , theme: 'snow' }
+      this.state = { editorHtml: "" ,
+                     theme: 'snow',
+                      content: props.content || "" }
       this.handleChange = this.handleChange.bind(this)
+    }
+
+    componentDidMount(){
+      console.log(this)
+
+      this.props.getPost(3)
     }
 
     handleChange (html) {
@@ -36,20 +46,27 @@ export default class Editor extends Component {
 
      componentDidUpdate(prevProps){
        if (prevProps.content !== this.props.content){
-         this.setState({ editorHtml: this.props.content })
+           this.setState({content: this.props.content})
        }
      }
 
+    static getDerivedStateFromProps(props, state){
+       state = { editorHtml: "" ,
+                      theme: 'snow',
+                       content: props.content || "" }
+     }
+
     render () {
-      console.log(this.props.content)
+      console.log(this.props.post.content)
       const content = this.props.content
-      console.log(content)
+
       return (
         <div>
+
           <ReactQuill
             theme={this.state.theme}
             onChange={this.handleChange}
-            defaultValue={ this.state.editorHtml || content}
+            defaultValue={  this.props.post.content }
             modules={Editor.modules}
             formats={Editor.formats}
             bounds={'.app'}
@@ -106,3 +123,9 @@ Editor.formats = [
 Editor.propTypes = {
     placeholder: PropTypes.string,
   }
+
+  const mapStateToProps = state => (
+      {post: state.posts.post}
+  );
+
+export default connect(mapStateToProps, {getPost})(Editor)
