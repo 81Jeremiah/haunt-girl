@@ -244,9 +244,9 @@ class EditForm extends Component {
 
         <Form.Group >
           <Form.Label>Blog Post</Form.Label>
-          <Editor defaultValue={this.props.post.content} getEditorText={this.getEditorText} content={this.props.post.content} />
+          <Editor  getEditorText={this.getEditorText} content={this.props.post.content} />
 
-
+        
            {/* <Form.Control as="textarea" rows="15" value={this.state.content} onChange={this.handleChange} name="content"
 
              /> */}
@@ -287,7 +287,8 @@ class EditForm extends Component {
 }
 
 const mapStateToProps = state => ({
-     states: state.states.states,
+     states: state.states.states
+
 
 });
 
