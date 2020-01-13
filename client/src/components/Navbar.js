@@ -6,28 +6,28 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () =>{
   return (
-    <header class="header-section">
-      <div class="header-warp">
-        <div class="header-social d-flex justify-content-end">
+    <header className="header-section">
+      <div className="header-warp">
+        <div className="header-social d-flex justify-content-end">
           <p>Follow me:</p>
            <Social />
 
         </div>
-        <div class="header-bar-warp d-flex">
+        <div className="header-bar-warp d-flex">
           {/* logo */}
           {/*<a href="home.html" class="site-logo">
             <img src={ hauntGirlLogo } alt=""/>
           </a>*/}
-          <nav class="top-nav-area w-100">
+          <nav className="top-nav-area w-100">
             {/*<div class="user-panel">
               <Link to="login">Login</Link> / <Link to="register">Register</Link>
             </div>*/}
           {/*  Menu */}
-            <ul class="main-menu primary-menu">
+            <ul className="main-menu primary-menu">
               <li className="header-logo"><Link to="/" >THE HAUNT GIRL</Link></li>
               <li><Link to="/"><img src={hauntGirlLogo} alt="log" height="80" width="80"/></Link></li>
               <li><Link to="/">Reviews </Link>
-                   <ul class="sub-menu">
+            <ul className="sub-menu">
                      <li><Link to="/haunts">Haunts </Link></li>
                      <li><Link to="/escaperooms">Escape Rooms</Link></li>
                      <li><Link to="/oddities">Oddities</Link></li>
