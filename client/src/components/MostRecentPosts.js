@@ -11,11 +11,11 @@ const MostRecentPosts = props =>{
    const category_url = category.name.replace(' ','')
    console.log(category_url)
     return(
-      <div className="col-md-4">
+      <div key={post.id} className="col-md-4">
         <div className="intro-text-box text-box text-white">
-          <div className="top-meta"> <Link to={`/${category_url}`}>{category.name}</Link></div>
+          <div  className="top-meta"> <Link to={`/${category_url}`}>{category.name}</Link></div>
         <h3>{post.title}</h3>
-          <p>{ReactHtmlParser(post.content.substring(0,250))}</p>
+          {ReactHtmlParser(post.content.substring(0,250))}
         <Link to={`posts/${post.id}`} className="read-more">Read More  <img src={ doubleArrow } alt="#"/></Link>
         </div>
       </div>
