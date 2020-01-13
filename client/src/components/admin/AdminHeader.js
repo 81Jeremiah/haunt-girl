@@ -3,9 +3,9 @@ import {Link} from 'react-router-dom'
 
 const AdminHeader = () => {
   return(
-    <div class="header-bar-warp d-flex">
-      <nav class="top-nav-area w-100">
-        <ul class="main-menu primary-menu">
+    <div className="header-bar-warp d-flex">
+      <nav className="top-nav-area w-100">
+        <ul className="main-menu primary-menu">
           <li className="header-logo"><Link to="/admin/home">THE HAUNT GIRL</Link></li>
           <li><Link to="/admin/posts/new">Add New Review </Link></li>
           <li><Link to="/admin/interviews/new">Add New Interviews</Link></li>
