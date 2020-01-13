@@ -3,12 +3,12 @@ import doubleArrow from '../img/icons/double-arrow.png';
 
 const NewsletterSection = () => {
   return(
-    <section class="newsletter-section">
-      <div class="container">
+    <section className="newsletter-section">
+      <div className="container">
         <h2>Subscribe to my newsletter</h2>
-        <form class="newsletter-form">
+      <form className="newsletter-form">
           <input type="text" placeholder="ENTER YOUR E-MAIL"/>
-          <button class="site-btn">subscribe  <img src={doubleArrow} alt="#"/></button>
+        <button className="site-btn">subscribe  <img src={doubleArrow} alt="#"/></button>
         </form>
       </div>
     </section>
