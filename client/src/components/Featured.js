@@ -14,7 +14,7 @@ export default class Featured  extends Component {
             <div className="container">
               <h2></h2>
               <p><br/></p>
-              <a href="#" class="site-btn">Read More  <img src={doubleArrow} alt="#"/></a>
+            <a href="#" className="site-btn">Read More  <img src={doubleArrow} alt="#"/></a>
             </div>
           </div>
           <div className="hero-item set-bg d-flex align-items-center justify-content-center text-center" data-setbg={sliderbg2}>
