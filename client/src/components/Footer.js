@@ -1,6 +1,7 @@
 import React from 'react';
 import Social from './Social'
 import HGLogo from '../img/IMG_2792.png'
+// import footerRightPic from '../img/footer-right-pic.png'
 
 const Footer =() => {
 
@@ -8,10 +9,10 @@ return (
   <footer className="footer-section">
     <div className="container">
       <div className="footer-left-pic">
-        <img src="img/footer-left-pic.png" alt=""/>
+        <img src="../img/footer-left-pic.png" alt=""/>
       </div>
       <div className="footer-right-pic">
-        <img src="img/footer-right-pic.png" alt=""/>
+        {/* <img src={} alt=""/> */}
       </div>
       <a href="#" className="footer-logo">
         <img src={HGLogo} alt="" widtch="120" height="120" />
