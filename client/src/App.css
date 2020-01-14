@@ -427,6 +427,7 @@ ol {
 
 .main-menu li a:hover:after {
 	/* background-image: url("./img/icons/arrow-down-color.png"); */
+	/* update for only the reviews <li> */
 }
 
 .main-menu li a:hover i {
