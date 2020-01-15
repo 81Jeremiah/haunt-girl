@@ -23,7 +23,8 @@ import { getPost } from '../../actions/postActions';
 
     componentDidMount(){
       console.log(this)
-
+      this.setState({...this.state,editorHtml: this.props.content})
+      console.log(this.state.editorHtml)
       this.props.getPost(3)
     }
 
@@ -66,7 +67,7 @@ import { getPost } from '../../actions/postActions';
           <ReactQuill
             theme={this.state.theme}
             onChange={this.handleChange}
-            defaultValue={  this.props.post.content }
+            defaultValue={  this.state.editorHtml}
             modules={Editor.modules}
             formats={Editor.formats}
             bounds={'.app'}
