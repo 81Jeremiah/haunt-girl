@@ -6,7 +6,9 @@
   "dependencies": {
     "@material-ui/core": "^4.4.0",
     "@material-ui/icons": "^4.2.1",
+    "babel-polyfill": "^6.26.0",
     "bootstrap": "^4.3.1",
+    "draft-js": "^0.11.4",
     "jquery": "^3.4.1",
     "origen-react-instagram-feed": "0.0.3",
     "react": "^16.8.6",
