@@ -12,10 +12,9 @@ class EditContainer extends Component {
 
   render(){
     const title = this.props.post.title
-    console.log(this.props.post)
     return(
      <>
-      <div classname='AdminHeader'>
+      <div className='AdminHeader'>
         <AdminHeader />
       </div>
       <div>
@@ -23,7 +22,8 @@ class EditContainer extends Component {
         post ={this.props.post}
         category={this.props.post.category}
         state={this.props.post.state}
-        city={this.props.post.city} />
+        city={this.props.post.city}
+        testprop={'test'} />
       </div>
     </>
     )
