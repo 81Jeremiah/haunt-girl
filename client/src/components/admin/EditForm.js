@@ -7,24 +7,13 @@ import { fetchStates } from '../../actions/postActions';
 import { getPost } from '../../actions/postActions';
 import Editor from './Editor'
 import Dropzone from 'react-dropzone'
+import { withRouter, Redirect } from 'react-router-dom'
+
 
 // check on what props are loading( no website, but there are others too)
 
 
 class EditForm extends Component {
-
-  state = {};
-
-  static getDerivedStateFromProps(nextProps){
-
-    return{
-      state: nextProps.title
-
-    }
-
-  }
-
-
 
   // const intitalState = {
   //   title: this.props.title
@@ -32,23 +21,23 @@ class EditForm extends Component {
 
   constructor(props) {
     super(props);
-    console.log(props)
+    console.log(this.props.post)
     this.state = {
 
-      // title: ""
-      // content: props.post.content,
-      //
-      // image: null,
-      // video: props.post.video,
-      //
-      // recommended_players: props.post.recommended_players,
-      // price: props.post.price,
-      // difficulty: this.props.post.difficulty,
-      // public_or_private: props.post.public_or_private,
-      // recommended_age: props.post.recommended_age,
-      // scarefactor: props.post.scarefactor,
-      // published_at: props.post.published_at,
-      // company_website: props.post.company_website
+      title: this.props.post.title ,
+      content: this.props.post.content,
+
+      image: null,
+      video: this.props.post.video,
+
+      recommended_players: this.props.post.recommended_players,
+      price: this.props.post.price,
+      difficulty: this.props.post.difficulty,
+      public_or_private: this.props.post.public_or_private,
+      recommended_age: this.props.post.recommended_age,
+      scarefactor: this.props.post.scarefactor,
+      published_at: this.props.post.published_at,
+      company_website: this.props.post.company_website
     }
   }
 
@@ -56,8 +45,11 @@ class EditForm extends Component {
 
 
 
-  componentDidMount(){
+  componentDidMount = () => {
     this.props.fetchStates()
+    console.log(this.props)
+    const postId = this.props.match.params.id
+    this.props.getPost(postId)
 
     // this.setState({
     //   title: this.props.postData.title,
@@ -142,6 +134,7 @@ class EditForm extends Component {
   }
 
   getEditorText = (editorText) =>{
+    console.log(editorText)
     this.setState({
       content: editorText
     })
@@ -175,7 +168,7 @@ class EditForm extends Component {
 
         <Form.Group controlId="">
           <Form.Label column sm={2}>Title</Form.Label>
-          <Form.Control size="lg" type="text" defaultValue={this.props.post.title ||this.state.title } onChange={this.handleChange} name="title" />
+          <Form.Control size="lg" type="text" value={this.state.title } onChange={this.handleChange} name="title" />
 
         </Form.Group>
         <Form.Row>
@@ -196,7 +189,7 @@ class EditForm extends Component {
         </Form.Row>
         <Form.Group controlId="">
           <Form.Label column sm={2}>City</Form.Label>
-          <Form.Control size="lg" type="text" defaultValue={this.state.city || city.name } onChange={this.handleChange} name="city"/>
+          <Form.Control size="lg" type="text" defaultValue={city.name } onChange={this.handleChange} name="city"/>
         </Form.Group>
         <Form.Group controlId="">
           <Form.Label column sm={2}>Video Link</Form.Label>
@@ -244,9 +237,9 @@ class EditForm extends Component {
 
         <Form.Group >
           <Form.Label>Blog Post</Form.Label>
-          <Editor  getEditorText={this.getEditorText} content={this.props.post.content} />
+          <Editor  getEditorText={this.getEditorText} content={this.state.content} />
 
-        
+
            {/* <Form.Control as="textarea" rows="15" value={this.state.content} onChange={this.handleChange} name="content"
 
              /> */}
@@ -286,11 +279,29 @@ class EditForm extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-     states: state.states.states
+const mapStateToProps = state => {
 
+     return {
+       post : state.posts.post,
+       states: state.states.states}
+};
+EditForm.defaultProps = {
+  title: "title" ,
+  content: "",
 
-});
+  image: null,
+  video: "",
 
+  recommended_players: "",
+  price: "",
+  difficulty: "",
+  public_or_private: "",
+  recommended_age: "",
+  scarefactor: "",
+  published_at: "",
+  company_website: ""
 
-export default connect(mapStateToProps, {updatePost, fetchStates, getPost})(EditForm)
+}
+
+// export default connect(mapStateToProps, {updatePost, fetchStates, getPost})(EditForm)
+export default EditForm = withRouter(connect(mapStateToProps, {updatePost, fetchStates, getPost})(EditForm));
