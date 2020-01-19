@@ -7,23 +7,19 @@ class EditContainer extends Component {
 
   componentDidMount(){
     const postId = this.props.match.params.id
+    console.log(this.props)
     this.props.getPost(postId)
   }
 
   render(){
-    const title = this.props.post.title
     return(
      <>
       <div className='AdminHeader'>
         <AdminHeader />
       </div>
       <div>
-      <EditForm
-        post ={this.props.post}
-        category={this.props.post.category}
-        state={this.props.post.state}
-        city={this.props.post.city}
-        testprop={'test'} />
+      <EditForm />
+
       </div>
     </>
     )
