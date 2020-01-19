@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { getPost } from '../../../actions/postActions';
 import { connect } from 'react-redux';
+import { withRouter, Redirect } from 'react-router-dom'
+
 import EditForm from '../EditForm';
 import AdminHeader from '../AdminHeader'
 class EditContainer extends Component {
@@ -11,14 +13,20 @@ class EditContainer extends Component {
     this.props.getPost(postId)
   }
 
+
+
   render(){
+
     return(
      <>
       <div className='AdminHeader'>
         <AdminHeader />
       </div>
       <div>
-      <EditForm />
+
+      <EditForm
+        post={this.props.post}
+        />
 
       </div>
     </>
@@ -27,9 +35,8 @@ class EditContainer extends Component {
 }
 
 
-const mapStateToProps = state => ({
-     post: state.posts.post
-});
+const mapStateToProps = state => {
+    return {post: state.posts.post}
+};
 
-
-export default connect(mapStateToProps, {getPost})(EditContainer)
+export default EditContainer = withRouter(connect(mapStateToProps, {getPost})(EditContainer));
