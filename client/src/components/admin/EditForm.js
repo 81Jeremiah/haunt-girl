@@ -24,8 +24,32 @@ class EditForm extends Component {
     console.log(this.props.post)
     this.state = {
 
-      title: this.props.post.title ,
+      title: "" ,
+      content: "",
+      city:{},
+      image: null,
+      video: "",
+
+      recommended_players: "",
+      price: "",
+      difficulty: "",
+      public_or_private: "",
+      recommended_age: "",
+      scarefactor: "",
+      published_at: "",
+      company_website: ""
+    }
+
+  }
+
+componentDidUpdate = (prevProps) => {
+  console.log(this.props)
+
+  if(prevProps !== this.props){
+    this.setState({
+      title: this.props.post.title,
       content: this.props.post.content,
+      city:this.props.post.city || {},
 
       image: null,
       video: this.props.post.video,
@@ -36,20 +60,22 @@ class EditForm extends Component {
       public_or_private: this.props.post.public_or_private,
       recommended_age: this.props.post.recommended_age,
       scarefactor: this.props.post.scarefactor,
-      published_at: this.props.post.published_at,
+      published_at: this.props.post.published_at|| "",
       company_website: this.props.post.company_website
-    }
+
+    })
+
   }
 
-
+}
 
 
 
   componentDidMount = () => {
     this.props.fetchStates()
-    console.log(this.props)
-    const postId = this.props.match.params.id
-    this.props.getPost(postId)
+    // console.log(this.props)
+    // const postId = this.props.match.params.id
+    // this.props.getPost(postId)
 
     // this.setState({
     //   title: this.props.postData.title,
@@ -120,7 +146,7 @@ class EditForm extends Component {
       state_id: "1",
       image: null,
       video: "",
-      city: "",
+      city: {},
       recommended_players:"",
       price: "",
       difficulty:"",
@@ -164,11 +190,15 @@ class EditForm extends Component {
     return(
       // <div className = "post-form">
       <div>
-      <Form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit}>
 
         <Form.Group controlId="">
           <Form.Label column sm={2}>Title</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.title } onChange={this.handleChange} name="title" />
+          <input size="lg"
+                 type="text"
+                 value={this.state.title }
+                 onChange={this.handleChange}
+                 name="title" />
 
         </Form.Group>
         <Form.Row>
@@ -189,7 +219,12 @@ class EditForm extends Component {
         </Form.Row>
         <Form.Group controlId="">
           <Form.Label column sm={2}>City</Form.Label>
-          <Form.Control size="lg" type="text" defaultValue={city.name } onChange={this.handleChange} name="city"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.city.name}
+            onChange={this.handleChange}
+            name="city"/>
         </Form.Group>
         <Form.Group controlId="">
           <Form.Label column sm={2}>Video Link</Form.Label>
@@ -272,7 +307,7 @@ class EditForm extends Component {
 
         <Button variant="primary" type="submit" value="New Entry">New Entry</Button>
 
-        </Form>
+        </form>
 
       </div>
     )
@@ -282,26 +317,25 @@ class EditForm extends Component {
 const mapStateToProps = state => {
 
      return {
-       post : state.posts.post,
        states: state.states.states}
 };
-EditForm.defaultProps = {
-  title: "title" ,
-  content: "",
-
-  image: null,
-  video: "",
-
-  recommended_players: "",
-  price: "",
-  difficulty: "",
-  public_or_private: "",
-  recommended_age: "",
-  scarefactor: "",
-  published_at: "",
-  company_website: ""
-
-}
+// EditForm.defaultProps = {
+//   title: "title" ,
+//   content: "",
+//
+//   image: null,
+//   video: "",
+//
+//   recommended_players: "",
+//   price: "",
+//   difficulty: "",
+//   public_or_private: "",
+//   recommended_age: "",
+//   scarefactor: "",
+//   published_at: "",
+//   company_website: ""
+//
+// }
 
 // export default connect(mapStateToProps, {updatePost, fetchStates, getPost})(EditForm)
 export default EditForm = withRouter(connect(mapStateToProps, {updatePost, fetchStates, getPost})(EditForm));
