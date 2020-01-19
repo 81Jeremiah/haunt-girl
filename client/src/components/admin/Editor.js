@@ -17,15 +17,21 @@ import { getPost } from '../../actions/postActions';
       console.log(props)
       this.state = { editorHtml: "" ,
                      theme: 'snow',
-                      content: props.content || "" }
+                   }
       this.handleChange = this.handleChange.bind(this)
     }
 
-    componentDidMount(){
-      console.log(this)
-      this.setState({...this.state,editorHtml: this.props.content})
-      console.log(this.state.editorHtml)
-      this.props.getPost(3)
+
+
+    componentDidUpdate = (prevProps) => {
+      console.log(this.props)
+      if(prevProps !== this.props){
+        this.setState({
+          ...this.state,
+          editorHtml: this.props.content,
+        })
+
+      }
     }
 
     handleChange (html) {
@@ -45,11 +51,7 @@ import { getPost } from '../../actions/postActions';
       this.setState({ theme: newTheme })
     }
 
-     componentDidUpdate(prevProps){
-       if (prevProps.content !== this.props.content){
-           this.setState({content: this.props.content})
-       }
-     }
+
 
     static getDerivedStateFromProps(props, state){
        state = { editorHtml: "" ,
@@ -58,7 +60,7 @@ import { getPost } from '../../actions/postActions';
      }
 
     render () {
-      console.log(this.props.post.content)
+      console.log(this.state)
       const content = this.props.content
 
       return (
@@ -67,7 +69,7 @@ import { getPost } from '../../actions/postActions';
           <ReactQuill
             theme={this.state.theme}
             onChange={this.handleChange}
-            defaultValue={  this.state.editorHtml}
+            defaultValue={ this.state.editorHtml }
             modules={Editor.modules}
             formats={Editor.formats}
             bounds={'.app'}
