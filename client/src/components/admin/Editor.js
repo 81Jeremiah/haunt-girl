@@ -37,7 +37,7 @@ import { getPost } from '../../actions/postActions';
     handleChange (html) {
 
     	this.setState({ editorHtml: html });
-      this.sendTextToForm()
+      // this.sendTextToForm()
       console.log(this.state.editorHtml)
     }
 
@@ -69,7 +69,7 @@ import { getPost } from '../../actions/postActions';
           <ReactQuill
             theme={this.state.theme}
             onChange={this.handleChange}
-            defaultValue={ this.state.editorHtml }
+            value={ this.state.editorHtml }
             modules={Editor.modules}
             formats={Editor.formats}
             bounds={'.app'}
