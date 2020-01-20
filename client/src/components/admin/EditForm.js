@@ -103,6 +103,7 @@ componentDidUpdate = (prevProps) => {
   handleChange = event => {
     const {name, value } = event.target;
     this.setState({
+      ...this.state,
       [name]: value
     })
 
@@ -272,7 +273,9 @@ componentDidUpdate = (prevProps) => {
 
         <Form.Group >
           <Form.Label>Blog Post</Form.Label>
-          <Editor  getEditorText={this.getEditorText} content={this.state.content} />
+          <Editor
+            getEditorText={this.getEditorText}
+            content={this.state.content} />
 
 
            {/* <Form.Control as="textarea" rows="15" value={this.state.content} onChange={this.handleChange} name="content"
