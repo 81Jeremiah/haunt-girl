@@ -26,7 +26,9 @@ class EditForm extends Component {
 
       title: "" ,
       content: "",
-      city:{},
+      city: {
+        name:""
+      },
       image: null,
       video: "",
 
@@ -49,7 +51,7 @@ componentDidUpdate = (prevProps) => {
     this.setState({
       title: this.props.post.title,
       content: this.props.post.content,
-      city:this.props.post.city || {},
+      city:this.props.post.city || {name:''},
 
       image: null,
       video: this.props.post.video,
@@ -102,13 +104,17 @@ componentDidUpdate = (prevProps) => {
 
   handleChange = event => {
     const {name, value } = event.target;
+    if(name === 'city'){
+      this.setState({
+        [name]: {'name':value}
+      })
+    }else{
     this.setState({
-      ...this.state,
       [name]: value
     })
-
+    }
+    console.log(this.state.city)
   }
-
   handleSubmit = event =>{
 
     event.preventDefault()
