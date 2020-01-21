@@ -69,7 +69,7 @@ import { getPost } from '../../actions/postActions';
           <ReactQuill
             theme={this.state.theme}
             onChange={this.handleChange}
-            value={ this.state.editorHtml }
+            value={ this.state.editorHtml || "" }
             modules={Editor.modules}
             formats={Editor.formats}
             bounds={'.app'}
