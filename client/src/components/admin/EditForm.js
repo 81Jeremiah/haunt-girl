@@ -57,21 +57,21 @@ componentDidUpdate = (prevProps) => {
 
   if(prevProps !== this.props){
     this.setState({
-      title: this.props.post.title,
-      content: this.props.post.content,
+      title: this.props.post.title || "",
+      content: this.props.post.content || "",
       city:this.props.post.city || {name:''},
       state : this.props.post.state || {id:''},
       image: null,
-      video: this.props.post.video,
+      video: this.props.post.video || "",
       category: this.props.post.category || {id: ''},
-      recommended_players: this.props.post.recommended_players,
-      price: this.props.post.price,
-      difficulty: this.props.post.difficulty,
-      public_or_private: this.props.post.public_or_private,
-      recommended_age: this.props.post.recommended_age,
-      scarefactor: this.props.post.scarefactor,
+      recommended_players: this.props.post.recommended_players || "",
+      price: this.props.post.price || "",
+      difficulty: this.props.post.difficulty || "",
+      public_or_private: this.props.post.public_or_private || "",
+      recommended_age: this.props.post.recommended_age || "",
+      scarefactor: this.props.post.scarefactor || "",
       published_at: this.props.post.published_at|| "",
-      company_website: this.props.post.company_website
+      company_website: this.props.post.company_website || ""
 
     })
 
@@ -190,15 +190,13 @@ componentDidUpdate = (prevProps) => {
   }
 
   render(){
-    const category = this.props.category || ""
-    const postState = this.props.state || ""
-    const city = this.props.city || ""
-
     const statesList = this.props.states.map(state => {
 
         return(
-
-          <option key={state.id} value={state.id}>{state.abbreviation}</option>
+          <option key={state.id}
+                  value={state.id}>
+                  {state.abbreviation}
+          </option>
         );
     });
     console.log(this.props)
@@ -207,19 +205,18 @@ componentDidUpdate = (prevProps) => {
       <div>
       <form onSubmit={this.handleSubmit}>
 
-        <Form.Group controlId="">
+       <Form.Group controlId="">
           <Form.Label column sm={2}>Title</Form.Label>
-          <input size="lg"
+          <Form.Control  size="lg"
                  type="text"
                  value={this.state.title }
                  onChange={this.handleChange}
                  name="title" />
-
         </Form.Group>
         <Form.Row>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Category</Form.Label>
-          <Form.Control 
+          <Form.Control
             as="select"
             value={this.state.category.id}
             onChange={this.handleChange} name="category_id">
@@ -252,20 +249,39 @@ componentDidUpdate = (prevProps) => {
         </Form.Group>
         <Form.Group controlId="">
           <Form.Label column sm={2}>Video Link</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.video} onChange={this.handleChange} name="video"/>
+          <Form.Control
+             size="lg" type="text"
+             value={this.state.video}
+             onChange={this.handleChange}
+             name="video"/>
         </Form.Group>
         <Form.Row>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Recommended Players</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.recommended_players} onChange={this.handleChange} name="recommended_players"/>
+          <Form.Control
+             size="lg"
+             type="text"
+             value={this.state.recommended_players}
+             onChange={this.handleChange}
+             name="recommended_players"/>
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Price</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.price} onChange={this.handleChange} name="price"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.price}
+            onChange={this.handleChange}
+            name="price"/>
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Difficulty</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.difficulty} onChange={this.handleChange} name="difficulty"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.difficulty}
+            onChange={this.handleChange}
+            name="difficulty"/>
           </Form.Group>
         </Form.Row>
 
