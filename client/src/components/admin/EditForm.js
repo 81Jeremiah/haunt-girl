@@ -29,6 +29,14 @@ class EditForm extends Component {
       city: {
         name:""
       },
+      state: {
+         id: "",
+      },
+
+      category: {
+        id: ""
+      },
+
       image: null,
       video: "",
 
@@ -52,10 +60,10 @@ componentDidUpdate = (prevProps) => {
       title: this.props.post.title,
       content: this.props.post.content,
       city:this.props.post.city || {name:''},
-
+      state : this.props.post.state || {id:''},
       image: null,
       video: this.props.post.video,
-
+      category: this.props.post.category || {id: ''},
       recommended_players: this.props.post.recommended_players,
       price: this.props.post.price,
       difficulty: this.props.post.difficulty,
@@ -104,7 +112,7 @@ componentDidUpdate = (prevProps) => {
 
   handleChange = event => {
     const {name, value } = event.target;
-    if(name === 'city'){
+    if(name === 'city' || name === 'state'){
       this.setState({
         [name]: {'name':value}
       })
@@ -128,7 +136,7 @@ componentDidUpdate = (prevProps) => {
     post.append('[post]category_id', this.state.category_id)
     post.append('[post]state', this.state.state_id)
     post.append('[post]video', this.state.video)
-    post.append('[post]city_name', this.state.city)
+    post.append('[post]city_name', this.state.city.name)
     post.append('[post]recommended_players', this.state.recommended_players)
     post.append('[post]price', this.state.price)
     post.append('[post]difficulty', this.state.difficulty)
@@ -211,7 +219,11 @@ componentDidUpdate = (prevProps) => {
         <Form.Row>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Category</Form.Label>
-          <Form.Control as="select" defaultValue={this.state.category_id || category.id } onChange={this.handleChange} name="category_id">
+          <Form.Control 
+            as="select"
+            value={this.state.category.id}
+            onChange={this.handleChange} name="category_id">
+
             <option value="1">Escape Rooms</option>
             <option value="2">Haunts</option>
             <option value="3">Oddities</option>
@@ -219,8 +231,13 @@ componentDidUpdate = (prevProps) => {
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
             <Form.Label>State</Form.Label>
-            <Form.Control as="select" defaultValue={this.state.state_id || postState.abbreviation} onChange={this.handleChange} name="state_id">
+            <Form.Control
+              as="select"
+              value={this.state.state.id}
+              onChange={this.handleChange}
+              name="state">
               {statesList}
+              console.log(this.state.state.id)
             </Form.Control>
           </Form.Group>
         </Form.Row>
