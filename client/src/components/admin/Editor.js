@@ -1,13 +1,7 @@
-
-
-
 import React, { Component } from 'react';
 import ReactQuill from 'react-quill'; // ES6
-
 import 'react-quill/dist/quill.snow.css'; // ES6
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { getPost } from '../../actions/postActions';
 
 
  class Editor extends Component {
@@ -52,16 +46,7 @@ import { getPost } from '../../actions/postActions';
     }
 
 
-
-    static getDerivedStateFromProps(props, state){
-       state = { editorHtml: "" ,
-                      theme: 'snow',
-                       content: props.content || "" }
-     }
-
     render () {
-      console.log(this.state)
-      const content = this.props.content
 
       return (
         <div>
@@ -127,8 +112,5 @@ Editor.propTypes = {
     placeholder: PropTypes.string,
   }
 
-  const mapStateToProps = state => (
-      {post: state.posts.post}
-  );
 
-export default connect(mapStateToProps, {getPost})(Editor)
+export default Editor
