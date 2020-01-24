@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
 
     constructor (props) {
       super(props)
-      console.log(props)
+
       this.state = { editorHtml: "" ,
                      theme: 'snow',
                    }
