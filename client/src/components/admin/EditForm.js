@@ -179,7 +179,8 @@ componentDidUpdate = (prevProps) => {
           <Form.Control
             as="select"
             value={this.state.category.id}
-            onChange={this.handleChange} name="category_id">
+            onChange={this.handleChange}
+            name="category">
 
             <option value="1">Escape Rooms</option>
             <option value="2">Haunts</option>
