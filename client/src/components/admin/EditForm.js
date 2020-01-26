@@ -101,7 +101,7 @@ componentDidUpdate = (prevProps) => {
     post.append('[post]scarefactor', this.state.scarefactor)
     post.append('[post]published_at:', this.state.published_at)
     post.append('[post]company_website:', this.state.company_website)
-
+    post.append('[post]id:', this.props.post.id)
 
     if(this.state.image !== null){
       post.append('[post]image', this.state.image)
@@ -291,7 +291,7 @@ componentDidUpdate = (prevProps) => {
         <Form.Control
             size="lg"
             type="text"
-            value={this.props.company_website}
+            value={this.state.company_website}
             onChange={this.handleChange}
             name="company_website"/>
         </Form.Group>
