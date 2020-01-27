@@ -83,19 +83,21 @@ export const narrowByState = (state) => {
   }
 }
 
-export const updatePost = post => {
+export const updatePost = (postId, post) => {
+  console.log(post)
   return (dispatch) => {
-    return fetch(`/api/posts/${post.id}`, {
+    dispatch({type: 'SENDING_POST'});
+    return fetch(`/api/posts/${postId}`, {
       method: "PATCH",
-      headers: {
-        "Content-Type": 'application/json',
-        "Authorization": `Bearer ${localStorage.auth_token}`
-      },
-      body: JSON.stringify( post )
+      // headers: {
+      //   "Content-Type": 'application/json',
+      //   "Authorization": `Bearer ${localStorage.auth_token}`
+      // },
+      body: post
     })
     .then(response => response.json())
     .then(post => {
-      dispatch({type:'EDIT_POSTS', post: post})
+      dispatch({type:'UPDATE_POST', post: post})
     })
     .catch(error => console.log(error))
   }
