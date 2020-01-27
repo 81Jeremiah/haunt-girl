@@ -38,9 +38,9 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    
+
     @post.update(post_params)
-    flash[:message]="Post updated!"
+    # flash[:message]="Post updated!"
     render json: @post
 
   end
