@@ -101,14 +101,15 @@ componentDidUpdate = (prevProps) => {
     post.append('[post]scarefactor', this.state.scarefactor)
     post.append('[post]published_at:', this.state.published_at)
     post.append('[post]company_website:', this.state.company_website)
-    post.append('[post]id:', this.props.post.id)
+    debugger
 
     if(this.state.image !== null){
       post.append('[post]image', this.state.image)
     }
 
-    console.log(this.state)
-    this.props.updatePost(post)
+    const postId = this.props.post.id
+    console.log(post)
+    this.props.updatePost(postId, post)
     window.alert('you updated the post')
     this.setState({
       title: "" ,
