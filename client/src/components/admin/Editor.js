@@ -18,7 +18,7 @@ import PropTypes from 'prop-types';
 
 
     componentDidUpdate = (prevProps) => {
-      console.log(this.props)
+
       if(prevProps !== this.props){
         this.setState({
           ...this.state,
@@ -32,7 +32,7 @@ import PropTypes from 'prop-types';
 
     	this.setState({ editorHtml: html });
       // this.sendTextToForm()
-      console.log(this.state.editorHtml)
+
     }
 
     sendTextToForm = () =>{
