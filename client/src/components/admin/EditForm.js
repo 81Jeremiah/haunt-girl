@@ -67,10 +67,12 @@ componentDidUpdate = (prevProps) => {
 
   handleChange = event => {
     const {name, value } = event.target;
+    console.log(event.target)
     if(name === 'city' ){
       this.setState({
         [name]: {'name':value}
       })
+    console.log(this.state.city.name)
     }else if (name === 'state' || name === 'category') {
       this.setState({
         [name]: {'id':value}
@@ -101,7 +103,7 @@ componentDidUpdate = (prevProps) => {
     post.append('[post]scarefactor', this.state.scarefactor)
     post.append('[post]published_at:', this.state.published_at)
     post.append('[post]company_website:', this.state.company_website)
-    debugger
+  
 
     if(this.state.image !== null){
       post.append('[post]image', this.state.image)
