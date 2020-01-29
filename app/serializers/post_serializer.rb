@@ -1,6 +1,11 @@
 class PostSerializer < ActiveModel::Serializer
   include Rails.application.routes.url_helpers
-  attributes :id, :title, :content, :image, :published_at, :recommended_players, :price, :difficulty, :public_or_private, :company_website
+  attributes :id, :title, :content, :image, :published_at,
+  :recommended_players, :price, :difficulty, :public_or_private,
+  :company_website, :public_or_private, :recommended_age, :scarefactor, :price,
+  :difficulty
+
+
 
   belongs_to :category
   # belongs_to :state
