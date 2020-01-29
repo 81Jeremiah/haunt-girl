@@ -101,9 +101,10 @@ componentDidUpdate = (prevProps) => {
     post.append('[post]public_or_private', this.state.public_or_private)
     post.append('[post]recommended_age', this.state.recommended_age)
     post.append('[post]scarefactor', this.state.scarefactor)
-    post.append('[post]published_at:', this.state.published_at)
-    post.append('[post]company_website:', this.state.company_website)
-  
+    post.append('[post]published_at', this.state.published_at)
+    post.append('[post]company_website', this.state.company_website)
+
+
 
     if(this.state.image !== null){
       post.append('[post]image', this.state.image)
