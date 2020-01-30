@@ -38,9 +38,12 @@ class Api::PostsController < ApplicationController
   end
 
   def update
-    
+
     @post.update(post_params)
-    post.city.state_id = params[:post][:state]
+    debugger
+    @post.city.state_id = params[:post][:state]
+    @post.save
+
     # flash[:message]="Post updated!"
     render json: @post
 
@@ -71,8 +74,7 @@ class Api::PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :category_id, :content, :image,
       :video, :city_name, :published_at, :company_website, :recommended_players,
-      :public_or_private, :recommended_age, :scarefactor, :price, :difficulty,
-      :state)
+      :public_or_private, :recommended_age, :scarefactor, :price, :difficulty)
   end
 
 
