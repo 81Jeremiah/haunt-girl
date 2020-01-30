@@ -1,6 +1,8 @@
 class Category < ApplicationRecord
   has_many :posts
 
+  accepts_nested_attributes_for :posts
+
   def self.find_category_id(param)
     if param == 'escaperooms'
       1
