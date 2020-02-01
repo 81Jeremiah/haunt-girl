@@ -58,8 +58,8 @@ class PostForm extends Component {
     post.append('[post]public_or_private', this.state.public_or_private)
     post.append('[post]recommended_age', this.state.recommended_age)
     post.append('[post]scarefactor', this.state.scarefactor)
-    post.append('[post]published_at:', this.state.published_at)
-    post.append('[post]company_website:', this.state.company_website)
+    post.append('[post]published_at', this.state.published_at)
+    post.append('[post]company_website', this.state.company_website)
     post.append('[post]state', this.state.state_id)
 
 
@@ -114,12 +114,21 @@ class PostForm extends Component {
       <Form onSubmit={this.handleSubmit}>
         <Form.Group controlId="">
           <Form.Label column sm={2}>Title</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.title} onChange={this.handleChange} name="title"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.title}
+             onChange={this.handleChange}
+             name="title"/>
         </Form.Group>
         <Form.Row>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Category</Form.Label>
-          <Form.Control as="select" value={this.state.category_id} onChange={this.handleChange} name="category_id">
+          <Form.Control
+            as="select"
+            value={this.state.category_id}
+            onChange={this.handleChange}
+            name="category_id">
             <option value="1">Escape Rooms</option>
             <option value="2">Haunts</option>
             <option value="3">Oddities</option>
@@ -127,62 +136,118 @@ class PostForm extends Component {
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
             <Form.Label>State</Form.Label>
-            <Form.Control as="select" value={this.state.state_id} onChange={this.handleChange} name="state_id">
+            <Form.Control
+              as="select"
+              value={this.state.state_id}
+              onChange={this.handleChange}
+               name="state_id">
               {statesList}
             </Form.Control>
           </Form.Group>
         </Form.Row>
         <Form.Group controlId="">
           <Form.Label column sm={2}>City</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.city} onChange={this.handleChange} name="city"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.city}
+            onChange={this.handleChange}
+            name="city"/>
         </Form.Group>
         <Form.Group controlId="">
           <Form.Label column sm={2}>Video Link</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.video} onChange={this.handleChange} name="video"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.video}
+            onChange={this.handleChange}
+            name="video"/>
         </Form.Group>
         <Form.Row>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Recommended Players</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.recommended_players} onChange={this.handleChange} name="recommended_players"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.recommended_players}
+            onChange={this.handleChange}
+            name="recommended_players"/>
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Price</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.price} onChange={this.handleChange} name="price"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.price}
+            onChange={this.handleChange}
+            name="price"/>
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Difficulty</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.difficulty} onChange={this.handleChange} name="difficulty"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.difficulty}
+            onChange={this.handleChange}
+            name="difficulty"/>
           </Form.Group>
         </Form.Row>
 
         <Form.Row>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Public or Private</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.public_or_private} onChange={this.handleChange} name="public_or_private"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.public_or_private}
+            onChange={this.handleChange}
+            name="public_or_private"/>
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Recommended Age</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.recommended_age} onChange={this.handleChange} name="recommended_age"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.recommended_age}
+            onChange={this.handleChange}
+            name="recommended_age"/>
           </Form.Group>
           <Form.Group as={Form.Col} controlId="">
           <Form.Label>Scare Factor</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.scarefactor} onChange={this.handleChange} name="scarefactor"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.scarefactor}
+            onChange={this.handleChange}
+            name="scarefactor"/>
           </Form.Group>
         </Form.Row>
 
         <Form.Group>
           <Form.Label>Published-DD-MM-YYYY</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.published_at} onChange={this.handleChange} name="published_at"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.published_at}
+            onChange={this.handleChange}
+            name="published_at"/>
         </Form.Group>
 
         <Form.Group>
           <Form.Label>Company Website</Form.Label>
-          <Form.Control size="lg" type="text" value={this.state.company_website} onChange={this.handleChange} name="company_website"/>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.company_website}
+            onChange={this.handleChange}
+            name="company_website"/>
         </Form.Group>
 
         <Form.Group >
           <Form.Label>Blog Post</Form.Label>
-          <Editor getEditorText={this.getEditorText} />
+            <Editor
+              getEditorText={this.getEditorText}
+              content={""} />
 
 
            {/* <Form.Control as="textarea" rows="15" value={this.state.content} onChange={this.handleChange} name="content"
