@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 
     componentDidUpdate = (prevProps) => {
 
-      if(prevProps !== this.props){
+      if(prevProps !== this.props ){
         this.setState({
           ...this.state,
           editorHtml: this.props.content,
@@ -31,7 +31,8 @@ import PropTypes from 'prop-types';
     handleChange (html) {
 
     	this.setState({ editorHtml: html });
-      // this.sendTextToForm()
+      this.sendTextToForm()
+
 
     }
 
@@ -54,7 +55,7 @@ import PropTypes from 'prop-types';
           <ReactQuill
             theme={this.state.theme}
             onChange={this.handleChange}
-            value={ this.state.editorHtml || "" }
+            value={ this.state.editorHtml  }
             modules={Editor.modules}
             formats={Editor.formats}
             bounds={'.app'}
