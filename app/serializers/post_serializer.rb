@@ -3,7 +3,7 @@ class PostSerializer < ActiveModel::Serializer
   attributes :id, :title, :content, :image, :published_at,
   :recommended_players, :price, :difficulty, :public_or_private,
   :company_website, :public_or_private, :recommended_age, :scarefactor, :price,
-  :difficulty
+  :difficulty, :video
 
 
 
