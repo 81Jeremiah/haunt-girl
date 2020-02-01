@@ -82,6 +82,7 @@ componentDidUpdate = (prevProps) => {
       this.setState({
         [name]: value
       });
+      console.log(this.state.content)
     }
   }
 
@@ -334,7 +335,7 @@ componentDidUpdate = (prevProps) => {
         <Button
           variant="primary"
           type="submit"
-          value="New Entry">New Entry</Button>
+          value="New Entry">Update</Button>
 
         </form>
 
