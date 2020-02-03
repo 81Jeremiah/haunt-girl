@@ -10,7 +10,7 @@ class EditContainer extends Component {
   componentDidMount(){
     const postId = this.props.match.params.id
     console.log(this.props)
-    this.props.getPost(postId)
+    // this.props.getPost(postId)
   }
 
 
@@ -36,6 +36,7 @@ class EditContainer extends Component {
 
 
 const mapStateToProps = state => {
+    console.log(state.posts.post)
     return {post: state.posts.post}
 };
 
