@@ -19,7 +19,7 @@ import PropTypes from 'prop-types';
 
     componentDidUpdate = (prevProps) => {
 
-      if(prevProps !== this.props ){
+      if(prevProps !== this.props){
         this.setState({
           ...this.state,
           editorHtml: this.props.content,
