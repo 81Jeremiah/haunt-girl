@@ -7,6 +7,7 @@ import Footer from './Footer';
 import NewsletterSection from './NewsletterSection';
 import ReactPlayer from 'react-player'
 import ReactHtmlParser from 'react-html-parser';
+import GhostRating from './GhostRating';
 
 class Post extends Component {
 
@@ -33,57 +34,57 @@ class Post extends Component {
             <ReactPlayer url={post.video}  />
             {/*// <img src="img/games/big.jpg" alt=""/>*/}
           </div>
-          <div class="row">
-            <div class="col-xl-9 col-lg-8 col-md-7 game-single-content">
+          <div className="row">
+            <div className="col-xl-9 col-lg-8 col-md-7 game-single-content">
 
 
-              <div class="gs-meta">{post.published_at} /  in <Link to="/escaperooms"> {category.name}</Link></div>
-              <h2 class="gs-title">{post.title}</h2>
-            <p>{ReactHtmlParser(post.content)}</p>
-              <div class="geme-social-share pt-5 d-flex">
+              <div className="gs-meta">{post.published_at} /  in <Link to="/escaperooms"> {category.name}</Link></div>
+              <h2 className="gs-title">{post.title}</h2>
+                  <p>{ReactHtmlParser(post.content)}</p>
+                <div className="geme-social-share pt-5 d-flex">
                 <p>Share:</p>
-                <Link to={`https://www.facebook.com/sharer/sharer.php?u=thehauntgirl.com/posts/${post.id}`}><i class="fa fa-facebook"></i></Link>
-                <Link to={`https://twitter.com/home?status=thehauntgirl.com/posts/${post.id} `}><i class="fa fa-twitter"></i></Link>
+              <Link to={`https://www.facebook.com/sharer/sharer.php?u=thehauntgirl.com/posts/${post.id}`}><i className="fa fa-facebook"></i></Link>
+            <Link to={`https://twitter.com/home?status=thehauntgirl.com/posts/${post.id} `}><i className="fa fa-twitter"></i></Link>
 
               </div>
             </div>
-            {/* <div class="col-xl-3 col-lg-4 col-md-5 sidebar game-page-sideber">
+            <div className="col-xl-3 col-lg-4 col-md-5 sidebar game-page-sideber">
               <div id="stickySidebar">
-                <div class="widget-item">
-                  <div class="rating-widget">
-                    <h4 class="widget-title">Ratings</h4>
+                <div className="widget-item">
+                  <div className="rating-widget">
+                    <h4 className="widget-title">Ratings</h4>
                     <ul>
                       <li>Cost<span>3.5/5</span></li>
                       <li>Set Design<span>4.5/5</span></li>
                       <li>Jump Scares<span>3.5/5</span></li>
-                      <li>Intensity<span>4.5/5</span></li>
+                    <li>Scare Rating:  <span><GhostRating scarefactor={3}/></span></li>
 
                     </ul>
-                    <div class="rating">
+                    <div className="rating">
                       <h5><i>Overall Rating</i><span>4.5</span> / 5</h5>
                     </div>
                   </div>
                 </div>
-                <div class="widget-item">
-                  <div class="testimonials-widget">
-                    <h4 class="widget-title">What Other Enthusiasts Say</h4>
-                    <div class="testim-text">
-                      <p>Worst.Haunt.Ever</p>
+                <div className="widget-item">
+                  <div className="testimonials-widget">
+                    <h4 className="widget-title">What Other Enthusiasts Say</h4>
+                      <div className="testim-text">
+                         <p>Worst.Haunt.Ever</p>
                       <h6><span>Potato Salad Jeff</span></h6>
                     </div>
                   </div>
                 </div>
               </div>
-            </div> */}
+            </div>
           </div>
         </div>
       </section>
 
 
-      <section class="game-author-section">
-        <div class="container">
-          <div class="game-author-pic set-bg" data-setbg="img/author.jpg"></div>
-          <div class="game-author-info">
+      <section className="game-author-section">
+        <div className="container">
+          <div className="game-author-pic set-bg" data-setbg="img/author.jpg"></div>
+        <div className="game-author-info">
             <h4>Written by:The Haunt Girl</h4>
             <p></p>
           </div>
