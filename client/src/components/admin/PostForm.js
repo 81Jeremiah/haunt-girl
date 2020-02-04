@@ -4,8 +4,9 @@ import Button from 'react-bootstrap/Button';
 import { createPost } from '../../actions/postActions';
 import { connect } from 'react-redux';
 import { fetchStates } from '../../actions/postActions';
-import Editor from './Editor'
-import Dropzone from 'react-dropzone'
+import Editor from './Editor';
+import Dropzone from 'react-dropzone';
+import AdminHeader from './AdminHeader';
 
 class PostForm extends Component {
   state = {
@@ -110,6 +111,8 @@ class PostForm extends Component {
     });
 
     return(
+      <>
+      <div><AdminHeader /></div>
       <div className = "post-form">
       <Form onSubmit={this.handleSubmit}>
         <Form.Group controlId="">
@@ -286,6 +289,7 @@ class PostForm extends Component {
         </Form>
 
       </div>
+    </>
     )
   }
 }
