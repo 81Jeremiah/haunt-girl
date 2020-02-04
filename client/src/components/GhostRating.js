@@ -9,8 +9,10 @@ import five from '../img/ghost-meter/Ghosts5.png'
 const imgMapper = {0: zero, 1: one, 2: two, 3: three, 4: four, 5: five}
 
 const GhostRating = (props) => {
+  console.log(props)
+  const ghosts = imgMapper[props.scarefactor]
   return(
-    <img src={imgMapper[this.props.scarefactor]} alt={this.props.scarefactor}/>
+    <img src={ghosts} alt={props.scarefactor}/>
   )
 }
 
