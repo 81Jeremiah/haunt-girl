@@ -8,6 +8,7 @@ import NewsletterSection from './NewsletterSection';
 import ReactPlayer from 'react-player'
 import ReactHtmlParser from 'react-html-parser';
 import GhostRating from './GhostRating';
+import KeyRating from './KeyRating';
 
 class Post extends Component {
 
@@ -61,7 +62,7 @@ class Post extends Component {
 
                     </ul>
                     <div className="rating">
-                      <h5><i>Overall Rating</i><span>4.5</span> / 5</h5>
+                      <h5><i>Overall Rating</i><span><KeyRating score={3} test={'test'}/></span></h5>
                     </div>
                   </div>
                 </div>
