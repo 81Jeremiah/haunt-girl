@@ -9,11 +9,11 @@ import five from '../img/key-ratings/skeletonkeys5.png';
 const imgMapper = {0: zero, 1: one, 2: two, 3: three, 4: four, 5: five}
 
 const KeyRating = (props) => {
-  console.log(props)
+
   const keys = imgMapper[props.score]
   return(
     <img src={keys} alt={props.score}/>
   )
 }
 
-export default KeyRating()
+export default KeyRating
