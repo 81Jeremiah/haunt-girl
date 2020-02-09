@@ -737,7 +737,8 @@ ol {
 }
 
 .widget-item .widget-title {
-	color: #fff;
+	/* color: #fff; */
+	color:#501755;
 	text-transform: uppercase;
 	font-weight: 700;
 	font-style: italic;
@@ -1330,7 +1331,8 @@ ol {
 }
 
 .rating-widget {
-	background: #34164b;
+	/* background: #34164b; */
+	background: white;
 	padding: 55px 0 30px;
 }
 
@@ -1467,6 +1469,7 @@ ol {
 	text-align: right;
 	font-size: 36px;
 	color: #fff;
+	/* color:#501755; */
 	font-weight: 900;
 	padding-right: 38px;
 }
@@ -1837,6 +1840,11 @@ ol {
   transform: translate(-50%, -50%);
 	overflow-y: scroll;
 	max-height: 100%;
+}
+
+.keys{
+	width: 464px;
+	height: 34px;
 }
 
 /* .splash-carousel{

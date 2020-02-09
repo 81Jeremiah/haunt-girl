@@ -1272,7 +1272,7 @@ ol {
 }
 
 .rating-widget {
-	background: #34164b;
+	/* background: #34164b; */
 	padding: 55px 0 30px;
 }
 
@@ -1285,7 +1285,7 @@ ol {
 .rating-widget ul li {
 	display: block;
 	font-size: 16px;
-	color: #b01ba5;
+	/* color: #b01ba5; */
 	font-weight: 500;
 	margin-bottom: 10px;
 }
