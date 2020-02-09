@@ -58,11 +58,11 @@ class Post extends Component {
                       <li>Cost<span>3.5/5</span></li>
                       <li>Set Design<span>4.5/5</span></li>
                       <li>Jump Scares<span>3.5/5</span></li>
-                    <li>Scare Rating:  <span><GhostRating scarefactor={3}/></span></li>
+                      <li>Scare Rating:  <span><GhostRating scarefactor={3}/></span></li>
 
                     </ul>
                     <div className="rating">
-                      <h5><i>Overall Rating</i><span><KeyRating score={3} test={'test'}/></span></h5>
+                      <h5><i>Overall Rating</i></h5><span><KeyRating score={3} /></span>
                     </div>
                   </div>
                 </div>
