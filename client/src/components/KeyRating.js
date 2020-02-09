@@ -12,7 +12,7 @@ const KeyRating = (props) => {
 
   const keys = imgMapper[props.score]
   return(
-    <img src={keys} alt={props.score}/>
+    <img classname='keys' src={keys} alt={props.score}/>
   )
 }
 
