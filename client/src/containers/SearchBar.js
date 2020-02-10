@@ -40,9 +40,13 @@ import { Redirect } from 'react-router-dom'
     }
     return(
       <Form inline onSubmit={this.handleSubmit}>
-        <FormControl type="text" placeholder="Search"
-        className="mr-sm-2" value={this.state.query}  onChange={this.handleChange}/>
-        <Button type="submit"  variant="outline-success">Search</Button>
+        <FormControl
+          type="text"
+          placeholder="Search"
+          className="mr-sm-2"
+          value={this.state.query}
+          onChange={this.handleChange}/>
+         <Button className='search-btn' type="submit"  variant="outline-success">Search</Button>
       </Form>
 
 

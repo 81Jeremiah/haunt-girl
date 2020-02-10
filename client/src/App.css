@@ -1847,6 +1847,15 @@ ol {
 	height: 34px;
 }
 
+.search-btn {
+	border: 2px solid purple;
+  background-color: indigo;
+  color: white;
+  /* padding: 14px 28px; */
+  font-size: 16px;
+  cursor: pointer;
+}
+
 /* .splash-carousel{
 	margin-top: 150px;
 } */
