@@ -7,7 +7,8 @@ import Posts from './containers/Posts';
 import Post from './components/Post';
 
 import Contact from './components/Static/Contact';
-import Login from './components/admin/Login'
+import Login from './components/admin/Login';
+import SearchResults from './components/SearchResults';
 
 const Routes = () => {
 
@@ -26,6 +27,7 @@ const Routes = () => {
         <Route exact path="/contact" component={ Contact } />
         <Route exact path="/about" component={ ProfilePage } />
         <Route exact path="/admin/login" component={ Login } />
+        <Route exact path="/searchresults" component={ SearchResults} />
         {/* <Route render={ () => <h1>404 Error</h1> } /> */}
       </Switch>
     </Router>
