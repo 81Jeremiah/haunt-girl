@@ -2,7 +2,7 @@ import React from 'react';
 import hauntGirlLogo from '../img/IMG_2792.png';
 import Social from './Social';
 import { Link } from 'react-router-dom';
-
+import SearchBar from '../containers/SearchBar';
 
 const Navbar = () =>{
   return (
@@ -37,6 +37,7 @@ const Navbar = () =>{
               <li><Link to="/interviews">Interviews</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="contact">Contact</Link></li>
+              <li><SearchBar /></li>
             </ul>
           </nav>
         </div>
