@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ResultList from './CreatorList'
+import ResultList from './ResultList';
 
 import { connect } from 'react-redux'
 
@@ -8,7 +8,7 @@ class SearchResults extends Component {
    render() {
      return (
       <div>
-       <ResultList results={this.props.results} />
+       <ResultList posts={this.props.results} />
       </div>
      )
    }
@@ -16,7 +16,7 @@ class SearchResults extends Component {
 
 const mapStateToProps = state => {
   return {
-       results: state.search.results
+       results: state.searchResults.foundPosts
    }
 }
 
