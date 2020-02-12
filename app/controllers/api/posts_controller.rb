@@ -1,6 +1,6 @@
 
 class Api::PostsController < ApplicationController
-  skip_before_action :authorized, only: [:index, :show, :new, :create, :edit, :update, :destroy, :recent_posts]
+  skip_before_action :authorized, only: [:index, :show, :new, :create, :edit, :update, :destroy, :recent_posts, :search]
   before_action :set_post, only: [:update, :show, :edit, :destroy]
 
 
