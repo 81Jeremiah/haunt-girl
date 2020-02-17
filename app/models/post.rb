@@ -9,7 +9,7 @@ class Post < ApplicationRecord
   scope :by_category, -> (category_id){joins(:category).where("category_id=?", category_id)}
   has_one_attached :image
   scope :by_state, -> (state_id){joins(:state).where("state_id=?", state_id)}
-  scope :search, ->(query) {where( 'post_title LIKE ?', "%#{query}%")}
+  scope :search, ->(query) {where( 'lower(title) LIKE ?', "%#{query.downcase}%")}
 
 
   def city_name=(name)
