@@ -66,7 +66,7 @@ class Api::PostsController < ApplicationController
   end
 
   def search
-    @posts = Post.search(params[:post_title])
+    @posts = Post.search(params[:title])
     render json: @posts
   end
 
