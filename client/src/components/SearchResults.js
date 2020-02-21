@@ -24,17 +24,17 @@ class SearchResults extends Component {
      return (
       <div>
        <Navbar />
-       <section class="page-top-section set-bg" >
-         <div class="page-info">
+       <section className="page-top-section set-bg" >
+         <div className="page-info">
 
-           <div class="site-breadcrumb">
+           <div className="site-breadcrumb">
              <Link to="/">Home</Link>  /
              <span>Reviews</span>
            </div>
          </div>
        </section>
-       <section class="review-section">
-         <div class="container">
+       <section className="review-section">
+         <div className="container">
           {/*<StatesList states={this.props.states} handleStateClick={this.handleStateClick} />*/}
           <ResultList posts={this.props.results} />
        </div>
