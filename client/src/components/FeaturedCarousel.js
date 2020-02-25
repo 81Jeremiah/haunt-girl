@@ -1,14 +1,15 @@
 
 import React, { Component } from 'react';
 import { Carousel } from 'react-responsive-carousel';
-import basementCourtyard  from '../img/carousel-pics/BasementCourtyard.PNG';
-import thirteenthgate from '../img/carousel-pics/13thGate.JPG';
-import larry from '../img/carousel-pics/larry-bones.jpg';
-import doldricks from '../img/carousel-pics/Doldricks.jpg';
-import joey from '../img/carousel-pics/Joey-Escape-The-Night.jpg';
-import skyoddessy from '../img/carousel-pics/SkyOddessy.jpg';
-
+import basementCourtyard  from '../img/carousel-pics/BasementCourtyard-640-480.jpg';
+import thirteenthgate from '../img/carousel-pics/13thGate-640-480.jpg';
+import larry from '../img/carousel-pics/larry-bones-640-480.jpg';
+import doldricks from '../img/carousel-pics/Doldricks-640-480.jpg';
+import joey from '../img/carousel-pics/Joey-Escape-The-Night-640-480.jpg';
+import skyoddessy from '../img/carousel-pics/SkyOddessy640-480.jpg';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+
+import styles from "react-responsive-carousel/lib/styles/carousel.min.css";
 
 
 class FeaturedCarousel extends Component {
@@ -23,27 +24,27 @@ class FeaturedCarousel extends Component {
               centerSlidePercentage={20}>
 
                 <div>
-                    <img src={basementCourtyard} alt="d" height="400" width="auto" />
-                  <h1 className="legend">The Courtyard at the Basement</h1>
+                    <img src={basementCourtyard} alt="d"  />
+                  <p className="legend">The Courtyard at the Basement</p>
                 </div>
                 <div>
-                    <img src={thirteenthgate} alt="d" height="400" width="auto" />
+                    <img src={thirteenthgate} alt="d" />
                     <p className="legend">Cutthroat Cavern at the 13thGate Escape </p>
                 </div>
                 <div>
-                    <img src={larry} alt="d" height="400" width="auto"/>
+                    <img src={larry} alt="d" />
                     <p className="legend">Larry Bones - Bone Yard Effects</p>
                 </div>
                 <div>
-                    <img src={doldricks} alt="d" height="400" width="auto"/>
+                    <img src={doldricks} alt="d" />
                     <p className="legend">Captain Spoopy Bones at Doldrick's Escape Room</p>
                 </div>
                 <div>
-                    <img src={joey} alt="d" height="400" width="auto"/>
+                    <img src={joey} alt="d" />
                     <p className="legend">Escape The Night Escape Room</p>
                 </div>
                 <div>
-                    <img src={skyoddessy} alt="d" height="400" width="auto" />
+                    <img src={skyoddessy} alt="d" />
                     <p className="legend">Sky Odyssey at Maze Rooms</p>
                 </div>
 
