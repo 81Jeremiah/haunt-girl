@@ -1,5 +1,2 @@
 class Award < ApplicationRecord
-
-
-
 end
