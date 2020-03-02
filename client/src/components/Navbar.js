@@ -25,15 +25,24 @@ const Navbar = () =>{
           {/*  Menu */}
             <ul className="main-menu primary-menu">
               <li className="header-logo"><Link to="/" >THE HAUNT GIRL</Link></li>
-              <li><Link to="/"><img src={hauntGirlLogo} alt="log" height="80" width="80"/></Link></li>
+              {/* <li><Link to="/"><img src={hauntGirlLogo} alt="log" height="80" width="80"/></Link></li> */}
               <li><Link to="/">Reviews </Link>
-            <ul className="sub-menu">
-                     <li><Link to="/haunts">Haunts </Link></li>
-                     <li><Link to="/escaperooms">Escape Rooms</Link></li>
-                     <li><Link to="/oddities">Oddities</Link></li>
-                     <li><Link to="/immersives">Immersives</Link></li>
-                   </ul>
+                  <ul className="sub-menu">
+                     <li><Link to="reviews/haunts">Haunts </Link></li>
+                     <li><Link to="reviews/escaperooms">Escape Rooms</Link></li>
+                     <li><Link to="reviews/oddities">Oddities</Link></li>
+                     <li><Link to="reviews/immersives">Immersives</Link></li>
+                  </ul>
               </li>
+              <li><Link to="/">Blog</Link>
+                  <ul className="sub-menu">
+                     <li><Link to="blog/toprated">Top Rated </Link></li>
+                     <li><Link to="blog/tips">Tips</Link></li>
+                     <li><Link to="blog/announcements">Announcements</Link></li>
+                     <li><Link to="blog/General">General</Link></li>
+                  </ul>
+              </li>
+              <li><Link to="/SkeletonKeyAwards">Skeleton Key Awards</Link></li>
               <li><Link to="/interviews">Interviews</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="contact">Contact</Link></li>
