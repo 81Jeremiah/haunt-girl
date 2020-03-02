@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Splash from './containers/Splash';
 import ProfilePage from './components/Static/About';
 import Posts from './containers/Posts';
-
+import SkeletonKeyContainer from './containers/SkeletonKeyContainer';
 import Post from './components/Post';
 
 import Contact from './components/Static/Contact';
@@ -16,18 +16,19 @@ const Routes = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={ Splash }/>
-        <Route exact path="/posts/:id" component={Post} />
-        <Route exact path="/posts" component={ Posts } />
-        <Route exact path="/haunts" component={ Posts } />
-        <Route exact path="/haunts/:id" component={ Post } />
-        <Route exact path="/escaperooms" component={ Posts } />
-        <Route exact path="/escaperooms/:id" component={ Post } />
-        <Route exact path="/oddities" component={ Posts } />
-        <Route exact path="/oddities/:id" component={ Post } />
+        <Route exact path="reviews/posts/:id" component={Post} />
+        <Route exact path="reviews/posts" component={ Posts } />
+        <Route exact path="reviews/haunts" component={ Posts } />
+        <Route exact path="reviews/haunts/:id" component={ Post } />
+        <Route exact path="reviews/escaperooms" component={ Posts } />
+        <Route exact path="reviews/escaperooms/:id" component={ Post } />
+        <Route exact path="reviews/oddities" component={ Posts } />
+        <Route exact path="reviews/oddities/:id" component={ Post } />
         <Route exact path="/contact" component={ Contact } />
         <Route exact path="/about" component={ ProfilePage } />
         <Route exact path="/admin/login" component={ Login } />
         <Route exact path="/searchresults" component={ SearchResults} />
+        <Route exact path="/SkeletonKeyAwards" component={ SkeletonKeyContainer} />
         {/* <Route render={ () => <h1>404 Error</h1> } /> */}
       </Switch>
     </Router>
