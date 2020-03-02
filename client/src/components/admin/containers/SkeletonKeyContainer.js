@@ -3,7 +3,7 @@ import { getPost } from '../../../actions/postActions';
 import { connect } from 'react-redux';
 import { withRouter, Redirect } from 'react-router-dom'
 
-import EditForm from '../EditForm';
+import SkeletonKeyForm from '../SkeletonKeyForm';
 import AdminHeader from '../AdminHeader'
 class SkeletonKeyContainer extends Component {
 
@@ -19,8 +19,8 @@ class SkeletonKeyContainer extends Component {
       </div>
       <div>
 
-      <EditForm
-        
+      <SkeletonKeyForm
+
         />
 
       </div>
