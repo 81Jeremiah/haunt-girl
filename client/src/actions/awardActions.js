@@ -17,3 +17,16 @@ export const createAward = (newAward) => {
     });
   }
 }
+
+export const fetchWinners = () => {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_AWARDS'});
+    return fetch('/api/awards', {
+      method: "GET"
+    })
+    .then(response => response.json())
+    .then(award => {
+      dispatch({type:'FETCH_AWARDS', award:award});
+    });
+  }
+}
