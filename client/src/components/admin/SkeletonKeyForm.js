@@ -1,16 +1,17 @@
 import React,{Component} from 'react';
 import Editor from './Editor'
-import AdminHeader from '.AdminHeader'
+import AdminHeader from './AdminHeader'
 import {connect} from 'react-redux';
-import {createAward} from '../../actions/awardsActions';
+import {createAward} from '../../actions/awardActions';
 import Form from 'react-bootstrap/Form';
 
 class SkeletonKeyForm extends Component{
-
   state = {
     title: "",
     link: "",
-}
+    content: ""
+   }
+
 
   handleSubmit = event =>{
     event.preventDefault()
@@ -23,6 +24,12 @@ class SkeletonKeyForm extends Component{
       [name]: value
     })
   }
+
+  getEditorText = (editorText) =>{
+    this.setState({
+      content: editorText
+    })
+  };
 
   render(){
   return(
@@ -38,7 +45,7 @@ class SkeletonKeyForm extends Component{
          onChange={this.handleChange}
          name="title"/>
     </Form.Group>
-    <div><Editor /> </div>
+    <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
     </Form>
     </>
   );
