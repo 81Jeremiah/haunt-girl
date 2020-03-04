@@ -1,8 +1,10 @@
 class Api::AwardsController < ApplicationController
+  skip_before_action :authorized, only: [:create]
 
   def create
 
     award= Award.new(award_params)
+    render json: award
 
   end
 
@@ -10,6 +12,6 @@ class Api::AwardsController < ApplicationController
   private
 
   def award_params
-    params.require(:award).permit(:title, :year, :link)
+    params.require(:award).permit(:title, :year, :link, :content)
   end
 end
