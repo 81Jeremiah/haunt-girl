@@ -3,7 +3,7 @@ class Api::AwardsController < ApplicationController
 
   def create
 
-    award= Award.new(award_params)
+    award= Award.create(award_params)
     render json: award
 
   end
