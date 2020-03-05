@@ -6,16 +6,21 @@ import Form from 'react-bootstrap/Form';
 
 class SkeletonKeyForm extends Component{
   state = {
-    title: "",
-    link: "",
-    content: "",
-    year:""
-   }
+
+      title: "",
+      link_to_post: "",
+      content: "",
+      year:""
+
+}
 
 
   handleSubmit = event =>{
     event.preventDefault()
-    this.props.createAward(this.state)
+    const award = this.state
+    console.log( {'award': award})
+
+    this.props.createAward({'award': award})
   }
 
   handleChange = event =>{
