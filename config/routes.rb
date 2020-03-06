@@ -13,7 +13,7 @@ Rails.application.routes.draw do
    get 'posts/:id/edit' => 'posts#edit'
    resources :categories, only: [:show]
    resources :states, only: [:index, :show]
-   resources :awards, only: [:create]
+   resources :awards, only: [:create, :index, :show]
  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
