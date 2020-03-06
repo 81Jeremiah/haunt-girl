@@ -18,6 +18,7 @@ class SkeletonKeyForm extends Component{
   handleSubmit = event =>{
     event.preventDefault()
     const award = this.state
+    console.log(award)
     console.log( {'award': award})
 
     this.props.createAward({'award': award})
@@ -58,6 +59,15 @@ class SkeletonKeyForm extends Component{
         value={this.state.year}
         onChange={this.handleChange}
         name="year"/>
+    </Form.Group>
+    <Form.Group controlId="">
+      <Form.Label column sm={2}>Link</Form.Label>
+      <Form.Control
+        size="lg"
+        type="text"
+        value={this.state.link_to_post}
+        onChange={this.handleChange}
+        name="link_to_post"/>
     </Form.Group>
     <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
      <input type="submit" value='Create Award'/>
