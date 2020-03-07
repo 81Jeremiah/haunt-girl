@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchWinners } from '../actions/winnersActions';
+import { fetchWinners } from '../actions/awardActions';
 import { connect } from 'react-redux';
 import AwardsList from '../components/AwardsList';
 import Navbar from '../components/Navbar';
@@ -47,7 +47,7 @@ class SkeletonKeyContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    winners: state.winners.winners,
+    winners: state.awards.awards,
   }
 }
 
