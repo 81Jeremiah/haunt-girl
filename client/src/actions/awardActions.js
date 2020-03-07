@@ -26,8 +26,8 @@ export const fetchWinners = () => {
       method: "GET"
     })
     .then(response => response.json())
-    .then(award => {
-      dispatch({type:'FETCH_AWARDS', award:award});
+    .then(awards => {
+      dispatch({type:'FETCH_AWARDS', awards:awards});
     });
   }
 }
