@@ -6,7 +6,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 
 const AwardsList = (props) =>{
-
+  console.log(props)
   const listWinners = props.winners.map( winner => {
 
     return(
@@ -23,13 +23,13 @@ const AwardsList = (props) =>{
 							<div className="rating">
 								<h5><i>Rating</i><span>4.5</span> / 5</h5>
 							</div>
-							<div className="top-meta">{post.published_at}  /  in <Link to={props.categoryRoute}>{post.category.name}</Link></div>
-              <h3>{post.title}</h3>
+							<div className="top-meta">{winner.year}  /  in <Link to={winner.link_to_post}>original post</Link></div>
+            <h3>{winner.title}</h3>
             <div className="review-content text-box text-white">
-                    {ReactHtmlParser(post.content.substring(0,250))}
+                    
                   </div>
                    <br/>
-                 <Link to={`${props.categoryRoute}/${post.id}`} className="read-more">Read More  <img src={doubleArrow} alt=""/></Link>
+                 <Link to={`${props.categoryRoute}/${winner.id}`} className="read-more">Read More  <img src={doubleArrow} alt=""/></Link>
           </div>
         </div>
       </div>
