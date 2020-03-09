@@ -14,6 +14,7 @@ Rails.application.routes.draw do
    resources :categories, only: [:show]
    resources :states, only: [:index, :show]
    resources :awards, only: [:create, :index, :show]
+   resources :interviews, only: [:create, :index, :show]
  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
