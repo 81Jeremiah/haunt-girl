@@ -1,5 +1,5 @@
 class InterviewSerializer < ActiveModel::Serializer
-  attributes :title, :content, :website
+  attributes :id, :title, :content, :website
 
 
 end

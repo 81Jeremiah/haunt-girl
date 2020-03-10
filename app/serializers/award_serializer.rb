@@ -1,5 +1,5 @@
 class AwardSerializer < ActiveModel::Serializer
-  attributes :title, :year,:link_to_post,:content
+  attributes :id, :title, :year,:link_to_post,:content
 
 
 end
