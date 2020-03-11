@@ -7,6 +7,8 @@ import InterviewForm from './components/admin/InterviewForm';
 import TopListsForm from './components/admin/TopListsForm';
 import MyEditor from './components/admin/newEditForm/MyEditor'
 import SkeletonKeyContainer from './components/admin/containers/SkeletonKeyContainer';
+import AnnouncementContainer from './components/admin/containers/AnnouncementContainer';
+
 
 const Routes = () => {
 
@@ -21,6 +23,7 @@ const Routes = () => {
         <Route exact path='/admin/newEditForm' component= { MyEditor} />
         <Route exact path="/admin/home" component={ Home } />
         <Route exact path="/admin/awards/new" component={ SkeletonKeyContainer } />
+        <Route exact path="/admin/announcements/new" component={ AnnouncementContainer } />
       </Switch>
     </Router>
   )

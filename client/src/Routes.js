@@ -5,7 +5,7 @@ import ProfilePage from './components/Static/About';
 import Posts from './containers/Posts';
 import SkeletonKeyContainer from './containers/SkeletonKeyContainer';
 import Post from './components/Post';
-
+import AnnouncementsContainer from './containers/AnnouncementsContainer';
 import Contact from './components/Static/Contact';
 import Login from './components/admin/Login';
 import SearchResults from './components/SearchResults';
@@ -29,6 +29,7 @@ const Routes = () => {
         <Route exact path="/admin/login" component={ Login } />
         <Route exact path="/searchresults" component={ SearchResults} />
         <Route exact path="/SkeletonKeyAwards" component={ SkeletonKeyContainer} />
+        <Route exact path="/announcements" component={ AnnouncementsContainer} />
         {/* <Route render={ () => <h1>404 Error</h1> } /> */}
       </Switch>
     </Router>
