@@ -51,4 +51,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps)(AnnouncementsContainer)
+export default connect(mapStateToProps, {fetchAnnouncements})(AnnouncementsContainer)
