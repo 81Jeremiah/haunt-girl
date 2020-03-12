@@ -30,3 +30,15 @@ export const fetchAnnouncements = () => {
     });
   }
 }
+
+export const getAnnouncement = (announcementId) => {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_ANNOUNCEMENT'});
+      return fetch('/api/posts/'+ announcementId)
+
+    .then(response => response.json())
+    .then(announcement => {
+        return dispatch({type: 'FETCH_ANNOUNCEMENT', announcement:announcement})
+    });
+  }
+}

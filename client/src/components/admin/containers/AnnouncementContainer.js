@@ -1,13 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter, Redirect } from 'react-router-dom'
-
+import  {getAnnouncement} from '../../../actions/announcementActions'
 import AnnouncementForm from '../AnnouncementForm';
 import AdminHeader from '../AdminHeader'
 
 class AnnouncementContainer extends Component {
 
-
+ // componentDidMount(){
+ //   const announcementId = this.props.match.params.id
+ //   this.props.getAnnouncement(announcementId)
+ //
+ // }
 
 
   render(){
@@ -30,8 +34,9 @@ class AnnouncementContainer extends Component {
 }
 
 
-const mapStateToProps = state => {
-    return {announcement: state.announcement.announcement}
-};
+// const mapStateToProps = state => {
+//     return {announcement: state.announcement.announcement}
+// };
 
-export default AnnouncementContainer = withRouter(connect(mapStateToProps )(AnnouncementContainer));
+export default AnnouncementContainer
+// export default AnnouncementContainer = withRouter(connect(mapStateToProps, {getAnnouncement} )(AnnouncementContainer));
