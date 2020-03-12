@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getAward } from '../../../actions/postActions';
 import { connect } from 'react-redux';
 import { withRouter, Redirect } from 'react-router-dom'
 
@@ -35,4 +34,4 @@ const mapStateToProps = state => {
     return {announcement: state.announcement.announcement}
 };
 
-export default AnnouncementContainer = withRouter(connect(mapStateToProps, {getAward})(AnnouncementContainer));
+export default AnnouncementContainer = withRouter(connect(mapStateToProps )(AnnouncementContainer));

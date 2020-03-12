@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { getAward } from '../../../actions/postActions';
 import { connect } from 'react-redux';
 import { withRouter, Redirect } from 'react-router-dom'
 
@@ -34,4 +33,4 @@ const mapStateToProps = state => {
     return {award: state.awards.award}
 };
 
-export default SkeletonKeyContainer = withRouter(connect(mapStateToProps, {getAward})(SkeletonKeyContainer));
+export default SkeletonKeyContainer = withRouter(connect(mapStateToProps )(SkeletonKeyContainer));
