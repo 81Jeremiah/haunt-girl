@@ -1,4 +1,5 @@
 class Api::AnnouncementsController < ApplicationController
+  skip_before_action :authorized, only: [:index, :show, :create]
 
 
   def index
@@ -20,7 +21,7 @@ class Api::AnnouncementsController < ApplicationController
 
   private
 
-  def award_params
+  def announcement_params
     params.require(:announcement).permit(:title, :content)
   end
 end
