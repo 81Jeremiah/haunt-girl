@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import Editor from './Editor'
 import {connect} from 'react-redux';
-import {createAward} from '../../actions/awardActions';
+import {createInterview} from '../../actions/interviewActions';
 import Form from 'react-bootstrap/Form';
 
 class InterviewForm extends Component{
@@ -53,7 +53,7 @@ class InterviewForm extends Component{
         type="text"
         value={this.state.website}
         onChange={this.handleChange}
-        name="websitet"/>
+        name="website"/>
     </Form.Group>
     <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
      <input type="submit" value='Create Interview'/>
@@ -63,4 +63,4 @@ class InterviewForm extends Component{
  }
 }
 
-export default connect(null,{createAward})(InterviewForm)
+export default connect(null,{createInterview})(InterviewForm)
