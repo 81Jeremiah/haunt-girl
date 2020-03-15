@@ -1,0 +1,2 @@
+class TopList < ApplicationRecord
+end
