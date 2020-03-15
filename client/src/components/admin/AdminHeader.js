@@ -11,6 +11,7 @@ const AdminHeader = () => {
           <li><Link to="/admin/interviews/new">Add New Interviews</Link></li>
           <li><Link to="/admin/TopLists/new">Add New Top Lists</Link></li>
           <li><Link to="/admin/awards/new">Add Skeleton Keys</Link></li>
+          <li><Link to="/admin/announcements/new">Add Announcements</Link></li>
           <li><Link to="/admin/about">About</Link></li>
           <li><Link to="admin/contact">Contact</Link></li>
         </ul>
