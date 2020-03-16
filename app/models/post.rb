@@ -10,8 +10,13 @@ class Post < ApplicationRecord
   has_one_attached :image
   scope :by_state, -> (state_id){joins(:state).where("state_id=?", state_id)}
   scope :search, ->(query) {where( 'lower(title) LIKE ?', "%#{query}%".downcase)}
+  # scope :escape_room_search, ->(query){}
 
-
+  def escape_room_search(query):
+    SELECT *.p
+    FROM post p JOIN category c ON p.id = c.post_id
+    WHERE c.name = "essape room" and query LIKE "%#{query}%";
+ end
   def city_name=(name)
     self.city = City.find_or_create_by(name: name.titleize)
   end
