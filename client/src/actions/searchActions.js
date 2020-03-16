@@ -8,3 +8,15 @@ export const search = (query) => {
     })
   }
 }
+
+
+export const escapeRoomSearch = (query) => {
+  return (dispatch) => {
+    dispatch({type: 'SEARCHING'});
+    return fetch(`/api/posts/escape_room_search?title=${query}`)
+    .then(response => response.json())
+    .then(posts => {
+      return dispatch({ type: 'SEARCH_RESULTS', posts: posts })
+    })
+  }
+}
