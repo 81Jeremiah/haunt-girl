@@ -70,6 +70,10 @@ class Api::PostsController < ApplicationController
     render json: @posts
   end
 
+  def escape_room_search
+    @escape_rooms = Post.find_escape_rooms(params[:title])
+  end
+
   private
 
   def set_post
