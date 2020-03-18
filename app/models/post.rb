@@ -15,7 +15,7 @@ class Post < ApplicationRecord
   def escape_room_search(query):
     SELECT *.p
     FROM post p JOIN category c ON p.id = c.post_id
-    WHERE c.name = "essape room" and query LIKE "%#{query}%";
+    WHERE c.name = "Escape Room" and p.title LIKE "%#{query}%";
  end
   def city_name=(name)
     self.city = City.find_or_create_by(name: name.titleize)
