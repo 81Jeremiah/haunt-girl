@@ -1,4 +1,5 @@
-class Api::AwardsController < ApplicationController
+class Api::InterviewsController < ApplicationController
+  skip_before_action :authorized, only: [:index, :create, :show]
 
 
   def index
@@ -8,8 +9,8 @@ class Api::AwardsController < ApplicationController
 
   def create
 
-    interview= Interview.create(award_params)
-    render json: award
+    interview = Interview.create(award_params)
+    render json: interview
 
   end
 
