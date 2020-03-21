@@ -4,10 +4,9 @@ import { connect } from 'react-redux';
 import { withRouter, Redirect } from 'react-router-dom'
 
 import InterviewForm from '../InterviewForm';
-import AdminHeader from '../AdminHeader'
+import AdminHeader from '../AdminHeader';
+
 class InterviewContainer extends Component {
-
-
 
 
   render(){
@@ -16,10 +15,11 @@ class InterviewContainer extends Component {
      <>
       <div className='AdminHeader'>
         <AdminHeader />
+      
       </div>
       <div>
 
-      <InterviewForm
+        <InterviewForm
 
         />
 
@@ -29,10 +29,11 @@ class InterviewContainer extends Component {
   }
 }
 
+export default InterviewContainer
 
-const mapStateToProps = state => {
-    console.log(state.posts.post)
-    return {interview: state.interviews.interview}
-};
-
-export default InterviewContainer = withRouter(connect(mapStateToProps, {getInterview})(InterviewContainer));
+// const mapStateToProps = state => {
+//
+//     return {interview: state.interviews.interview}
+// };
+//
+// export default InterviewContainer = withRouter(connect(mapStateToProps, {getInterview})(InterviewContainer));
