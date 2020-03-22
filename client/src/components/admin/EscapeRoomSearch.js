@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, FormControl, Form } from 'react-bootstrap';
-import { search } from '../actions/searchActions';
+import { escapeRoomSearch } from '../../actions/searchActions';
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
@@ -25,7 +25,7 @@ import { Redirect } from 'react-router-dom'
   handleSubmit = event =>{
     event.preventDefault()
 
-    this.props.search(this.state.query)
+    this.props.escapeRoomSearch(this.state.query)
     this.setState({
       query: "",
       redirect: true})
@@ -55,4 +55,4 @@ import { Redirect } from 'react-router-dom'
   }
 }
 
-export default connect(null, {search})(EscapeRoomSearch);
+export default connect(null, {escapeRoomSearch})(EscapeRoomSearch);
