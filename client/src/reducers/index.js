@@ -6,6 +6,7 @@ import adminReducer from './adminReducer';
 import cityReducer from './cityReducer';
 import awardReducer from './awardReducer';
 import interviewReducer from './interviewReducer';
+import listReducer from './listReducer';
 
 const rootReducer = combineReducers({
   posts: postReducer,
@@ -14,8 +15,8 @@ const rootReducer = combineReducers({
   admin: adminReducer,
   cities: cityReducer,
   awards: awardReducer,
-  interviews: interviewReducer
-
+  interviews: interviewReducer,
+  lists : listReducer
 })
 
 

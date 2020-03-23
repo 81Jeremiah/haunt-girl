@@ -17,6 +17,17 @@ export default ( state =
     case 'FETCH_INTERVIEW':
       return {...state, loading:false, interview: action.interview}
 
+    case 'SENDING_INTERVIEW':
+      return {...state, loading: true}
+
+    case 'CREATE_INTERVIEW':
+      return {...state, loading: false, list: action.interview}
+
+    case 'UPDATE_INTERVIEW':
+        return {...state, loading: false, list: action.interview}
+
+
+
     default:
       return state
   }
