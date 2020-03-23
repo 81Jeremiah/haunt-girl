@@ -12,7 +12,7 @@ import { Redirect } from 'react-router-dom'
     super(props)
     this.state = {
     query: "",
-    redirect: false
+
   }
 }
 
@@ -27,17 +27,11 @@ import { Redirect } from 'react-router-dom'
 
     this.props.escapeRoomSearch(this.state.query)
     this.setState({
-      query: "",
-      redirect: true})
+      query: ""})
   }
 //redirects to search page once submit button clicked
   render() {
-    if (this.state.redirect === true){
-      this.setState({
-        query: "",
-        redirect: false})
-      return <Redirect to="/searchresults" />
-    }
+
     return(
       <Form inline onSubmit={this.handleSubmit}>
         <FormControl
