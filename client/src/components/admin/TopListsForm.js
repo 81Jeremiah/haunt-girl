@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import Editor from './Editor'
 import {connect} from 'react-redux';
-import {createAward} from '../../actions/awardActions';
+import {createList} from '../../actions/listActions';
 import Form from 'react-bootstrap/Form';
 import EscapeRoomSearch from './EscapeRoomSearch'
 class TopListsForm extends Component {
@@ -15,11 +15,10 @@ class TopListsForm extends Component {
 
     handleSubmit = event =>{
       event.preventDefault()
-      const award = this.state
-      console.log(award)
-      console.log( {'award': award})
+      const list = this.state
 
-      this.props.createAward({'award': award})
+
+      this.props.createList({'list': list})
     }
 
     handleChange = event =>{
@@ -58,7 +57,7 @@ class TopListsForm extends Component {
           name="year"/>
       </Form.Group>
       <EscapeRoomSearch />
-      <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
+
        <input type="submit" value='Create List'/>
       </Form>
       </>
@@ -68,4 +67,4 @@ class TopListsForm extends Component {
 
 
 
-export default TopListsForm
+export default connect(null,{createList})(TopListsForm)
