@@ -1,6 +1,7 @@
 export default ( state =
   { loading: false,
     awards: [],
+    award: {}
   }, action) => {
   switch(action.type){
 
@@ -9,6 +10,17 @@ export default ( state =
 
     case 'FETCH_AWARDS':
       return {...state, loading:false, awards: action.awards}
+
+    case 'SENDING_AWARD':
+      return {...state, loading: true}
+
+    case 'CREATE_AWARD':
+      return {...state, loading: false, award: action.award}
+
+    case 'UPDATE_AWARD':
+        return {...state, loading: false, award: action.award}
+
+
 
     default:
       return state
