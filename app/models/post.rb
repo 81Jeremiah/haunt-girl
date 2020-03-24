@@ -10,7 +10,8 @@ class Post < ApplicationRecord
   has_one_attached :image
   scope :by_state, -> (state_id){joins(:state).where("state_id=?", state_id)}
   scope :search, ->(query) {where( 'lower(title) LIKE ?', "%#{query}%".downcase)}
-  scope :escape_room_search, ->(query){joins(:category).where(["category_id=? and title=?", 1 ,"%#{query}%" ])}
+  scope :find_escape_rooms, ->(query){joins(:category).where(["category_id=? and lower(title) LIKE ?", 1 ,"%#{query}%".downcase ])}
+  # scope :find_escape_rooms, ->(query){where("title LIKE ?","%#{query}%" )}
 
 
 
