@@ -72,6 +72,7 @@ class Api::PostsController < ApplicationController
 
   def escape_room_search
     @escape_rooms = Post.find_escape_rooms(params[:title])
+    render json: @escape_rooms
   end
 
   private
