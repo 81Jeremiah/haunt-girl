@@ -8,8 +8,9 @@ class TopListsForm extends Component {
   state = {
 
       title: "",
-      area: ""
-
+      area: "",
+      escapeRoom:{},
+      escapeRooms: []
   }
 
 
@@ -34,6 +35,23 @@ class TopListsForm extends Component {
       })
     };
 
+    addEscapeRoom = (escapeRoom) =>{
+      this.setState({
+        escapeRoom:escapeRoom
+      })
+    }
+
+    addIngredient = event => {
+      event.preventDefault()
+      const { escapeRooms, escapeRoom } = this.state;
+      escapeRooms.push(escapeRoom)
+
+      this.setState({
+        escapeRooms,
+        escapeRoom: ''
+      }, () => console.log(escapeRooms))
+    }
+
     render(){
     return(
       <>
@@ -56,7 +74,8 @@ class TopListsForm extends Component {
           onChange={this.handleChange}
           name="year"/>
       </Form.Group>
-      <EscapeRoomSearch />
+      <EscapeRoomSearch
+          addEscapeRoom={this.addEscapeRoom} />
 
        <input type="submit" value='Create List'/>
       </Form>
