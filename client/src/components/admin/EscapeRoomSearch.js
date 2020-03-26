@@ -12,7 +12,8 @@ import { Redirect } from 'react-router-dom'
     super(props)
     this.state = {
     query: "",
-    found: {}
+    foundResult: {},
+    found: false
 
   }
 }
@@ -29,7 +30,8 @@ import { Redirect } from 'react-router-dom'
     this.props.escapeRoomSearch(this.state.query)
     this.setState({
       query: "",
-      found:this.props.escapeRoom})
+      foundResult:this.props.escapeRoom})
+    console.log(this.state)
   }
 
   handleClick = event =>{
@@ -49,7 +51,7 @@ import { Redirect } from 'react-router-dom'
           onChange={this.handleChange}/>
 
          <Button className='search-btn' type="submit"  variant="outline-success">Search</Button>
-         <div>{this.found.name}</div>
+         {/*<div>{this.found.name}</div> */}
          <Button onClick={this.handleClick}>Add</Button>
       </Form>
 
@@ -60,8 +62,9 @@ import { Redirect } from 'react-router-dom'
 }
 
 
+
 const mapStateToProps = state => {
-  return {escapeRoom:state.searchResults.foundPost}
+  return {escapeRoom: state.searchResults.foundPosts}
 }
 
 export default connect(mapStateToProps, {escapeRoomSearch})(EscapeRoomSearch);
