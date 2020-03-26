@@ -55,6 +55,9 @@ class TopListsForm extends Component {
     render(){
     return(
       <>
+      <EscapeRoomSearch
+          addEscapeRoom={this.addEscapeRoom} />
+
       <Form onSubmit={this.handleSubmit}>
       <Form.Group controlId="">
         <Form.Label column sm={2}>Title</Form.Label>
@@ -74,8 +77,6 @@ class TopListsForm extends Component {
           onChange={this.handleChange}
           name="year"/>
       </Form.Group>
-      <EscapeRoomSearch
-          addEscapeRoom={this.addEscapeRoom} />
 
        <input type="submit" value='Create List'/>
       </Form>
