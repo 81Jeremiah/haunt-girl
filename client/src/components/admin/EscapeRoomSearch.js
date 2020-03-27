@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Button, FormControl, Form } from 'react-bootstrap';
 import { escapeRoomSearch } from '../../actions/searchActions';
-import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
-
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
+import SearchResults from  './SearchResults';
 
 
  class EscapeRoomSearch extends Component {
@@ -28,20 +28,21 @@ import { Redirect } from 'react-router-dom'
     event.preventDefault()
 
     this.props.escapeRoomSearch(this.state.query)
-    this.setState({
-      query: "",
-      foundResult:this.props.escapeRoom})
-    console.log(this.state)
+    // this.setState({
+    //   query: "",
+    //   foundResult:this.props.escapeRoom})
+    //   console.log(this.state)
   }
 
   handleClick = event =>{
     event.preventDefault()
     this.props.addEscapeRoom(this.state.found)
   }
-//redirects to search page once submit button clicked
+
   render() {
 
     return(
+      <>
       <Form inline onSubmit={this.handleSubmit}>
         <FormControl
           type="text"
@@ -52,9 +53,12 @@ import { Redirect } from 'react-router-dom'
 
          <Button className='search-btn' type="submit"  variant="outline-success">Search</Button>
          {/*<div>{this.found.name}</div> */}
-         <Button onClick={this.handleClick}>Add</Button>
+
       </Form>
 
+      <SearchResults escapeRooms={this.props.escapeRooms}/>
+
+      </>
 
     )
 
@@ -64,7 +68,9 @@ import { Redirect } from 'react-router-dom'
 
 
 const mapStateToProps = state => {
-  return {escapeRoom: state.searchResults.foundPosts}
+  console.log(state)
+  return {escapeRooms: state.searchResults.foundPosts}
+
 }
 
 export default connect(mapStateToProps, {escapeRoomSearch})(EscapeRoomSearch);
