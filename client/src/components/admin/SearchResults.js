@@ -1,21 +1,22 @@
-import React from 'react';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import ResultList from './ResultList';
 
-const SearchResults = (props) => {
-  console.log(props)
-  const results = props.escapeRooms.map(escaperoom => {
+class SearchResults extends Component{
+
+  render(){
     return(
-      <li key={escaperoom.id}>{escaperoom.title}
-      <button onClick={this.handleClick}>Add</button>
-      </li>
-     )
-  });
+      <ResultList escapeRooms={this.props.escapeRooms} />
+    )
+  }
 
-  return(
-     <ul>
-      {results}
-     </ul>
-  )
 }
 
 
-export default SearchResults
+const mapStateToProps = state => {
+  console.log(state)
+  return {escapeRooms: state.searchResults.foundPosts}
+
+}
+
+export default connect(mapStateToProps)(SearchResults)
