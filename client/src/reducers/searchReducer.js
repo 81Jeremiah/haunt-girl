@@ -7,11 +7,11 @@ export default (state =
   switch(action.type) {
 
     case 'SEARCHING':
-      return { loading: true}
+      return { ...state, loading: true}
 
 
     case 'SEARCH_RESULTS':
-      return {loading: false, foundPosts: action.posts }
+      return {...state, loading: false, foundPosts: action.posts }
 
     default:
       return state;
