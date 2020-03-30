@@ -24,6 +24,12 @@ import SearchResults from  './SearchResults';
     })
   }
 
+foundEscapeRoom = (escapeRoom) =>{
+  this.setState({
+    foundResult: escapeRoom,
+    found: true
+  })
+}
   handleSubmit = event =>{
     event.preventDefault()
 
@@ -39,7 +45,16 @@ import SearchResults from  './SearchResults';
     this.props.addEscapeRoom(this.state.found)
   }
 
+
   render() {
+    const found = this.state.found
+    let escapeRoom;
+    if (found){
+      escapeRoom = this.state.foundEscapeRoom.title
+    }
+    else{
+      escapeRoom = ""
+    }
 
     return(
       <>
@@ -56,21 +71,16 @@ import SearchResults from  './SearchResults';
 
       </Form>
 
-      <SearchResults escapeRooms={this.props.escapeRooms}/>
+      <SearchResults
+        foundEscapeRoom={this.foundEscapeRoom} />
+
+      <div>{escapeRoom}</div>
+
 
       </>
 
     )
-
   }
 }
 
-
-
-const mapStateToProps = state => {
-  console.log(state)
-  return {escapeRooms: state.searchResults.foundPosts}
-
-}
-
-export default connect(mapStateToProps, {escapeRoomSearch})(EscapeRoomSearch);
+export default connect(null, {escapeRoomSearch})(EscapeRoomSearch);
