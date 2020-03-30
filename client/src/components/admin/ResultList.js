@@ -1,22 +1,30 @@
-import React from 'react';
+import React,{Component} from 'react';
 
-const ResultList = (props) => {
-  console.log(props)
+class ResultList extends Component {
 
+ handleAddClick = (escaperoom) =>{
+   this.props.foundEscapeRoom(escaperoom)
+ }
 
-  const results = props.escapeRooms.map(escaperoom => {
+render(){
+
+  const results = this.props.escapeRooms.map(escaperoom => {
     return(
       <li key={escaperoom.id}><strong>{escaperoom.title}</strong>
-      <button >Add</button>
+      <button onClick={this.handleAddClick(escaperoom)}>Add</button>
       </li>
      )
   });
 
   return(
      <ul>
+       {console.log(this.props)}
       {results}
      </ul>
   )
+
+}
+
 }
 
 export default ResultList
