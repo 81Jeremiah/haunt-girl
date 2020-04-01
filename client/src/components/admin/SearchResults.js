@@ -4,14 +4,21 @@ import ResultList from './ResultList';
 
 class SearchResults extends Component{
 
+
+
   render(){
+    
     return(
-      <ResultList escapeRooms={this.props.escapeRooms} />
+      <div>
+      {console.log(this.props)}
+      <ResultList
+        escapeRooms={this.props.escapeRooms}
+        foundEscapeRoom={this.props.foundEscapeRoom}/>
+      </div>
     )
   }
 
 }
-
 
 const mapStateToProps = state => {
   console.log(state)
