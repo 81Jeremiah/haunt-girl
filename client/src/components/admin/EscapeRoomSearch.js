@@ -40,17 +40,13 @@ foundEscapeRoom = (escapeRoom) =>{
     //   console.log(this.state)
   }
 
-  handleClick = event =>{
-    event.preventDefault()
-    this.props.addEscapeRoom(this.state.found)
-  }
-
 
   render() {
     const found = this.state.found
     let escapeRoom;
     if (found){
-      escapeRoom = this.state.foundEscapeRoom.title
+      console.log(this.state)
+      escapeRoom = this.state.foundResult.title
     }
     else{
       escapeRoom = ""
