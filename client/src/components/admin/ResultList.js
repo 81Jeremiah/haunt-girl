@@ -2,13 +2,10 @@ import React,{Component} from 'react';
 
 class ResultList extends Component {
 
-  state = {
-    escapeRoom:{}
-  }
 
-   handleAddClick = ( escaperoom) =>{
-     this.props.foundEscapeRoom(escaperoom)
-   }
+  handleAddClick = ( escaperoom) =>{
+   this.props.foundEscapeRoom(escaperoom)
+  }
 
 render(){
 
@@ -19,7 +16,7 @@ render(){
       <button onClick={() => this.handleAddClick(escaperoom)}>Add</button>
       </li>
      )
-  });
+   });
 
   return(
      <ul>
