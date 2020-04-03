@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Button, FormControl, Form } from 'react-bootstrap';
 import { escapeRoomSearch } from '../../actions/searchActions';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import SearchResults from  './SearchResults';
 
 
@@ -12,8 +11,8 @@ import SearchResults from  './SearchResults';
     super(props)
     this.state = {
     query: "",
-    foundResult: {},
-    found: false
+    // foundResults: [],
+    // found: false
 
   }
 }
@@ -24,12 +23,7 @@ import SearchResults from  './SearchResults';
     })
   }
 
-foundEscapeRoom = (escapeRoom) =>{
-  this.setState({
-    foundResult: escapeRoom,
-    found: true
-  })
-}
+
   handleSubmit = event =>{
     event.preventDefault()
 
@@ -42,15 +36,15 @@ foundEscapeRoom = (escapeRoom) =>{
 
 
   render() {
-    const found = this.state.found
-    let escapeRoom;
-    if (found){
-      console.log(this.state)
-      escapeRoom = this.state.foundResult.title
-    }
-    else{
-      escapeRoom = ""
-    }
+    // const found = this.state.found
+    // let escapeRoom;
+    // if (found){
+    //   console.log(this.state)
+    //   escapeRoom = this.state.foundResult.title
+    // }
+    // else{
+    //   escapeRoom = ""
+    // }
 
     return(
       <>
@@ -68,9 +62,8 @@ foundEscapeRoom = (escapeRoom) =>{
       </Form>
 
       <SearchResults
-        foundEscapeRoom={this.foundEscapeRoom} />
+        foundEscapeRoom={this.props.foundEscapeRoom} />
 
-      <div>{escapeRoom}</div>
 
 
       </>
