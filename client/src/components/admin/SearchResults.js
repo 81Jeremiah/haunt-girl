@@ -7,10 +7,9 @@ class SearchResults extends Component{
 
 
   render(){
-    
+
     return(
       <div>
-      {console.log(this.props)}
       <ResultList
         escapeRooms={this.props.escapeRooms}
         foundEscapeRoom={this.props.foundEscapeRoom}/>
