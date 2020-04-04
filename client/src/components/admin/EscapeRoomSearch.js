@@ -10,12 +10,9 @@ import SearchResults from  './SearchResults';
   constructor(props) {
     super(props)
     this.state = {
-    query: "",
-    // foundResults: [],
-    // found: false
-
+      query: "",
+     }
   }
-}
 
   handleChange = event => {
     this.setState({
@@ -26,25 +23,14 @@ import SearchResults from  './SearchResults';
 
   handleSubmit = event =>{
     event.preventDefault()
-
     this.props.escapeRoomSearch(this.state.query)
-    // this.setState({
-    //   query: "",
-    //   foundResult:this.props.escapeRoom})
-    //   console.log(this.state)
+    this.setState({
+      query: "",
+    });
   }
 
 
-  render() {
-    // const found = this.state.found
-    // let escapeRoom;
-    // if (found){
-    //   console.log(this.state)
-    //   escapeRoom = this.state.foundResult.title
-    // }
-    // else{
-    //   escapeRoom = ""
-    // }
+  render(){
 
     return(
       <>
