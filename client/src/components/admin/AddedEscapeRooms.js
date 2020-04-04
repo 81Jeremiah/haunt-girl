@@ -1,11 +1,15 @@
 import React from 'react';
 
 const AddedEscapeRooms = (props) => {
-  console.log(props.escapeRooms)
+
+  const handleClick = (escaperoom) => {
+    props.deleteEscapeRoom(escaperoom)
+  }
+
   const results = props.escapeRooms.map(escaperoom => {
     return(
 
-      <li key={escaperoom.id}>{escaperoom.title}</li>
+      <li key={escaperoom.id}>{escaperoom.title}<span onClick={()=> handleClick(escaperoom)}>(x)</span></li>
      )
   });
 
