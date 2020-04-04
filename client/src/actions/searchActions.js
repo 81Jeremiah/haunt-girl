@@ -20,3 +20,9 @@ export const escapeRoomSearch = (query) => {
     })
   }
 }
+
+export const removeFound = () => {
+  return (dispatch) => {
+    dispatch({type: 'CLEAR_RESULTS'});
+  }
+}
