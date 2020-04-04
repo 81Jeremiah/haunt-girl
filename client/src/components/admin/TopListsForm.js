@@ -5,15 +5,14 @@ import {createList} from '../../actions/listActions';
 import Form from 'react-bootstrap/Form';
 import EscapeRoomSearch from './EscapeRoomSearch';
 import AddedEscapeRooms from './AddedEscapeRooms';
+import {removeFound} from '../../actions/searchActions';
 
 class TopListsForm extends Component {
   state = {
 
       title: "",
       area: "",
-      escapeRoom:{},
       escapeRooms: [],
-      found:false
   }
 
 
@@ -28,8 +27,8 @@ class TopListsForm extends Component {
     foundEscapeRoom = (escapeRoom) =>{
       this.setState({
         escapeRooms: [...this.state.escapeRooms, escapeRoom]
-        // found: true
       })
+      this.props.removeFound()
       console.log(this.state.escapeRooms)
     }
 
@@ -40,10 +39,16 @@ class TopListsForm extends Component {
       })
     }
 
+    deleteEscapeRoom = escapeRoom =>{
+
+      let filteredEscapeRooms = this.state.escapeRooms.filter(room => room !== escapeRoom)
+      this.setState({escapeRooms: filteredEscapeRooms});
+    }
+
 
 
     render(){
-      
+
     return(
       <>
       <EscapeRoomSearch
@@ -70,7 +75,9 @@ class TopListsForm extends Component {
             name="year"/>
         </Form.Group>
 
-        <AddedEscapeRooms escapeRooms={this.state.escapeRooms} />
+        <AddedEscapeRooms
+          escapeRooms={this.state.escapeRooms}
+          deleteEscapeRoom={this.deleteEscapeRoom} />
         <input type="submit" value='Create List'/>
       </Form>
       </>
@@ -80,4 +87,4 @@ class TopListsForm extends Component {
 
 
 
-export default connect(null,{createList})(TopListsForm)
+export default connect(null,{createList, removeFound})(TopListsForm)
