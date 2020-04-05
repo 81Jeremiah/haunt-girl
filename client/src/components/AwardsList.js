@@ -21,13 +21,13 @@ const AwardsList = (props) =>{
 					<div className="col-lg-8">
 						<div className="review-content text-box text-white">
 							<div className="rating">
-								<h5><i>Rating</i><span>4.5</span> / 5</h5>
+								<h5><i>Best Something out of Something</i></h5>
 							</div>
 							<div className="top-meta">{winner.year}  /  in <Link to={winner.link_to_post}>original post</Link></div>
             <h3>{winner.title}</h3>
             <div className="review-content text-box text-white">
-                    
-                  </div>
+               {ReactHtmlParser(winner.content.substring(0,250))}
+            </div>
                    <br/>
                  <Link to={`${props.categoryRoute}/${winner.id}`} className="read-more">Read More  <img src={doubleArrow} alt=""/></Link>
           </div>
