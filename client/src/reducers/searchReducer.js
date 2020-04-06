@@ -13,7 +13,8 @@ export default (state =
       return {...state, loading: false, foundPosts: action.posts }
 
     case 'CLEAR_RESULTS':
-      return {...state, foundPosts:[]}
+      let filteredEscapeRooms = state.foundPosts.filter(room => room !== action.escaperoom)
+      return {...state, foundPosts:filteredEscapeRooms}
 
     default:
       return state;
