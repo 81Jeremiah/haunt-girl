@@ -21,8 +21,9 @@ export const escapeRoomSearch = (query) => {
   }
 }
 
-export const removeFound = () => {
+export const removeFound = (escaperoom) => {
+
   return (dispatch) => {
-    dispatch({type: 'CLEAR_RESULTS'});
+    dispatch({type: 'CLEAR_RESULTS', escaperoom: escaperoom });
   }
 }
