@@ -17,6 +17,7 @@ Rails.application.routes.draw do
    resources :awards, only: [:create, :index, :show]
    resources :interviews, only: [:create, :index, :show]
    resources :announcements, only: [:create, :index, :show]
+   resources :top_lists,only: [:create, :index, :show]
  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
