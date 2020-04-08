@@ -21,8 +21,8 @@ class Api::TopListsController < ApplicationController
 
   private
 
-  def award_params
-    params.require(:top_list).permit(:title, :area, :escapeRooms)
+  def list_params
+    params.require(:top_list).permit(:title, :area, :escapeRooms[], :year)
   end
 
 end
