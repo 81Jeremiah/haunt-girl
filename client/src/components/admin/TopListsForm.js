@@ -13,22 +13,27 @@ class TopListsForm extends Component {
       title: "",
       area: "",
       escapeRooms: [],
+      year: ""
   }
 
 
     handleSubmit = event =>{
       event.preventDefault()
       const list = this.state
-
-
-      this.props.createList({'list': list})
+      this.props.createList({'top_list': list})
+      this.setState({
+        title: "",
+        area: "",
+        escapeRooms: [],
+        year: ""
+      })
     }
 
     foundEscapeRoom = (escapeRoom) =>{
       this.setState({
         escapeRooms: [...this.state.escapeRooms, escapeRoom]
       })
-      this.props.removeFound()
+      this.props.removeFound(escapeRoom)
       console.log(this.state.escapeRooms)
     }
 
@@ -70,10 +75,21 @@ class TopListsForm extends Component {
           <Form.Control
             size="lg"
             type="text"
-            value={this.state.area}
+            value={this.state.year}
             onChange={this.handleChange}
             name="year"/>
         </Form.Group>
+
+        <Form.Group controlId="">
+          <Form.Label column sm={2}>Area</Form.Label>
+          <Form.Control
+            size="lg"
+            type="text"
+            value={this.state.area}
+            onChange={this.handleChange}
+            name="area"/>
+        </Form.Group>
+
 
         <AddedEscapeRooms
           escapeRooms={this.state.escapeRooms}
