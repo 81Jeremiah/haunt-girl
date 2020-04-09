@@ -3,7 +3,7 @@ class Post < ApplicationRecord
   belongs_to :city
   has_one :state, through: :city
   has_one :country, through: :state
-
+  has_many :top_lists through: :list_post
   accepts_nested_attributes_for :state
 
   scope :by_category, -> (category_id){joins(:category).where("category_id=?", category_id)}
