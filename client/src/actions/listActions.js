@@ -4,7 +4,7 @@ export const createList = (newList) => {
   return (dispatch) => {
 
     dispatch({type: 'SENDING_LIST'});
-      return fetch('/api/lists', {
+      return fetch('/api/top_lists', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json'
@@ -15,6 +15,19 @@ export const createList = (newList) => {
     .then(response => response.json())
     .then(list => {
       dispatch({type:'CREATE_LIST', list:list});
+    });
+  }
+}
+
+
+export const fetchList = (listId) => {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_POSTS'});
+    return fetch('/api/top_lists/' + listId)
+
+    .then(response => response.json())
+    .then(list => {
+      return dispatch({ type: 'FETCH_LIST', list: list })
     });
   }
 }
