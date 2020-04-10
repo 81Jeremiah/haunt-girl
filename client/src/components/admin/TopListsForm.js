@@ -12,8 +12,7 @@ class TopListsForm extends Component {
 
       title: "",
       area: "",
-      escapeRooms: [],
-      year: ""
+      escapeRooms: []
   }
 
 
@@ -70,16 +69,7 @@ class TopListsForm extends Component {
             onChange={this.handleChange}
             name="title"/>
         </Form.Group>
-        <Form.Group controlId="">
-          <Form.Label column sm={2}>Year</Form.Label>
-          <Form.Control
-            size="lg"
-            type="text"
-            value={this.state.year}
-            onChange={this.handleChange}
-            name="year"/>
-        </Form.Group>
-
+        
         <Form.Group controlId="">
           <Form.Label column sm={2}>Area</Form.Label>
           <Form.Control
