@@ -22,7 +22,8 @@ class Api::TopListsController < ApplicationController
   private
 
   def list_params
-    params.require(:top_list).permit(:title, :area, :escapeRooms[], :year)
+    params.require(:top_list).permit(:title, :area, :year, posts_attributes: [:title])
   end
+
 
 end
