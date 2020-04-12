@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import Editor from './Editor'
+import AdminHeader from './AdminHeader';
 import {connect} from 'react-redux';
 import {createList} from '../../actions/listActions';
 import Form from 'react-bootstrap/Form';
@@ -68,6 +68,7 @@ class TopListsForm extends Component {
 
     return(
       <>
+      <AdminHeader />
       <EscapeRoomSearch
           addEscapeRoom={this.addEscapeRoom}
           foundEscapeRoom={this.foundEscapeRoom} />
