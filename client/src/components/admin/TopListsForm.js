@@ -19,7 +19,12 @@ class TopListsForm extends Component {
 
     handleSubmit = event =>{
       event.preventDefault()
-      const list = this.state
+      const list = {title:this.state.title, area:this.state.area, posts_attributes:
+        {"1" : {title:'THE HAUNTED MORTUARY'},
+         "2" : {title:'EL PASO SHERIFF HAUNTED HOUSE'}
+        }
+      }
+
       this.props.createList({'top_list': list})
       this.setState({
         title: "",
@@ -27,6 +32,10 @@ class TopListsForm extends Component {
         escapeRooms: [],
         posts:[]
       })
+    }
+
+    built_params = () =>{
+
     }
 
     foundEscapeRoom = (escapeRoom) =>{
