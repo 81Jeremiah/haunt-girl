@@ -4,7 +4,7 @@ class Post < ApplicationRecord
   has_one :state, through: :city
   has_one :country, through: :state
   has_many :list_posts
-  has_many :top_lists, through: :list_post
+  has_many :top_lists, through: :list_posts
   accepts_nested_attributes_for :state
 
   scope :by_category, -> (category_id){joins(:category).where("category_id=?", category_id)}
@@ -54,5 +54,7 @@ class Post < ApplicationRecord
     recent_posts = [escaperoom, haunt,oddities ]
     recent_posts
   end
+
+
 
 end
