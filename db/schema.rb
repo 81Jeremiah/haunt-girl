@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_15_232459) do
+ActiveRecord::Schema.define(version: 2020_04_14_031449) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -94,15 +94,6 @@ ActiveRecord::Schema.define(version: 2020_03_15_232459) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "list_posts", force: :cascade do |t|
-    t.bigint "post_id"
-    t.bigint "top_list_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["post_id"], name: "index_list_posts_on_post_id"
-    t.index ["top_list_id"], name: "index_list_posts_on_top_list_id"
-  end
-
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.text "content"
@@ -134,6 +125,15 @@ ActiveRecord::Schema.define(version: 2020_03_15_232459) do
     t.index ["country_id"], name: "index_states_on_country_id"
   end
 
+  create_table "top_list_posts", force: :cascade do |t|
+    t.bigint "post_id"
+    t.bigint "top_list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_top_list_posts_on_post_id"
+    t.index ["top_list_id"], name: "index_top_list_posts_on_top_list_id"
+  end
+
   create_table "top_lists", force: :cascade do |t|
     t.string "area"
     t.string "title"
@@ -141,6 +141,6 @@ ActiveRecord::Schema.define(version: 2020_03_15_232459) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "list_posts", "posts"
-  add_foreign_key "list_posts", "top_lists"
+  add_foreign_key "top_list_posts", "posts"
+  add_foreign_key "top_list_posts", "top_lists"
 end
