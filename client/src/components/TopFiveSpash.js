@@ -2,14 +2,14 @@ import React, {Component} from 'react';
 import doubleArrow from '../img/icons/double-arrow.png'
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
-import {fetchRecentPosts} from '../actions/postActions';
-import MostRecentPosts from './MostRecentPosts'
+import {fetchLists} from '../actions/listActions';
+import TopLists from './TopLists';
 
 class TopFiveSplash extends Component{
 
 
    componentDidMount(){
-     this.props.fetchThreeTopFive()
+     this.props.fetchLists()
 
    }
 
@@ -21,6 +21,7 @@ class TopFiveSplash extends Component{
           <div class="row">
             <div class="col-xl-9 col-lg-8 col-md-7">
               <div class="section-title text-white">
+                <TopLists lists={this.state.toplists} />
                 <h2>Top 5 by City</h2>
                  <ul class="blog-filter">
                   <li>Los Angeles</li>
@@ -40,7 +41,7 @@ class TopFiveSplash extends Component{
 
 const mapStateToProps = state => {
   console.log(state)
-  return {recentPosts: state.posts.posts}
+  return {toplists: state.lists.lists}
 }
 
-export default connect(mapStateToProps ,{fetchRecentPosts})(TopFiveSplash)
+export default connect(mapStateToProps ,{fetchLists})(TopFiveSplash)
