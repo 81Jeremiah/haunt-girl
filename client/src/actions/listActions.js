@@ -19,10 +19,23 @@ export const createList = (newList) => {
   }
 }
 
+export const fetchLists = () =>{
+  return (dispatch) => {
+    dispatch({type: 'LOADING_LIST'});
+    return fetch('/api/top_lists/')
+
+    .then(response => response.json())
+    .then(lists => {
+      return dispatch({ type: 'FETCH_LIST', lists: lists })
+    });
+  }
+
+}
+
 
 export const fetchList = (listId) => {
   return (dispatch) => {
-    dispatch({type: 'LOADING_POSTS'});
+    dispatch({type: 'LOADING_LIST'});
     return fetch('/api/top_lists/' + listId)
 
     .then(response => response.json())
