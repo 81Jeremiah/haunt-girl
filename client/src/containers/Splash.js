@@ -5,8 +5,9 @@ import ShortBio from '../components/ShortBio';
 import Footer from '../components/Footer';
 import BlogSection from '../components/BlogSection';
 import FeaturedSection from '../components/FeaturedSection';
-import NewsletterSection from '../components/NewsletterSection'
-import FeaturedCarousel from '../components/FeaturedCarousel'
+import NewsletterSection from '../components/NewsletterSection';
+import FeaturedCarousel from '../components/FeaturedCarousel';
+import TopFiveSplash from '../components/TopFiveSpash';
 
 const Splash = () =>{
 
@@ -16,7 +17,8 @@ const Splash = () =>{
       <FeaturedCarousel />
       <ShortBio />
       <Featured />
-      <BlogSection />
+      {/* <BlogSection /> */}
+      <TopFiveSplash />
       <FeaturedSection />
       <NewsletterSection />
       <Footer />
