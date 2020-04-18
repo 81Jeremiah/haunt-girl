@@ -17,8 +17,8 @@ const Splash = () =>{
       <FeaturedCarousel />
       <ShortBio />
       <Featured />
-      {/* <BlogSection /> */}
-      <TopFiveSplash />
+      <BlogSection />
+      {/* <TopFiveSplash /> */}
       <FeaturedSection />
       <NewsletterSection />
       <Footer />
