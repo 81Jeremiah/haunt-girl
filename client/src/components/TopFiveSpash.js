@@ -21,14 +21,13 @@ class TopFiveSplash extends Component{
           <div class="row">
             <div class="col-xl-9 col-lg-8 col-md-7">
               <div class="section-title text-white">
-                <TopLists lists={this.props.toplists} />
-                <h2>Top 5 by City</h2>
-                 <ul class="blog-filter">
-                  <li>Los Angeles</li>
-                  <li>New York</li>
-                  <li>Atlanta</li>
 
-                </ul>
+                <h2>Top Escape Rooms</h2>
+                 {/* <ul class="blog-filter"> */}
+                  <TopLists lists={this.props.toplists} />
+
+                {/* </ul> */}
+                
               </div>
             </div>
           </div>
