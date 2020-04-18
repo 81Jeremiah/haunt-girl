@@ -4,12 +4,12 @@ import React from 'react';
 const TopLists = (props) =>{
 
   const list = props.lists.map( list => {
-    return <li key={list.id}> list.title </li>
+    return <li key={list.id}> {list.title} </li>
   })
 
   return (
     <ul>
-     {list} 
+     {list}
     </ul>
   )
 
