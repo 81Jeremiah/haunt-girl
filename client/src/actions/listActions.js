@@ -21,12 +21,12 @@ export const createList = (newList) => {
 
 export const fetchLists = () =>{
   return (dispatch) => {
-    dispatch({type: 'LOADING_LIST'});
+    dispatch({type: 'LOADING_LISTS'});
     return fetch('/api/top_lists/')
 
     .then(response => response.json())
     .then(lists => {
-      return dispatch({ type: 'FETCH_LIST', lists: lists })
+      return dispatch({ type: 'FETCH_LISTS', lists: lists })
     });
   }
 
