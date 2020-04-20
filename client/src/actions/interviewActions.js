@@ -29,3 +29,16 @@ export const fetchInterviews = () => {
     });
   }
 }
+
+export const fetchInterview = (interviewId) => {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_INTERVIEW'});
+    return fetch('/api/interviews'+interviewId, {
+      method: "GET"
+    })
+    .then(response => response.json())
+    .then(interview => {
+      dispatch({type:'FETCH_INTERVIEW', interview:interview});
+    });
+  }
+}
