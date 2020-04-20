@@ -18,6 +18,18 @@ export const createAward = (newAward) => {
     });
   }
 }
+export const fetchWinner = (winnerId) => {
+  return (dispatch) => {
+    dispatch({type: 'LOADING_AWARD'});
+    return fetch('/api/awards/' + winnerId, {
+      method: "GET"
+    })
+    .then(response => response.json())
+    .then(award => {
+      dispatch({type:'FETCH_AWARD', award:award});
+    });
+  }
+}
 
 export const fetchWinners = () => {
   return (dispatch) => {
