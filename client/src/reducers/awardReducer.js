@@ -11,6 +11,12 @@ export default ( state =
     case 'FETCH_AWARDS':
       return {...state, loading:false, awards: action.awards}
 
+    case 'LOADING_AWARD':
+        return {...state, loading: true}
+
+    case 'FETCH_AWARD':
+        return {...state, loading:false, award: action.award}
+
     case 'SENDING_AWARD':
       return {...state, loading: true}
 
