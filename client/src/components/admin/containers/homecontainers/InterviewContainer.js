@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import { getInterviews } from '../../../actions/interviewActions';
+import { fetchInterviews } from '../../../../actions/interviewActions';
 import { connect } from 'react-redux';
 // import { withRouter, Redirect } from 'react-router-dom'
-import InterviewLIst from '../../InterviewLIst';
+import InterviewList from '../../InterviewList';
 import AdminHeader from '../../AdminHeader';
 
 class InterviewContainer extends Component {
 
   componentDidMount(){
-    this.props.getInterviews()
+    this.props.fetchInterviews()
   }
 
 
@@ -23,7 +23,7 @@ class InterviewContainer extends Component {
       </div>
       <div>
 
-        <InterviewLIst interviews={this.props.interviews}/>
+        <InterviewList interviews={this.props.interviews}/>
 
       </div>
     </>
@@ -36,4 +36,4 @@ const mapStateToProps = state => {
     return {interviews: state.interviews.interviews}
 };
 
-export default connect(mapStateToProps, {getInterviews})(InterviewContainer);
+export default connect(mapStateToProps, {fetchInterviews})(InterviewContainer);
