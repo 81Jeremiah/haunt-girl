@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // import { withRouter, Redirect } from 'react-router-dom'
 import InterviewList from '../../InterviewList';
 import AdminHeader from '../../AdminHeader';
+import { Link } from 'react-router-dom';
 
 class InterviewContainer extends Component {
 
@@ -24,6 +25,7 @@ class InterviewContainer extends Component {
       <div>
 
         <InterviewList interviews={this.props.interviews}/>
+        <Link to={`/interviews/new`}> Create New </Link>
 
       </div>
     </>
