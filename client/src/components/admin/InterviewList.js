@@ -8,7 +8,7 @@ const InterviewsList = (props) =>{
   const listInterviews = props.interviews.map( interview => {
     return(
       <li key={interview.id}>
-        <Link to={`admin/interviews/${interview.id}`}>{interview}</Link>
+        <Link to={`edit/${interview.id}`}>{interview.title}</Link>
       </li>
     );
   });
