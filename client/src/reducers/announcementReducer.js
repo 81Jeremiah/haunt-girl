@@ -17,6 +17,12 @@ export default ( state =
     case 'FETCH_ANNOUNCEMENT':
       return {...state, loading:false, announcement: action.announcement}
 
+    case 'SENDING_ANNOUNCEMENT':
+      return {...state, loading:true}
+
+    case 'CREATE_ANNOUNCEMENT':
+      return {...state, loading:false, announcement: action.announcement}
+
     default:
       return state
   }
