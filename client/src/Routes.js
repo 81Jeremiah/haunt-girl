@@ -16,21 +16,21 @@ const Routes = () => {
     <Router>
       <Switch>
         <Route exact path="/" component={ Splash }/>
-        <Route exact path="reviews/posts/:id" component={Post} />
-        <Route exact path="reviews/posts" component={ Posts } />
-        <Route exact path="reviews/haunts" component={ Posts } />
-        <Route exact path="reviews/haunts/:id" component={ Post } />
-        <Route exact path="reviews/escaperooms" component={ Posts } />
-        <Route exact path="reviews/escaperooms/:id" component={ Post } />
-        <Route exact path="reviews/oddities" component={ Posts } />
-        <Route exact path="reviews/oddities/:id" component={ Post } />
+        <Route exact path="/reviews/posts/:id" component={Post} />
+        <Route exact path="/reviews/posts" component={ Posts } />
+        <Route exact path="/reviews/haunts" component={ Posts } />
+        <Route exact path="/reviews/haunts/:id" component={ Post } />
+        <Route exact path="/reviews/escaperooms" component={ Posts } />
+        <Route exact path="/reviews/escaperooms/:id" component={ Post } />
+        <Route exact path="/reviews/oddities" component={ Posts } />
+        <Route exact path="/reviews/oddities/:id" component={ Post } />
         <Route exact path="/contact" component={ Contact } />
         <Route exact path="/about" component={ ProfilePage } />
         <Route exact path="/admin/login" component={ Login } />
         <Route exact path="/searchresults" component={ SearchResults} />
         <Route exact path="/SkeletonKeyAwards" component={ SkeletonKeysContainer} />
-        <Route exact path=" blog/announcements" component={ AnnouncementsContainer} />
-        {/* <Route render={ () => <h1>404 Error</h1> } /> */}
+        <Route exact path="/blog/announcements" component={ AnnouncementsContainer} />
+        <Route render={ () => <h1>404 Error</h1> } />
       </Switch>
     </Router>
   )

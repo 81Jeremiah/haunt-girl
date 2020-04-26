@@ -12,7 +12,7 @@ const ResultsList = props  => {
 
 
 
-        <Link to={`posts/${post.id}`}>{post.title}</Link>
+        <Link to={`reviews/posts/${post.id}`}>{post.title}</Link>
 
 
 

@@ -28,10 +28,10 @@ const Navbar = () =>{
               {/* <li><Link to="/"><img src={hauntGirlLogo} alt="log" height="80" width="80"/></Link></li> */}
               <li><Link to="/">Reviews </Link>
                   <ul className="sub-menu">
-                     <li><Link to="reviews/haunts">Haunts </Link></li>
-                     <li><Link to="reviews/escaperooms">Escape Rooms</Link></li>
-                     <li><Link to="reviews/oddities">Oddities</Link></li>
-                     <li><Link to="reviews/immersives">Immersives</Link></li>
+                     <li><Link to="/reviews/haunts">Haunts </Link></li>
+                     <li><Link to="/reviews/escaperooms">Escape Rooms</Link></li>
+                     <li><Link to="/reviews/oddities">Oddities</Link></li>
+                     <li><Link to="/reviews/immersives">Immersives</Link></li>
                   </ul>
               </li>
               <li><Link to="/">Blog</Link>
