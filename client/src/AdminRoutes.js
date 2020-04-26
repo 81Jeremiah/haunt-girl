@@ -7,11 +7,12 @@ import InterviewEditContainer from './components/admin/containers/InterviewConta
 import TopListsForm from './components/admin/TopListsForm';
 import MyEditor from './components/admin/newEditForm/MyEditor'
 import SkeletonKeyEditContainer from './components/admin/containers/SkeletonKeyContainer';
-import AnnouncementContainer from './components/admin/containers/AnnouncementContainer';
+import AnnouncementEditContainer from './components/admin/containers/AnnouncementContainer';
 import PostContainer from './components/admin/containers/homecontainers/PostContainer';
 import InterviewContainer from './components/admin/containers/homecontainers/InterviewContainer';
 import TopListContainer from './components/admin/containers/homecontainers/TopListContainer';
 import SkeletonKeyContainer from './components/admin/containers/homecontainers/SkeletonKeyContainer';
+import AnnouncementContainer from './components/admin/containers/homecontainers/AnnouncementContainer';
 
 
 const Routes = () => {
@@ -27,11 +28,13 @@ const Routes = () => {
         <Route exact path='/admin/newEditForm' component= { MyEditor} />
         <Route exact path="/admin/home" component={ Home } />
         <Route exact path="/admin/awards/new" component={ SkeletonKeyEditContainer } />
-        <Route exact path="/admin/announcements/new" component={ AnnouncementContainer } />
+        <Route exact path="/admin/announcements/new" component={ AnnouncementEditContainer } />
         <Route exact path="/admin/posts" component={PostContainer } />
         <Route exact path="/admin/interviews/" component={ InterviewContainer } />
         <Route exact path="/admin/TopLists/" component={ TopListContainer} />
-      <Route exact path="/admin/awards/" component={ SkeletonKeyContainer} />
+        <Route exact path="/admin/awards/" component={ SkeletonKeyContainer} />
+        <Route exact path="/admin/announcements/" component={ AnnouncementContainer } />
+
       </Switch>
     </Router>
   )
