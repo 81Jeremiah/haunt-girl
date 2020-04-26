@@ -20,7 +20,7 @@ class PostContainer extends Component {
       </div>
       <div>
         <Reviews posts={this.props.posts}/>
-        <Link to={`/posts/new`}> Create New </Link>
+      <Link to={`new`}> Create New </Link>
 
       </div>
       </>
