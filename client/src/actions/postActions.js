@@ -2,7 +2,7 @@
 export const fetchPosts = (category) => {
   return (dispatch) => {
     dispatch({type: 'LOADING_POSTS'});
-    return fetch('/api/categories' + category)
+    return fetch('/api/categories/' + category)
 
     .then(response => response.json())
     .then(posts => {
@@ -10,6 +10,8 @@ export const fetchPosts = (category) => {
     });
   }
 }
+
+
 
 export const fetchAllPosts = () => {
   return(dispatch) => {
