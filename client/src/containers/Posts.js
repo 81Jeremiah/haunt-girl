@@ -15,7 +15,9 @@ import CitiesList from '../components/CitiesList';
 class Posts extends Component {
 
   componentDidMount(){
-    const category = this.props.match.path
+    const route = this.props.match.path
+    var category = /[^/]*$/.exec(route)[0];
+
     console.log(category)
 
     this.props.fetchPosts(category)
@@ -50,17 +52,17 @@ class Posts extends Component {
     return(
       <div>
         <Navbar />
-          <section class="page-top-section set-bg" data-setbg="img/page-top-bg/2.jpg">
-        		<div class="page-info">
+          <section className="page-top-section set-bg" data-setbg="img/page-top-bg/2.jpg">
+        		<div className="page-info">
         			<h2>Haunts</h2>
-        			<div class="site-breadcrumb">
+        			<div className="site-breadcrumb">
         				<Link to="/">Home</Link>  /
         				<span>Reviews</span>
         			</div>
         		</div>
         	</section>
-          <section class="review-section">
-            <div class="container">
+          <section className="review-section">
+            <div className="container">
              <StatesList states={this.props.states} handleStateClick={this.handleStateClick} />
 
               {cityList}
