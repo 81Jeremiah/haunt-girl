@@ -7,8 +7,8 @@ class Api::StatesController < ApplicationController
   end
 
   def states_with_posts
-
-     category_id = Category.find_category_id(params[:id][1..-1])
+     
+     category_id = Category.find_category_id(params[:id])
 
      @states = Post.unique_states(category_id)
     # states = State.has_posts
@@ -18,7 +18,7 @@ class Api::StatesController < ApplicationController
 
   def show
     state = State.find_by(abbreviation: params[:id] )
-    
+
     state_id = state.id
 
     # category = Category.find_by(id: category_id)
