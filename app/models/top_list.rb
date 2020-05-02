@@ -1,6 +1,6 @@
 class TopList < ApplicationRecord
-  has_many :list_posts
-  has_many :posts, through: :list_posts
+  has_many :top_list_posts
+  has_many :posts, through: :top_list_posts
 
   def posts_attributes=(post_attributes)
     post_attributes.values.each do |post_attribute|
