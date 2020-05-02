@@ -12,7 +12,7 @@ class SkeletonKeyForm extends Component{
       content: "",
       year:""
 
-}
+  }
 
 
   handleSubmit = event =>{
@@ -35,7 +35,6 @@ class SkeletonKeyForm extends Component{
     this.setState({
       content: editorText
     })
-    console.log(this.state.content)
   };
 
   render(){

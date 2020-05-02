@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { withRouter, Redirect } from 'react-router-dom'
 
 import SkeletonKeyForm from '../SkeletonKeyForm';
-import AdminHeader from '../AdminHeader'
+import AdminHeader from '../AdminHeader';
+
 class SkeletonKeyContainer extends Component {
-
-
 
 
   render(){
@@ -18,7 +17,7 @@ class SkeletonKeyContainer extends Component {
       </div>
       <div>
 
-      <SkeletonKeyForm
+        <SkeletonKeyForm
 
         />
 
