@@ -55,9 +55,11 @@ class Post extends Component {
                   <div className="rating-widget">
                     <h4 className="widget-title">Ratings</h4>
                     <ul>
-                      <li>Cost<span>3.5/5</span></li>
-                      <li>Set Design<span>4.5/5</span></li>
-                      <li>Jump Scares<span>3.5/5</span></li>
+                      <li>Price<span>{post.price}</span></li>
+                      <li>Recomended Players: <span>{post.recomendedPrice}</span></li>
+                      {/*// <li>Cost<span>3.5/5</span></li>
+                      // <li>Set Design<span>4.5/5</span></li>
+                      // <li>Jump Scares<span>3.5/5</span></li>*/}
                       <li>Scare Rating:  <span><GhostRating scarefactor={3}/></span></li>
 
                     </ul>
