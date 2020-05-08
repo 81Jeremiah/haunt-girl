@@ -64,7 +64,7 @@ class Post extends Component {
 
                     </ul>
                     <div className="rating">
-                      <h5><i>Overall Rating</i></h5><span><KeyRating score={3} /></span>
+                      <h5><i>Overall Rating</i></h5><span><KeyRating score={post.score} /></span>
                     </div>
                   </div>
                 </div>
@@ -72,8 +72,8 @@ class Post extends Component {
                   <div className="testimonials-widget">
                     <h4 className="widget-title">What Other Enthusiasts Say</h4>
                       <div className="testim-text">
-                         <p>Worst.Haunt.Ever</p>
-                      <h6><span>Potato Salad Jeff</span></h6>
+                         <p></p>
+                      <h6><span></span></h6>
                     </div>
                   </div>
                 </div>
