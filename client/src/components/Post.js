@@ -60,7 +60,7 @@ class Post extends Component {
                       {/*// <li>Cost<span>3.5/5</span></li>
                       // <li>Set Design<span>4.5/5</span></li>
                       // <li>Jump Scares<span>3.5/5</span></li>*/}
-                      <li>Scare Rating:  <span><GhostRating scarefactor={3}/></span></li>
+                      <li>Scare Rating:  <span><GhostRating scarefactor={post.scarefactor}/></span></li>
 
                     </ul>
                     <div className="rating">
