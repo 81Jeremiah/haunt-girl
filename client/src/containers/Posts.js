@@ -65,7 +65,7 @@ class Posts extends Component {
             <div className="container">
              <StatesList states={this.props.states} handleStateClick={this.handleStateClick} />
 
-              {cityList}
+            {/*  {cityList} */}
 
 
              <PostsList posts={this.props.posts} categoryRoute={this.props.match.path} />
