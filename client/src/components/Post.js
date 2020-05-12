@@ -25,7 +25,10 @@ class Post extends Component {
     const post = this.props.post
     console.log(post)
     const category = this.props.post.category || " "
-
+    const state = this.props.post.state || " "
+    const city = this.props.post.city || " "
+    console.log(state)
+    const date = new Date(post.published_at)
     return(
       <>
 
@@ -40,7 +43,8 @@ class Post extends Component {
             <div className="col-xl-9 col-lg-8 col-md-7 game-single-content">
 
 
-              <div className="gs-meta">{post.published_at} /  in <Link to="/escaperooms"> {category.name}</Link></div>
+              <div className="gs-meta">{date.toDateString()} /  in <Link to="/escaperooms"> {category.name}</Link></div>
+              <p>{city.name}, {state.abbreviation} </p>
               <h2 className="gs-title">{post.title}</h2>
                   <p>{ReactHtmlParser(post.content)}</p>
                 <div className="geme-social-share pt-5 d-flex">
