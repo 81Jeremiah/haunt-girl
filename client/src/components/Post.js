@@ -23,6 +23,7 @@ class Post extends Component {
 
   render(){
     const post = this.props.post
+    console.log(post)
     const category = this.props.post.category || " "
 
     return(
@@ -56,15 +57,17 @@ class Post extends Component {
                     <h4 className="widget-title">Ratings</h4>
                     <ul>
                       <li>Price<span>{post.price}</span></li>
-                      <li>Recomended Players: <span>{post.recomendedPrice}</span></li>
-                      {/*// <li>Cost<span>3.5/5</span></li>
+                      <li>Recomended Players: <span>{post.recommended_players}</span></li>
+                      <li>Reccomended Age<span>{post.recommended_age}</span></li>
+                      <li><span>{post.public_or_private} game</span></li>
+                      {/*//
                       // <li>Set Design<span>4.5/5</span></li>
                       // <li>Jump Scares<span>3.5/5</span></li>*/}
                       <li>Scare Rating:  <span><GhostRating scarefactor={post.scarefactor}/></span></li>
 
                     </ul>
                     <div className="rating">
-                      <h5><i>Overall Rating</i></h5><span><KeyRating score={post.score} /></span>
+                      <h5><i>Overall Rating</i></h5><span><KeyRating score={5} /></span>
                     </div>
                   </div>
                 </div>
@@ -86,7 +89,7 @@ class Post extends Component {
 
       <section className="game-author-section">
         <div className="container">
-          <div className="game-author-pic set-bg" data-setbg="img/author.jpg"></div>
+          {/*<div className="game-author-pic set-bg" data-setbg="img/author.jpg"></div> */}
         <div className="game-author-info">
             <h4>Written by:The Haunt Girl</h4>
             <p></p>
