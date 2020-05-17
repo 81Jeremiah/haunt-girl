@@ -46,8 +46,9 @@ class SkeletonKeyContainer extends Component {
 }
 
 const mapStateToProps = state => {
+  console.log(state)
   return {
-    winners: state.awards.awards,
+    interviews: state.interviews.interviews,
   }
 }
 
