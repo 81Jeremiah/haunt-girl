@@ -16,6 +16,7 @@ class FeaturedCarousel extends Component {
     render() {
         return (
             <Carousel className="splash-carousel"
+              autoPlay
               infiniteLoop={true}
               showThumbs={false}
               showStatus={false}
