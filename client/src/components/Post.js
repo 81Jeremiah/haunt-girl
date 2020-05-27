@@ -12,6 +12,10 @@ import KeyRating from './KeyRating';
 
 class Post extends Component {
 
+  state = {
+    has_video: false
+  }
+
   componentDidMount(){
     const postId = this.props.match.params.id
     this.props.getPost(postId)
@@ -36,7 +40,7 @@ class Post extends Component {
       <section className="games-single-page">
         <div className="container">
           <div className="game-single-preview">
-            <ReactPlayer url={post.video}  />
+
             {/*// <img src="img/games/big.jpg" alt=""/>*/}
           </div>
           <div className="row">
@@ -45,8 +49,11 @@ class Post extends Component {
 
               <div className="gs-meta">{date.toDateString()} /  in <Link to="/escaperooms"> {category.name}</Link></div>
               <p>{city.name}, {state.abbreviation} </p>
+
               <h2 className="gs-title">{post.title}</h2>
-                  <p>{ReactHtmlParser(post.content)}</p>
+                {this.state.has_video ? <ReactPlayer url={post.video}  />: null}
+
+                <p>{ReactHtmlParser(post.content)}</p>
                 <div className="geme-social-share pt-5 d-flex">
                 <p>Share:</p>
               <Link to={`https://www.facebook.com/sharer/sharer.php?u=thehauntgirl.com/posts/${post.id}`}><i className="fa fa-facebook"></i></Link>
@@ -75,7 +82,7 @@ class Post extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="widget-item">
+              {/*  <div className="widget-item">
                   <div className="testimonials-widget">
                     <h4 className="widget-title">What Other Enthusiasts Say</h4>
                       <div className="testim-text">
@@ -83,7 +90,7 @@ class Post extends Component {
                       <h6><span></span></h6>
                     </div>
                   </div>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>
