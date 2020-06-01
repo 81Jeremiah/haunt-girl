@@ -19,6 +19,26 @@ class Api::TopListsController < ApplicationController
     render json: list
   end
 
+  def new
+
+  end
+
+  def update
+
+    @list.update(list_params)
+    render json: @list
+
+  end
+
+  def edit
+    render json: @list
+  end
+
+  def destroy
+    @list.destroy
+  end
+  private
+
   private
 
   def list_params
