@@ -1,5 +1,5 @@
 class Api::AwardsController < ApplicationController
-  skip_before_action :authorized, only: [:index]
+  skip_before_action :authorized, only: [:index, :show]
 
   def index
     awards = Award.all
@@ -16,6 +16,25 @@ class Api::AwardsController < ApplicationController
   def show
     award = Award.find_by(id: param[:id])
     render json: award
+  end
+
+  def new
+
+  end
+
+  def update
+
+    @award.update(award_params)
+    render json: @award
+
+  end
+
+  def edit
+    render json: @award
+  end
+
+  def destroy
+    @award.destroy
   end
 
   private
