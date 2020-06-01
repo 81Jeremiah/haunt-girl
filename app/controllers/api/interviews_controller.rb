@@ -19,9 +19,27 @@ class Api::InterviewsController < ApplicationController
     render json: interview
   end
 
+  def new
+
+  end
+
+  def update
+
+    @interview.update(interview_params)
+    render json: @interview
+
+  end
+
+  def edit
+    render json: @interview
+  end
+
+  def destroy
+    @interview.destroy
+  end
   private
 
-  def award_params
+  def interview_params
     params.require(:interview).permit(:title, :content, :website)
   end
 
