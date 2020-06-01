@@ -19,6 +19,25 @@ class Api::AnnouncementsController < ApplicationController
     render json: announcement
   end
 
+  def new
+
+  end
+
+  def update
+
+    @announcement.update(announcement_params)
+    render json: @announcement
+
+  end
+
+  def edit
+    render json: @announcement
+  end
+
+  def destroy
+    @announcement.destroy
+  end
+
   private
 
   def announcement_params
