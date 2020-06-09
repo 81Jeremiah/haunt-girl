@@ -35,7 +35,8 @@ class EditForm extends Component {
       recommended_age: "",
       scarefactor: "",
       published_at: "",
-      company_website: ""
+      company_website: "",
+      id:""
     }
   }
 
@@ -56,7 +57,8 @@ componentDidUpdate = (prevProps) => {
       recommended_age: this.props.post.recommended_age || "",
       scarefactor: this.props.post.scarefactor || "",
       published_at: this.props.post.published_at|| "",
-      company_website: this.props.post.company_website || ""
+      company_website: this.props.post.company_website || "",
+      id:this.props.post.id || ""
 
     });
   }
@@ -116,34 +118,35 @@ componentDidUpdate = (prevProps) => {
     console.log(post)
     this.props.updatePost(postId, post)
     window.alert('you updated the post')
-    this.setState({
-      title: "" ,
-      content: "",
-      city: {
-        name:""
-      },
-      state: {
-         id: "1",
-      },
-      category: {
-        id: "1"
-      },
-      image: null,
-      video: "",
-      recommended_players: "",
-      price: "",
-      difficulty: "",
-      public_or_private: "",
-      recommended_age: "",
-      scarefactor: "",
-      published_at: "",
-      company_website: ""
-    })
+    // this.setState({
+    //   title: "" ,
+    //   content: "",
+    //   city: {
+    //     name:""
+    //   },
+    //   state: {
+    //      id: "1",
+    //   },
+    //   category: {
+    //     id: "1"
+    //   },
+    //   image: null,
+    //   video: "",
+    //   recommended_players: "",
+    //   price: "",
+    //   difficulty: "",
+    //   public_or_private: "",
+    //   recommended_age: "",
+    //   scarefactor: "",
+    //   published_at: "",
+    //   company_website: "",
+    //   id: ""
+    // })
 
   }
 
   handleDelete = () => {
-    this.props.deletePost()
+    this.props.deletePost(this.state.id)
   }
 
   getEditorText = (editorText) =>{
@@ -342,15 +345,17 @@ componentDidUpdate = (prevProps) => {
         <Button
           variant="primary"
           type="submit"
-          value="New Entry">Update</Button>
-
-       <Button
-            onClick={this.handleDelete}
-            variant="primary"
-            type="submit"
-            value="New Entry">Delete</Button>
+          value="New Entry">Update
+        </Button>
 
         </form>
+
+        <Button
+             onClick={this.handleDelete}
+             variant="primary"
+             type="submit"
+             value="Delete">Delete
+       </Button>
 
       </div>
     )
