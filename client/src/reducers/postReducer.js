@@ -24,8 +24,11 @@ export default ( state =
       return {...state, loading: false, post: action.post}
 
     case 'UPDATE_POST':
-        return {...state, loading: false, post: action.post}
+      return {...state, loading: false, post: action.post}
 
+    case 'DELETE_POST':
+      let remainingPosts = this.state.posts.filter(post => post !== action.post)
+      return {...state, posts: remainingPosts}
 
     default:
       return state
