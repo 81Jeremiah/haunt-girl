@@ -5,6 +5,7 @@ import { updatePost } from '../../actions/postActions';
 import { connect } from 'react-redux';
 import { fetchStates } from '../../actions/postActions';
 import { getPost } from '../../actions/postActions';
+import { deletePost } from '../../actions/postActions';
 import Editor from './Editor'
 import Dropzone from 'react-dropzone'
 import { withRouter } from 'react-router-dom'
@@ -141,6 +142,10 @@ componentDidUpdate = (prevProps) => {
 
   }
 
+  handleDelete = () => {
+    this.props.deletePost()
+  }
+
   getEditorText = (editorText) =>{
     this.setState({
       content: editorText
@@ -154,6 +159,8 @@ componentDidUpdate = (prevProps) => {
        image: acceptedFiles[0]
     });
   }
+
+
 
   render(){
     const statesList = this.props.states.map(state => {
@@ -337,6 +344,12 @@ componentDidUpdate = (prevProps) => {
           type="submit"
           value="New Entry">Update</Button>
 
+       <Button
+            onClick={this.handleDelete}
+            variant="primary"
+            type="submit"
+            value="New Entry">Delete</Button>
+
         </form>
 
       </div>
@@ -349,4 +362,4 @@ const mapStateToProps = state => {
      return {
        states: state.states.states}
 };
-export default EditForm = withRouter(connect(mapStateToProps, {updatePost, fetchStates, getPost})(EditForm));
+export default EditForm = withRouter(connect(mapStateToProps, {updatePost, fetchStates, getPost, deletePost})(EditForm));
