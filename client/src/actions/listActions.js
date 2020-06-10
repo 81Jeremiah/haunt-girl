@@ -44,3 +44,20 @@ export const fetchList = (listId) => {
     });
   }
 }
+
+export const deleteList = listId => {
+  return (dispatch) => {
+    return fetch(`/api/posts/${listId}`, {
+      method: "DELETE",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${localStorage.auth_token}`
+      }
+    })
+    .then(response => response.json())
+    .then(list => {
+      dispatch({type:'DELETE_LIST', list: list})
+    })
+    .catch(error => console.log(error))
+  }
+}
