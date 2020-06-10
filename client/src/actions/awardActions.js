@@ -43,3 +43,20 @@ export const fetchWinners = () => {
     });
   }
 }
+
+export const deleteWinner = winnerId => {
+  return (dispatch) => {
+    return fetch(`/api/posts/${winnerId}`, {
+      method: "DELETE",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${localStorage.auth_token}`
+      }
+    })
+    .then(response => response.json())
+    .then(winner => {
+      dispatch({type:'DELETE_AWARD', post: winner})
+    })
+    .catch(error => console.log(error))
+  }
+}
