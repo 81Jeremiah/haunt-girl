@@ -42,3 +42,20 @@ export const getAnnouncement = (announcementId) => {
     });
   }
 }
+
+export const deleteAnnouncement = announcementId => {
+  return (dispatch) => {
+    return fetch(`/api/announcements/${announcementId}`, {
+      method: "DELETE",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${localStorage.auth_token}`
+      }
+    })
+    .then(response => response.json())
+    .then(announcement => {
+      dispatch({type:'DELETE_ANNOUNCEMENT', announcement: announcement})
+    })
+    .catch(error => console.log(error))
+  }
+}
