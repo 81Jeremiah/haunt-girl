@@ -26,6 +26,9 @@ export default ( state =
     case 'UPDATE_INTERVIEW':
         return {...state, loading: false, list: action.interview}
 
+    case 'DELETE_INTERVIEW':
+        let remainingInterviews = this.state.interviews.filter(interview => interview !== action.interview)
+        return {...state, interviews: remainingInterviews}
 
 
     default:
