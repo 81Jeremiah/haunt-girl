@@ -23,6 +23,10 @@ export default ( state =
     case 'CREATE_ANNOUNCEMENT':
       return {...state, loading:false, announcement: action.announcement}
 
+    case 'DELETE_ANNOUNCEMENT':
+      let remainingAnnouncements = this.state.announcements.filter(announcement => announcement !== action.announcement)
+      return {...state, announcements: remainingAnnouncements}
+
     default:
       return state
   }
