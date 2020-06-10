@@ -26,6 +26,10 @@ export default ( state =
     case 'UPDATE_AWARD':
         return {...state, loading: false, award: action.award}
 
+    case 'DELETE_AWARD':
+      let remainingAwards = this.state.awards.filter(award => award !== action.award)
+      return {...state, awards: remainingAwards}
+
 
 
     default:
