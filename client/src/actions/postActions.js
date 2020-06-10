@@ -116,7 +116,7 @@ export const deletePost = postId => {
     })
     .then(response => response.json())
     .then(post => {
-      dispatch({type:'DELETE_POSTS', post: post})
+      dispatch({type:'DELETE_POST', post: post})
     })
     .catch(error => console.log(error))
   }
