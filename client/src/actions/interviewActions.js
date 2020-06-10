@@ -42,3 +42,20 @@ export const fetchInterview = (interviewId) => {
     });
   }
 }
+
+export const deleteInterview = interviewId => {
+  return (dispatch) => {
+    return fetch(`/api/posts/${interviewId}`, {
+      method: "DELETE",
+      headers: {
+        "Accept": "application/json",
+        "Authorization": `Bearer ${localStorage.auth_token}`
+      }
+    })
+    .then(response => response.json())
+    .then(interview => {
+      dispatch({type:'DELETE_INTERVIEW', interview: interview})
+    })
+    .catch(error => console.log(error))
+  }
+}
