@@ -26,6 +26,10 @@ export default ( state =
     case 'UPDATE_LIST':
         return {...state, loading: false, list: action.list}
 
+    case 'DELETE_LIST':
+        let remainingLists = this.state.lists.filter(list => list !== action.list)
+        return {...state, interviews: remainingLists}
+
 
     default:
       return state
