@@ -9,7 +9,7 @@ import { deletePost } from '../../actions/postActions';
 import Editor from './Editor'
 import Dropzone from 'react-dropzone'
 import { withRouter } from 'react-router-dom';
-import { Redirect } from "react-router";
+import { Redirect } from 'react-router-dom';
 
 class EditForm extends Component {
 
@@ -37,7 +37,8 @@ class EditForm extends Component {
       scarefactor: "",
       published_at: "",
       company_website: "",
-      id:""
+      id:"",
+      redirect: false
     }
   }
 
@@ -148,9 +149,11 @@ componentDidUpdate = (prevProps) => {
 
   handleDelete = () => {
     this.props.deletePost(this.state.id)
-    <Redirect to="/somewhere/else" />
+    this.props.history.push('/admin/posts')
+
 
   }
+
 
   getEditorText = (editorText) =>{
     this.setState({
@@ -361,6 +364,7 @@ componentDidUpdate = (prevProps) => {
        </Button>
 
       </div>
+
     )
   }
 }
