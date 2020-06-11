@@ -8,7 +8,8 @@ import { getPost } from '../../actions/postActions';
 import { deletePost } from '../../actions/postActions';
 import Editor from './Editor'
 import Dropzone from 'react-dropzone'
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
+import { Redirect } from "react-router";
 
 class EditForm extends Component {
 
@@ -147,6 +148,8 @@ componentDidUpdate = (prevProps) => {
 
   handleDelete = () => {
     this.props.deletePost(this.state.id)
+    <Redirect to="/somewhere/else" />
+
   }
 
   getEditorText = (editorText) =>{
