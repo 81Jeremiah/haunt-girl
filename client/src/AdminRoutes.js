@@ -3,11 +3,12 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import PostForm from './components/admin/PostForm';
 import EditContainer from './components/admin/containers/EditContainer';
 import Home from './components/admin/Home';
+// rename all links to proper namespace the edit vs new containers
 import InterviewEditContainer from './components/admin/containers/InterviewContainer';
 import TopListsForm from './components/admin/TopListsForm';
 import MyEditor from './components/admin/newEditForm/MyEditor'
 import SkeletonKeyEditContainer from './components/admin/containers/SkeletonKeyContainer';
-import AnnouncementEditContainer from './components/admin/containers/AnnouncementContainer';
+import AnnouncementEditContainer from './components/admin/containers/editContainers/AnnouncementEditContainer';
 import PostContainer from './components/admin/containers/homecontainers/PostContainer';
 import InterviewContainer from './components/admin/containers/homecontainers/InterviewContainer';
 import TopListContainer from './components/admin/containers/homecontainers/TopListContainer';
