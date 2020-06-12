@@ -20,7 +20,7 @@ class SkeletonKeyContainer extends Component {
       </div>
       <div>
         <SkeletonKeyList awards={this.props.awards}/>
-        <Link to={`/awards/new/`}> Create New </Link>
+      <Link to={`/admin/awards/new/`}> Create New </Link>
 
       </div>
       </>
