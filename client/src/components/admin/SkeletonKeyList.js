@@ -8,7 +8,7 @@ const SkeletonKeyList = (props) =>{
   const awardsList = props.awards.map( award => {
     return(
       <li key={award.id}>
-        <Link to={`edit/${award.id}`}>{award.title}</Link>
+        <Link to={`${award.id}/edit`}>{award.title}</Link>
       </li>
     );
   });

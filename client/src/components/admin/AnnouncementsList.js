@@ -8,7 +8,7 @@ const AnnouncementsList = (props) =>{
   const listAnnouncements = props.announcements.map( announcement => {
     return(
       <li key={announcement.id}>
-        <Link to={`edit/${announcement.id}`}>{announcement.title}</Link>
+        <Link to={`${announcement.id}/edit`}>{announcement.title}</Link>
       </li>
     );
   });
