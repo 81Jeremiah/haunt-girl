@@ -21,19 +21,30 @@ const Routes = () => {
     <Router>
       <Switch>
 
+        <Route exact path="/admin/home" component={ Home } />
+
         <Route exact path="/admin/posts/new" component={ PostForm} />
         <Route exact path="/admin/posts/:id/edit" component={ EditContainer} />
-        <Route exact path="/admin/interviews/new" component={ InterviewEditContainer } />
-        <Route exact path="/admin/TopLists/new" component={ TopListsForm } />
-        <Route exact path='/admin/newEditForm' component= { MyEditor} />
-        <Route exact path="/admin/home" component={ Home } />
-        <Route exact path="/admin/awards/new" component={ SkeletonKeyEditContainer } />
-        <Route exact path="/admin/announcements/new" component={ AnnouncementEditContainer } />
         <Route exact path="/admin/posts" component={PostContainer } />
+
+        <Route exact path="/admin/interviews/new" component={ InterviewEditContainer } />
+        <Route exact path="/admin/interviews/:id/edit" component={ InterviewContainer } />
         <Route exact path="/admin/interviews/" component={ InterviewContainer } />
+
+        <Route exact path="/admin/TopLists/new" component={ TopListsForm } />
+        <Route exact path="/admin/TopLists/:id/edit" component={ TopListContainer} />
         <Route exact path="/admin/TopLists/" component={ TopListContainer} />
+
+        <Route exact path='/admin/newEditForm' component= { MyEditor} />
+
+        <Route exact path="/admin/awards/new" component={ SkeletonKeyEditContainer } />
         <Route exact path="/admin/awards/" component={ SkeletonKeyContainer} />
+        <Route exact path="/admin/awards/:id/edit" component={ SkeletonKeyContainer} />
+
+        <Route exact path="/admin/announcements/new" component={ AnnouncementEditContainer } />
         <Route exact path="/admin/announcements/" component={ AnnouncementContainer } />
+        <Route exact path="/admin/announcements/:id/edit" component={ AnnouncementContainer } />
+
 
       </Switch>
     </Router>
