@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import Editor from './Editor'
+import Editor from '../Editor';
 import {connect} from 'react-redux';
-import {createAward} from '../../actions/awardActions';
+import {createAward} from '../../../actions/awardActions';
 import Form from 'react-bootstrap/Form';
 
 class SkeletonKeyForm extends Component{

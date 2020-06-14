@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import Editor from './Editor'
+import Editor from '../Editor';
 import {connect} from 'react-redux';
-import {createInterview} from '../../actions/interviewActions';
+import {createInterview} from '../../../actions/interviewActions';
 import Form from 'react-bootstrap/Form';
 
 class InterviewForm extends Component{

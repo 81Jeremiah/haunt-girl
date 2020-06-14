@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
-import Editor from './Editor'
+import Editor from '../Editor';
 import {connect} from 'react-redux';
-import {createAnnouncement} from '../../actions/announcementActions';
+import {createAnnouncement} from '../../../actions/announcementActions';
 import Form from 'react-bootstrap/Form';
 
 class AnnouncementForm extends Component{
