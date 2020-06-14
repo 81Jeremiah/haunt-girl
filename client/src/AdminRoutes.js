@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import EditContainer from './components/admin/containers/EditContainer';
 import Home from './components/admin/Home';
 
-import InterviewEditContainer from './components/admin/containers/editContainers/InterviewEditContaner';
+import InterviewEditContainer from './components/admin/containers/editContainers/InterviewEditContainer';
 import InterviewForm from './components/admin/adminForms/InterviewForm';
 import InterviewContainer from './components/admin/containers/homecontainers/InterviewContainer'
 
