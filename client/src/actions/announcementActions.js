@@ -34,7 +34,7 @@ export const fetchAnnouncements = () => {
 export const getAnnouncement = (announcementId) => {
   return (dispatch) => {
     dispatch({type: 'LOADING_ANNOUNCEMENT'});
-      return fetch('/api/posts/'+ announcementId)
+      return fetch('/api/announcements/'+ announcementId)
 
     .then(response => response.json())
     .then(announcement => {
