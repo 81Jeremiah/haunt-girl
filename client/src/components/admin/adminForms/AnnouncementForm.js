@@ -3,16 +3,18 @@ import Editor from '../Editor';
 import {connect} from 'react-redux';
 import {createAnnouncement} from '../../../actions/announcementActions';
 import Form from 'react-bootstrap/Form';
+import AdminHeader from '../AdminHeader';
 
 class AnnouncementForm extends Component{
-  state = {
 
-      title: "",
-      content: "",
-
-
-}
-
+  constructor(props) {
+    super(props);
+    console.log(props)
+    this.state = {
+      title: props.announcement.title || "",
+      content: props.announcement.content || "",
+    };
+   }
 
   handleSubmit = event =>{
     event.preventDefault()
@@ -39,6 +41,7 @@ class AnnouncementForm extends Component{
   render(){
   return(
     <>
+    <AdminHeader />
     <Form onSubmit={this.handleSubmit}>
     <Form.Group controlId="">
       <Form.Label column sm={2}>Title</Form.Label>
@@ -50,7 +53,7 @@ class AnnouncementForm extends Component{
         name="title"/>
     </Form.Group>
     <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
-     <input type="submit" value='Create Announcement'/>
+  <input type="submit" value='Submit'/>
     </Form>
     </>
   );
