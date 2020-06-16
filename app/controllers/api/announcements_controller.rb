@@ -15,7 +15,8 @@ class Api::AnnouncementsController < ApplicationController
   end
 
   def show
-    announcement = Announcement.find_by(id: param[:id])
+    
+    announcement = Announcement.find_by(id: params[:id])
     render json: announcement
   end
 
