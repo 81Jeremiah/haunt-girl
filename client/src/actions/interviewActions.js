@@ -33,7 +33,7 @@ export const fetchInterviews = () => {
 export const fetchInterview = (interviewId) => {
   return (dispatch) => {
     dispatch({type: 'LOADING_INTERVIEW'});
-    return fetch('/api/interviews'+interviewId, {
+    return fetch('/api/interviews/'+interviewId, {
       method: "GET"
     })
     .then(response => response.json())

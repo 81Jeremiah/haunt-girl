@@ -25,7 +25,7 @@ class InterviewContainer extends Component {
       <div>
 
         <InterviewList interviews={this.props.interviews}/>
-      <Link to={`/admin/interviews/new`}> Create New </Link>
+        <Link to={`/admin/interviews/new`}> Create New </Link>
 
       </div>
     </>
