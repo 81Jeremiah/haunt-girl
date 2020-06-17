@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import  {getAnnouncement} from '../../../../actions/announcementActions';
-import AnnouncementForm from '../../AnnouncementForm';
+import AnnouncementEditForm from '../../adminForms/editForms/AnnouncementEditForm';
 import AdminHeader from '../../AdminHeader'
 
 class AnnouncementEditContainer extends Component {
@@ -13,7 +13,8 @@ class AnnouncementEditContainer extends Component {
 
  componentDidMount(){
    const announcementId = this.props.match.params.id
-   this.props.getAnnouncement(announcementId)
+   console.log(announcementId)
+   this.props.getAnnouncement(1)
 
  }
 
@@ -27,11 +28,10 @@ class AnnouncementEditContainer extends Component {
       </div>
       <div>
 
-      <AnnouncementForm announcement={this.state.announcement}
-
+       <AnnouncementEditForm announcement={this.props.announcement}
 
         />
-
+       {console.log(this.props.announcement)}
       </div>
     </>
     )
@@ -40,7 +40,7 @@ class AnnouncementEditContainer extends Component {
 
 
   const mapStateToProps = state => {
-      return {announcement: state.announcement.announcement}
+      return {announcement: state.announcements.announcement}
   };
 
 

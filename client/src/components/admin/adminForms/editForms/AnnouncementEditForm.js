@@ -1,9 +1,9 @@
 import React,{Component} from 'react';
-import Editor from '../Editor';
+import Editor from '../../Editor';
 import {connect} from 'react-redux';
-import {createAnnouncement} from '../../../actions/announcementActions';
+import {updateAnnouncement} from '../../../../actions/announcementActions';
 import Form from 'react-bootstrap/Form';
-import AdminHeader from '../AdminHeader';
+
 
 class AnnouncementForm extends Component{
 
@@ -19,6 +19,15 @@ class AnnouncementForm extends Component{
 
 
     this.props.createAnnouncement({'announcement': announcement})
+  }
+
+  componentDidUpdate = (prevProps) => {
+    if(prevProps !== this.props){
+      this.setState({
+        title: this.props.announcement.title || "",
+        content: this.props.announcement.content || "",
+      });
+    }
   }
 
   handleChange = event =>{
@@ -39,9 +48,6 @@ class AnnouncementForm extends Component{
   return(
 
     <>
-
-    <AdminHeader />
-
     <Form onSubmit={this.handleSubmit}>
     <Form.Group controlId="">
       <Form.Label column sm={2}>Title </Form.Label>
@@ -53,7 +59,7 @@ class AnnouncementForm extends Component{
         name="title"/>
     </Form.Group>
     <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
-  <input type="submit" value='Submit'/>
+    <input type="submit" value='Update Announcement'/>
     </Form>
     </>
   );
