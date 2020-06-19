@@ -59,3 +59,23 @@ export const deleteAnnouncement = announcementId => {
     .catch(error => console.log(error))
   }
 }
+
+export const updateAnnouncement = (announcementId, announcement) => {
+
+  return (dispatch) => {
+    dispatch({type: 'SENDING_POST'});
+    return fetch(`/api/announcements/${announcementId}`, {
+      method: "PATCH",
+      // headers: {
+      //   "Content-Type": 'application/json',
+      //   "Authorization": `Bearer ${localStorage.auth_token}`
+      // },
+      body: announcement
+    })
+    .then(response => response.json())
+    .then(announcement => {
+      dispatch({type:'UPDATE_ANNOUNCEMENT', announcement: announcement})
+    })
+    .catch(error => console.log(error))
+  }
+}
