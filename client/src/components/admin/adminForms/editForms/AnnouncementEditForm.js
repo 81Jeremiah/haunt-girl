@@ -7,9 +7,20 @@ import Form from 'react-bootstrap/Form';
 
 class AnnouncementForm extends Component{
 
+  // constructor(props) {
+  //    super(props);
+  //    this.state = {
+  //      title: this.props.announcement.title || "",
+  //      content: this.props.announcement.content || "",
+  //      id: this.props.announcement.id || ""
+  //    };
+  //  }
+
+
   state = {
               title: "",
               content: "",
+              id: ""
           };
 
 
@@ -18,7 +29,7 @@ class AnnouncementForm extends Component{
     const announcement = this.state
 
 
-    this.props.createAnnouncement({'announcement': announcement})
+    this.props.updateAnnouncement(this.state.id, {'announcement': announcement})
   }
 
   componentDidUpdate = (prevProps) => {
@@ -26,6 +37,7 @@ class AnnouncementForm extends Component{
       this.setState({
         title: this.props.announcement.title || "",
         content: this.props.announcement.content || "",
+        id: this.props.announcement.id || ""
       });
     }
   }
@@ -66,4 +78,4 @@ class AnnouncementForm extends Component{
  }
 }
 
-export default connect(null, {createAnnouncement})(AnnouncementForm)
+export default connect(null, {updateAnnouncement})(AnnouncementForm)
