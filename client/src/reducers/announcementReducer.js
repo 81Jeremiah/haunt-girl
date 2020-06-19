@@ -27,6 +27,9 @@ export default ( state =
       let remainingAnnouncements = this.state.announcements.filter(announcement => announcement !== action.announcement)
       return {...state, announcements: remainingAnnouncements}
 
+    case 'UPDATE_ANNOUNCEMENT':
+      return {...state, loading:false, announcement: action.announcement}
+
     default:
       return state
   }
