@@ -5,17 +5,7 @@ import {updateAnnouncement} from '../../../../actions/announcementActions';
 import Form from 'react-bootstrap/Form';
 
 
-class AnnouncementForm extends Component{
-
-  // constructor(props) {
-  //    super(props);
-  //    this.state = {
-  //      title: this.props.announcement.title || "",
-  //      content: this.props.announcement.content || "",
-  //      id: this.props.announcement.id || ""
-  //    };
-  //  }
-
+class AnnouncementEditForm extends Component{
 
   state = {
               title: "",
@@ -78,4 +68,4 @@ class AnnouncementForm extends Component{
  }
 }
 
-export default connect(null, {updateAnnouncement})(AnnouncementForm)
+export default connect(null, {updateAnnouncement})(AnnouncementEditForm)
