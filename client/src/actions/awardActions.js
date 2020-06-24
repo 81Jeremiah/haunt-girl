@@ -60,3 +60,23 @@ export const deleteWinner = winnerId => {
     .catch(error => console.log(error))
   }
 }
+
+export const updateAward = (awardId, award) => {
+
+  return (dispatch) => {
+    dispatch({type: 'SENDING_AWARD'});
+    return fetch(`/api/announcements/${awardId}`, {
+      method: "PATCH",
+      // headers: {
+      //   "Content-Type": 'application/json',
+      //   "Authorization": `Bearer ${localStorage.auth_token}`
+      // },
+      body: award
+    })
+    .then(response => response.json())
+    .then(award => {
+      dispatch({type:'UPDATE_AWARD', award: award})
+    })
+    .catch(error => console.log(error))
+  }
+}
