@@ -63,7 +63,7 @@ export const deleteAnnouncement = announcementId => {
 export const updateAnnouncement = (announcementId, announcement) => {
 
   return (dispatch) => {
-    dispatch({type: 'SENDING_POST'});
+    dispatch({type: 'SENDING_ANNOUNCEMENT'});
     return fetch(`/api/announcements/${announcementId}`, {
       method: "PATCH",
       // headers: {
