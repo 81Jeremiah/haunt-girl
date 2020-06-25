@@ -65,7 +65,7 @@ export const updateAward = (awardId, award) => {
 
   return (dispatch) => {
     dispatch({type: 'SENDING_AWARD'});
-    return fetch(`/api/announcements/${awardId}`, {
+    return fetch(`/api/awards/${awardId}`, {
       method: "PATCH",
       // headers: {
       //   "Content-Type": 'application/json',
