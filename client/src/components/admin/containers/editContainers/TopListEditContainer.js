@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import  {fetchList} from '../../../../actions/listActions';
-import TopListsForm from '../../TopListsForm';
+import TopListEditForm from '../../../adminForms/editForms/TopListEditForm';
 import AdminHeader from '../../AdminHeader'
 
 class TopListEditContainer extends Component {
@@ -21,13 +21,9 @@ class TopListEditContainer extends Component {
       <div className='AdminHeader'>
         <AdminHeader />
       </div>
+      
       <div>
-
-       <TopListsForm list={this.state.list}
-
-
-        />
-
+       <TopListEditForm list={this.state.list} />
       </div>
     </>
     )

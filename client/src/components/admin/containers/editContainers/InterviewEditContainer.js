@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import  {fetchInterview} from '../../../../actions/interviewActions';
-import InterviewForm from '../../adminForms/InterviewForm';
+import InterviewEditForm from '../../adminForms/editForms/InterviewEditForm';
 import AdminHeader from '../../AdminHeader'
 
 class InterviewEditContainer extends Component {
@@ -23,7 +23,7 @@ class InterviewEditContainer extends Component {
       </div>
       <div>
 
-       <InterviewForm interview={this.state.interview}
+       <InterviewEditForm interview={this.state.interview}
 
 
         />

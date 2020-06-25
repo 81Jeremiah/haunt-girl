@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import  {fetchWinner} from '../../../../actions/awardActions';
-import SkeletonKeyForm from '../../SkeletonKeyForm';
+import SkeletonKeyEditForm from '../../adminForms/editForms/SkeletonKeyEditForm';
 import AdminHeader from '../../AdminHeader'
 
 class SkeletonKeyEditContainer extends Component {
@@ -23,7 +23,7 @@ class SkeletonKeyEditContainer extends Component {
       </div>
       <div>
 
-       <SkeletonKeyForm award={this.state.award}
+       <SkeletonKeyEditForm award={this.state.award}
 
 
         />
