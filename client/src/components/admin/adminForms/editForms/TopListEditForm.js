@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import AdminHeader from './AdminHeader';
 import {connect} from 'react-redux';
-import {createList} from '../../actions/listActions';
+import {updateList} from '../../../../actions/listActions';
 import Form from 'react-bootstrap/Form';
-import EscapeRoomSearch from './EscapeRoomSearch';
-import AddedEscapeRooms from './AddedEscapeRooms';
-import {removeFound} from '../../actions/searchActions';
+import EscapeRoomSearch from '../../EscapeRoomSearch';
+import AddedEscapeRooms from '../../AddedEscapeRooms';
+import {removeFound} from '../../../../actions/searchActions';
 
 class TopListEditForm extends Component {
   state = {
@@ -108,7 +108,7 @@ class TopListEditForm extends Component {
         <AddedEscapeRooms
           escapeRooms={this.state.escapeRooms}
           deleteEscapeRoom={this.deleteEscapeRoom} />
-        <input type="submit" value='Create List'/>
+        <input type="submit" value='Update List'/>
       </Form>
       </>
     );
@@ -117,4 +117,4 @@ class TopListEditForm extends Component {
 
 
 
-export default connect(null,{createList, removeFound})(TopListEditForm)
+export default connect(null,{updateList, removeFound})(TopListEditForm)
