@@ -59,3 +59,24 @@ export const deleteInterview = interviewId => {
     .catch(error => console.log(error))
   }
 }
+
+
+export const updateInterview = (interviewId, interview) => {
+
+  return (dispatch) => {
+    dispatch({type: 'SENDING_AWARD'});
+    return fetch(`/api/interviews/${interviewId}`, {
+      method: "PATCH",
+      // headers: {
+      //   "Content-Type": 'application/json',
+      //   "Authorization": `Bearer ${localStorage.auth_token}`
+      // },
+      body: interview
+    })
+    .then(response => response.json())
+    .then(interview => {
+      dispatch({type:'UPDATE_INTERVIEW', interview: interview})
+    })
+    .catch(error => console.log(error))
+  }
+}
