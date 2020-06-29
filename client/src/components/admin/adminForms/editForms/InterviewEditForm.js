@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
 import Editor from '../Editor';
 import {connect} from 'react-redux';
-import {updateInterview} from '../../../../../actions/interviewActions';
+import {updateInterview,deleteInterview} from '../../../../actions/interviewActions';
 import Form from 'react-bootstrap/Form';
+import DeleteButton from '../../buttons/DeleteButton';
+
 
 class InterviewEditForm extends Component{
 
@@ -19,6 +21,11 @@ class InterviewEditForm extends Component{
     const interview = this.state
     const interviewId = this.state.id
     this.props.updateInterview(interviewId, {'interview': interview})
+  }
+
+  handleDelete = () => {
+    this.props.deleteInterview(this.state.id)
+    this.props.history.push('/admin/interviews')
   }
 
   handleChange = event =>{
@@ -71,9 +78,10 @@ class InterviewEditForm extends Component{
     <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
      <input type="submit" value='Update Interview'/>
     </Form>
+    <DeleteButton />
     </>
   );
  }
 }
 
-export default connect(null,{updateInterview})(InterviewEditForm)
+export default connect(null,{updateInterview, deleteInterview})(InterviewEditForm)
