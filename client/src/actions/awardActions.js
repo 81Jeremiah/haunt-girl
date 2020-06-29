@@ -44,9 +44,9 @@ export const fetchWinners = () => {
   }
 }
 
-export const deleteWinner = winnerId => {
+export const deleteAward = awardId => {
   return (dispatch) => {
-    return fetch(`/api/posts/${winnerId}`, {
+    return fetch(`/api/awards/${awardId}`, {
       method: "DELETE",
       headers: {
         "Accept": "application/json",
@@ -54,8 +54,8 @@ export const deleteWinner = winnerId => {
       }
     })
     .then(response => response.json())
-    .then(winner => {
-      dispatch({type:'DELETE_AWARD', post: winner})
+    .then(award => {
+      dispatch({type:'DELETE_AWARD', award: award})
     })
     .catch(error => console.log(error))
   }
