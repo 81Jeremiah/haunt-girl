@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
 import Editor from '../../Editor';
 import {connect} from 'react-redux';
-import {updateAnnouncement} from '../../../../actions/announcementActions';
+import {updateAnnouncement,deleteAnnouncement } from '../../../../actions/announcementActions';
 import Form from 'react-bootstrap/Form';
+import DeleteButton from '../../buttons/DeleteButton';
+
 
 
 class AnnouncementEditForm extends Component{
@@ -20,6 +22,11 @@ class AnnouncementEditForm extends Component{
 
 
     this.props.updateAnnouncement(this.state.id, {'announcement': announcement})
+  }
+
+  handleDelete = () => {
+    this.props.deleteAnnouncement(this.state.id)
+    this.props.history.push('/admin/announcements')
   }
 
   componentDidUpdate = (prevProps) => {
@@ -63,9 +70,10 @@ class AnnouncementEditForm extends Component{
     <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
     <input type="submit" value='Update Announcement'/>
     </Form>
+    <DeleteButton />
     </>
   );
  }
 }
 
-export default connect(null, {updateAnnouncement})(AnnouncementEditForm)
+export default connect(null, {updateAnnouncement, deleteAnnouncement})(AnnouncementEditForm)
