@@ -1,8 +1,10 @@
 import React,{Component} from 'react';
 import Editor from './Editor'
 import {connect} from 'react-redux';
-import {updateAward} from '../../actions/awardActions';
+import {updateAward,deleteAward } from '../../../../actions/awardActions';
 import Form from 'react-bootstrap/Form';
+import DeleteButton from '../../buttons/DeleteButton';
+
 
 class SkeletonKeyEditForm extends Component{
   state = {
@@ -24,6 +26,11 @@ class SkeletonKeyEditForm extends Component{
     console.log( {'award': award})
 
     this.props.updateAward(awardId, {'award': award})
+  }
+
+  handleDelete = () => {
+    this.props.deleteAward(this.state.id)
+    this.props.history.push('/admin/awards')
   }
 
   handleChange = event =>{
@@ -86,9 +93,10 @@ class SkeletonKeyEditForm extends Component{
     <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
      <input type="submit" value='Create Award'/>
     </Form>
+    <DeleteButton />
     </>
   );
  }
 }
 
-export default connect(null,{updateAward})(SkeletonKeyEditForm)
+export default connect(null,{updateAward, deleteAward})(SkeletonKeyEditForm)
