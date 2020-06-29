@@ -47,7 +47,7 @@ export const fetchList = (listId) => {
 
 export const deleteList = listId => {
   return (dispatch) => {
-    return fetch(`/api/posts/${listId}`, {
+    return fetch(`/api/top_lists/${listId}`, {
       method: "DELETE",
       headers: {
         "Accept": "application/json",
