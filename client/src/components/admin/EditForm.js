@@ -10,6 +10,7 @@ import Editor from './Editor'
 import Dropzone from 'react-dropzone'
 import { withRouter } from 'react-router-dom';
 import { Redirect } from 'react-router-dom';
+import DeleteButton from './buttons/DeleteButton';
 
 class EditForm extends Component {
 
@@ -355,14 +356,7 @@ componentDidUpdate = (prevProps) => {
         </Button>
 
         </form>
-
-        <Button
-             onClick={this.handleDelete}
-             variant="primary"
-             type="submit"
-             value="Delete">Delete
-       </Button>
-
+        <DeleteButton />
       </div>
 
     )
