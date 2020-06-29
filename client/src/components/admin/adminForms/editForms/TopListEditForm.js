@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
 import AdminHeader from './AdminHeader';
 import {connect} from 'react-redux';
-import {updateList} from '../../../../actions/listActions';
+import {updateList, deleteList} from '../../../../actions/listActions';
 import Form from 'react-bootstrap/Form';
 import EscapeRoomSearch from '../../EscapeRoomSearch';
 import AddedEscapeRooms from '../../AddedEscapeRooms';
 import {removeFound} from '../../../../actions/searchActions';
+import DeleteButton from '../../buttons/DeleteButton';
 
 class TopListEditForm extends Component {
+
   state = {
 
       title: "",
@@ -19,13 +21,13 @@ class TopListEditForm extends Component {
 
     handleSubmit = event =>{
       event.preventDefault()
-      const list = {title:this.state.title, area:this.state.area, posts_attributes:
-        {"1" : {title:'THE HAUNTED MORTUARY'},
-         "2" : {title:'EL PASO SHERIFF HAUNTED HOUSE'}
-        }
-      }
+      // const list = {title:this.state.title, area:this.state.area, posts_attributes:
+      //   {"1" : {title:'THE HAUNTED MORTUARY'},
+      //    "2" : {title:'EL PASO SHERIFF HAUNTED HOUSE'}
+      //   }
+      // }
 
-      this.props.updateList({'top_list': list})
+      this.props.updateList({'top_list': this.state.list})
       this.setState({
         title: "",
         area: "",
@@ -33,6 +35,12 @@ class TopListEditForm extends Component {
         posts:[],
         id: ""
       })
+    }
+
+
+    handleDelete = () => {
+      this.props.deleteList(this.state.id)
+      this.props.history.push('/admin/toplists')
     }
 
     componentDidUpdate = (prevProps) => {
@@ -110,6 +118,7 @@ class TopListEditForm extends Component {
           deleteEscapeRoom={this.deleteEscapeRoom} />
         <input type="submit" value='Update List'/>
       </Form>
+      <DeleteButton />
       </>
     );
    }
@@ -117,4 +126,4 @@ class TopListEditForm extends Component {
 
 
 
-export default connect(null,{updateList, removeFound})(TopListEditForm)
+export default connect(null,{updateList, removeFound, deleteList})(TopListEditForm)
