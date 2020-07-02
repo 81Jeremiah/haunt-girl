@@ -45,6 +45,26 @@ export const fetchList = (listId) => {
   }
 }
 
+export const updateList = (listId, list) => {
+  console.log(list)
+  return (dispatch) => {
+    dispatch({type: 'SENDING_LIST'});
+    return fetch(`/api/top_lists/${listId}`, {
+      method: "PATCH",
+      // headers: {
+      //   "Content-Type": 'application/json',
+      //   "Authorization": `Bearer ${localStorage.auth_token}`
+      // },
+      body: list
+    })
+    .then(response => response.json())
+    .then(post => {
+      dispatch({type:'UPDATE_LIST', list: list})
+    })
+    .catch(error => console.log(error))
+  }
+}
+
 export const deleteList = listId => {
   return (dispatch) => {
     return fetch(`/api/top_lists/${listId}`, {
