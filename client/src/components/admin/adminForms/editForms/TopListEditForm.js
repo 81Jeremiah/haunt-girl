@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import AdminHeader from './AdminHeader';
+import AdminHeader from '../../AdminHeader';
 import {connect} from 'react-redux';
 import {updateList, deleteList} from '../../../../actions/listActions';
 import Form from 'react-bootstrap/Form';
@@ -27,7 +27,8 @@ class TopListEditForm extends Component {
       //   }
       // }
 
-      this.props.updateList({'top_list': this.state.list})
+      this.props.updateList(this.state.id, {'top_list': this.state})
+
       this.setState({
         title: "",
         area: "",
