@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import Editor from './Editor'
+import Editor from '../../Editor'
 import {connect} from 'react-redux';
 import {updateAward,deleteAward } from '../../../../actions/awardActions';
 import Form from 'react-bootstrap/Form';
