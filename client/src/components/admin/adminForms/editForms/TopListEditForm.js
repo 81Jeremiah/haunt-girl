@@ -28,14 +28,9 @@ class TopListEditForm extends Component {
       // }
 
       this.props.updateList(this.state.id, {'top_list': this.state})
+      this.props.history.push('/admin/toplists')
 
-      this.setState({
-        title: "",
-        area: "",
-        escapeRooms: [],
-        posts:[],
-        id: ""
-      })
+
     }
 
 
@@ -119,7 +114,7 @@ class TopListEditForm extends Component {
           deleteEscapeRoom={this.deleteEscapeRoom} />
         <input type="submit" value='Update List'/>
       </Form>
-      <DeleteButton />
+      <DeleteButton handleDelete={this.handleDelete} />
       </>
     );
    }

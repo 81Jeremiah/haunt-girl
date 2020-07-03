@@ -26,6 +26,9 @@ class SkeletonKeyEditForm extends Component{
     console.log( {'award': award})
 
     this.props.updateAward(awardId, {'award': award})
+    this.props.history.push('/admin/awards')
+
+
   }
 
   handleDelete = () => {
@@ -91,9 +94,9 @@ class SkeletonKeyEditForm extends Component{
         name="link_to_post"/>
     </Form.Group>
     <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
-     <input type="submit" value='Create Award'/>
+     <input type="submit" value='Update Award'/>
     </Form>
-    <DeleteButton />
+    <DeleteButton handleDelete={this.handleDelete} />
     </>
   );
  }

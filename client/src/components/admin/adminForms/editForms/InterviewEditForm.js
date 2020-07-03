@@ -21,6 +21,7 @@ class InterviewEditForm extends Component{
     const interview = this.state
     const interviewId = this.state.id
     this.props.updateInterview(interviewId, {'interview': interview})
+    this.props.history.push('/admin/interviews')
   }
 
   handleDelete = () => {
@@ -78,7 +79,8 @@ class InterviewEditForm extends Component{
     <div><Editor content={this.state.content} getEditorText={this.getEditorText}/> </div>
      <input type="submit" value='Update Interview'/>
     </Form>
-    <DeleteButton />
+    <DeleteButton handleDelete={this.handleDelete} />
+
     </>
   );
  }

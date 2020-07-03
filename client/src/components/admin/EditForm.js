@@ -121,6 +121,8 @@ componentDidUpdate = (prevProps) => {
     console.log(post)
     this.props.updatePost(postId, post)
     window.alert('you updated the post')
+    this.props.history.push('/admin/posts')
+
     // this.setState({
     //   title: "" ,
     //   content: "",
@@ -356,7 +358,7 @@ componentDidUpdate = (prevProps) => {
         </Button>
 
         </form>
-        <DeleteButton />
+        <DeleteButton handleDelete={this.handleDelete} />
       </div>
 
     )
