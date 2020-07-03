@@ -1,7 +1,9 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import LogoutButton from './LogoutButton';
 
-const AdminHeader = () => {
+
+const AdminHeader = (props) => {
   return(
     <div className="header-bar-warp d-flex">
       <nav className="top-nav-area w-100">
@@ -14,6 +16,7 @@ const AdminHeader = () => {
           <li><Link to="/admin/announcements/">Announcements</Link></li>
           <li><Link to="/admin/about">About</Link></li>
           <li><Link to="admin/contact">Contact</Link></li>
+          <li><LogoutButton history={props.history}/></li>
         </ul>
       </nav>
     </div>
