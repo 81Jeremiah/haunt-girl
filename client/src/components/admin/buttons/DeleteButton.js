@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
 
- const DeleteButton = () =>{
+ const DeleteButton = (props) =>{
   return(
     <Button
-         onClick={this.handleDelete}
+         onClick={props.handleDelete}
          variant="primary"
          type="submit"
          value="Delete">Delete
