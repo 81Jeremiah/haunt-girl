@@ -23,7 +23,7 @@ class SkeletonKeyEditContainer extends Component {
       </div>
       <div>
 
-       <SkeletonKeyEditForm award={this.state.award}
+       <SkeletonKeyEditForm award={this.props.award}
 
 
         />
@@ -36,7 +36,7 @@ class SkeletonKeyEditContainer extends Component {
 
 
   const mapStateToProps = state => {
-      return {award: state.award.award}
+      return {award: state.awards.award}
   };
 
 

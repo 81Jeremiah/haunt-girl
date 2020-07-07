@@ -9,6 +9,7 @@ class InterviewEditContainer extends Component {
 
  componentDidMount(){
    const interviewId = this.props.match.params.id
+   console.log(interviewId)
    this.props.fetchInterview(interviewId)
 
  }
@@ -23,7 +24,7 @@ class InterviewEditContainer extends Component {
       </div>
       <div>
 
-       <InterviewEditForm interview={this.state.interview}
+       <InterviewEditForm interview={this.props.interview}
 
 
         />
@@ -36,7 +37,8 @@ class InterviewEditContainer extends Component {
 
 
   const mapStateToProps = state => {
-      return {interview: state.interview.interview}
+      console.log(state)
+      return {interview: state.interviews.interview}
   };
 
 

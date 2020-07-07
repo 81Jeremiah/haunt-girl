@@ -23,7 +23,7 @@ class TopListEditContainer extends Component {
       </div>
 
       <div>
-       <TopListEditForm list={this.state.list} />
+       <TopListEditForm list={this.props.list} />
       </div>
     </>
     )
@@ -32,7 +32,7 @@ class TopListEditContainer extends Component {
 
 
   const mapStateToProps = state => {
-      return {list: state.list.list}
+      return {list: state.lists.list}
   };
 
 
