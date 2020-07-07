@@ -15,7 +15,7 @@ class Api::InterviewsController < ApplicationController
   end
 
   def show
-    interview = Interview.find_by(id: param[:id])
+    interview = Interview.find_by(id: params[:id])
     render json: interview
   end
 

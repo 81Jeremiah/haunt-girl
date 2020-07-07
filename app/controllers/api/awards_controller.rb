@@ -14,7 +14,7 @@ class Api::AwardsController < ApplicationController
   end
 
   def show
-    award = Award.find_by(id: param[:id])
+    award = Award.find_by(id: params[:id])
     render json: award
   end
 

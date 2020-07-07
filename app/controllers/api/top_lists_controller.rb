@@ -15,7 +15,7 @@ class Api::TopListsController < ApplicationController
   end
 
   def show
-    list = TopList.find_by(id: param[:id])
+    list = TopList.find_by(id: params[:id])
     render json: list
   end
 
