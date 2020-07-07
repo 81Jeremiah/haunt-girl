@@ -31,6 +31,7 @@ export const fetchInterviews = () => {
 }
 
 export const fetchInterview = (interviewId) => {
+  debugger
   return (dispatch) => {
     dispatch({type: 'LOADING_INTERVIEW'});
     return fetch('/api/interviews/'+interviewId, {
@@ -45,7 +46,7 @@ export const fetchInterview = (interviewId) => {
 
 export const deleteInterview = interviewId => {
   return (dispatch) => {
-    return fetch(`/api/posts/${interviewId}`, {
+    return fetch(`/api/interviews/${interviewId}`, {
       method: "DELETE",
       headers: {
         "Accept": "application/json",
