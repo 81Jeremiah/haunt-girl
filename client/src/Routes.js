@@ -10,6 +10,7 @@ import Contact from './components/Static/Contact';
 import Login from './components/admin/Login';
 import SearchResults from './components/SearchResults';
 import interviewContainer from './containers/InterviewContainer';
+import FourOFourPage from './components/404Page';
 const Routes = () => {
 
   return (
@@ -31,7 +32,7 @@ const Routes = () => {
         <Route exact path="/SkeletonKeyAwards" component={ SkeletonKeysContainer} />
         <Route exact path="/blog/announcements" component={ AnnouncementsContainer} />
         <Route exact path="/interviews" component={ interviewContainer} />
-        <Route render={ () => <h1>404 Error</h1> } />
+        <Route render={ FourOFourPage } />
       </Switch>
     </Router>
   )
