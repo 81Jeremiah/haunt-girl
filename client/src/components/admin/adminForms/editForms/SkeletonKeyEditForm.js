@@ -51,12 +51,13 @@ class SkeletonKeyEditForm extends Component{
 
   componentDidUpdate = (prevProps) => {
     if(prevProps !== this.props){
+      console.log(this.props)
       this.setState({
         title: this.props.award.title || "",
         link_to_post: this.props.award.link_to_post || "",
         content: this.props.award.content || "",
-        year:this.props.award.year || "",
-        id:this.props.award.id || ""
+        year: this.props.award.year || "",
+        id: this.props.award.id || ""
 
       });
     }
