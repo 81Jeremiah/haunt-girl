@@ -1,8 +1,7 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
-
-
-const FourOFourPage = () =>{
+const FourOFourPage = (props) =>{
   return(
     <>
     <div className='foroforbody'>
@@ -36,8 +35,16 @@ const FourOFourPage = () =>{
       </button>
     </form>
     <div className="buttons">
-      <button className="btn">Back</button>
-      <button className="btn">Home</button>
+
+        <button
+           className="btn"
+           onClick={() => props.history.goBack()}>
+           Back
+         </button>
+
+      <Link to="/">
+        <button className="btn">Home</button>
+      </Link>
     </div>
     </div>
   </div>
