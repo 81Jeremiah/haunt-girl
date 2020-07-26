@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom'
+import SearchBar from '../containers/SearchBar';
 
 const FourOFourPage = (props) =>{
   return(
@@ -10,7 +11,7 @@ const FourOFourPage = (props) =>{
       <h1>404</h1>
       <h3>page not found</h3>
     </div>
-    <div className="container">
+    <div className="forofor-container">
     <div className="ghost-copy">
         <div className="one"></div>
         <div className="two"></div>
@@ -28,12 +29,13 @@ const FourOFourPage = (props) =>{
     </div>
     <div className="bottom">
     <p>Boo, looks like a ghost stole this page!</p>
-    <form className="search">
-      <input type="text" className="search-bar" placeholder="Search"/>
-      <button type="submit" class="search-btn">
-        <i className="fa fa-search"></i>
-      </button>
-    </form>
+    <SearchBar />
+    {/*// <form className="search">
+    //   <input type="text" className="search-bar" placeholder="Search"/>
+    //   <button type="submit" class="search-btn">
+    //     <i className="fa fa-search"></i>
+    //   </button>
+    // </form>*/}
     <div className="buttons">
 
         <button
