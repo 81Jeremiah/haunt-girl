@@ -1872,25 +1872,21 @@ ol {
   404 Page
 ---------------------*/
 
-$white: #EDEDED;
-$gray: #BFC0C0;
-$dark: #585959;
-$light: #D3DEEA;
+
 
 @import url('https://fonts.googleapis.com/css?family=Abril+Fatface|Lato');
 
-$big: 'Abril Fatface', serif;
-$body: 'Lato', sans-serif;
 
-body {
+
+/* body {
   background: #D3DEEA;
-}
+} */
 
 .top {
   margin-top: 30px;
 }
 
-.container {
+.forofor-container {
   margin: 0 auto;
   position: relative;
   width: 250px;
@@ -2110,7 +2106,7 @@ body {
   }
 }
 
-footer {
+/* footer {
   position: absolute;
   bottom: 0;
   right: 0;
@@ -2128,4 +2124,4 @@ footer {
       color: #7d7d7d;
     }
   }
-}
+} */
