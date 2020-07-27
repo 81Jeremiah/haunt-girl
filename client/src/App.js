@@ -55,25 +55,26 @@ class App extends Component {
 
  render() {
 
-    if (this.props.user && this.props.user.authorized) {
-
-      return (
-      <div className="App">
-        <>
-          <Routes />
-          <AdminRoutes authorized={this.props.user.authorized} />
-        </>
-       </div>
-     );
-    }else{
+    // if (this.props.user && this.props.user.authorized) {
+    //
+    //   return (
+    //   <div className="App">
+    //     <>
+    //
+    //       <AdminRoutes authorized={this.props.user.authorized} />
+    //       <Routes />
+    //     </>
+    //    </div>
+    //  );
+    // }else{}
       return(
         <div>
-          <Routes />
+          <Routes authorized={this.props.user.authorized}/>
         </div>
       );
     }
   }
-}
+
 
 const mapStateToProps = state => {
   console.log(state)
