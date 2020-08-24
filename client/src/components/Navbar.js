@@ -36,14 +36,14 @@ const Navbar = () =>{
               </li>
               <li><Link to="/">Blog</Link>
                   <ul className="sub-menu">
-                     <li><Link to="blog/toprated">Top Rated </Link></li>
-                     <li><Link to="blog/tips">Tips</Link></li>
-                     <li><Link to="blog/announcements">Announcements</Link></li>
+                     <li><Link to="/blog/toprated">Top Rated </Link></li>
+                     <li><Link to="/blog/tips">Tips</Link></li>
+                     <li><Link to="/blog/announcements">Announcements</Link></li>
                      <li><Link to="/interviews">Interviews</Link></li>
-                     <li><Link to="blog/General">General</Link></li>
+                     <li><Link to="/blog/General">General</Link></li>
                   </ul>
               </li>
-              <li><Link to="/SkeletonKeyAwards">Skeleton Key Awards</Link></li>              
+              <li><Link to="/SkeletonKeyAwards">Skeleton Key Awards</Link></li>
               <li><Link to="/about">About</Link></li>
               <li><Link to="contact">Contact</Link></li>
               <li><SearchBar /></li>
