@@ -29,13 +29,15 @@ const FourOFourPage = (props) =>{
     </div>
     <div className="bottom">
     <p>Boo, looks like a ghost stole this page!</p>
-    <SearchBar />
-    {/*// <form className="search">
-    //   <input type="text" className="search-bar" placeholder="Search"/>
-    //   <button type="submit" class="search-btn">
-    //     <i className="fa fa-search"></i>
-    //   </button>
-    // </form>*/}
+    {/* <div className="search">
+      <SearchBar />
+    </div> */}
+    <form className="search">
+       <input type="text" className="search-bar" placeholder="Search"/>
+       <button type="submit" class="search-btn">
+         <i className="fa fa-search"></i>
+       </button>
+    </form>
     <div className="buttons">
 
         <button
