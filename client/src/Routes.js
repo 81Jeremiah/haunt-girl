@@ -56,6 +56,8 @@ const Routes = (props) => {
         <Route exact path="/searchresults" component={ SearchResults} />
         <Route exact path="/SkeletonKeyAwards" component={ SkeletonKeysContainer} />
         <Route exact path="/blog/announcements" component={ AnnouncementsContainer} />
+        <Route exact path="/blog/toprated" component={ AnnouncementsContainer} />
+        <Route exact path="/blog/tips" component={ AnnouncementsContainer} />
         <Route exact path="/interviews" component={ interviewContainer} />
         <Route render={ FourOFourPage } />
       </Switch>
