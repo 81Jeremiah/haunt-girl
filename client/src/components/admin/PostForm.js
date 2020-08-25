@@ -250,7 +250,7 @@ class PostForm extends Component {
           <Form.Label>Blog Post</Form.Label>
             <Editor
               getEditorText={this.getEditorText}
-              content={""} />
+              content={this.state.content} />
 
 
            {/* <Form.Control as="textarea" rows="15" value={this.state.content} onChange={this.handleChange} name="content"
