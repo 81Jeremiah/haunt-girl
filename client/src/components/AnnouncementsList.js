@@ -7,7 +7,7 @@ import ReactHtmlParser from 'react-html-parser';
 
 const AnnouncementsList = (props) =>{
 
-  const listAnnouncements = props.Announcements.map( announcement => {
+  const listAnnouncements = props.announcements.map( announcement => {
 
     return(
 
