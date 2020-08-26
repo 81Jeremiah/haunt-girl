@@ -71,6 +71,11 @@ const Routes = (props) => {
         <Route exact path="/admin/posts/new" component={ PostForm} />
         <Route exact path="/admin/posts/:id/edit" component={ EditContainer} />
         <Route exact path="/admin/posts" component={PostContainer } />
+        <Route exact path="/admin/posts/reviews/escaperooms" component={PostContainer } />
+        <Route exact path="/admin/postsreviews/oddities" component={PostContainer } />
+        <Route exact path="/admin/postsreviews/immersives" component={PostContainer } />
+        <Route exact path="/admin/reviews/haunts" component={PostContainer } />
+
 
         <Route exact path="/admin/interviews/new" component={ InterviewForm } />
         <Route exact path="/admin/interviews/:id/edit" component={ InterviewEditContainer } />
