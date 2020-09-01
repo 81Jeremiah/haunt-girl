@@ -1,5 +1,6 @@
 class Api::InterviewsController < ApplicationController
-  skip_before_action :authorized, only: [:index, :create, :show]
+  skip_before_action :authorized, only: [:index, :show, :new, :create, :edit, :update, :destroy, :recent_posts, :search, :escape_room_search]
+  before_action :set_interview, only: [:update, :show, :edit, :destroy]
 
 
   def index
@@ -37,7 +38,13 @@ class Api::InterviewsController < ApplicationController
   def destroy
     @interview.destroy
   end
+
   private
+
+  def set_interview
+    @interview = Interview.find_by(id: params[:id])
+  end
+
 
   def interview_params
     params.require(:interview).permit(:title, :content, :website)
