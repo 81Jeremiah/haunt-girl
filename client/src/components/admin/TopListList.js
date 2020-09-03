@@ -1,15 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import { connect } from 'react-redux';
+import {deleteList} from '../../actions/listActions';
 
 
 const TopListList = (props) =>{
+
+  const handleClick = (list) => {
+    props.deleteEscapeRoom(list)
+  }
 
   const listLists = props.toplists.map( toplist => {
     return(
       <li key={toplist.id}>
         <Link to={`${toplist.id}/edit`}>{toplist.title}</Link>
-      </li>
+      <span onClick={() => handleClick(toplist.id)}>(x)</span>
+
+    </li>
     );
   });
 
@@ -22,4 +30,4 @@ const TopListList = (props) =>{
   );
 }
 
-export default TopListList
+export default connect(null,{deleteList})(TopListList)
