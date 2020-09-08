@@ -1,6 +1,6 @@
 class Api::TopListsController < ApplicationController
   skip_before_action :authorized, only: [:index, :create, :show]
-
+  before_action :set_list
 
   def index
     lists = TopList.all
@@ -37,9 +37,11 @@ class Api::TopListsController < ApplicationController
   def destroy
     @list.destroy
   end
-  private
 
   private
+
+  def set_list
+    @list = TopList.find_by(id: params[:id])
 
   def list_params
     params.require(:top_list).permit(:title, :area, :year, posts_attributes: [:title])

@@ -1,5 +1,6 @@
 class Api::AnnouncementsController < ApplicationController
   skip_before_action :authorized, only: [:index, :show, :create]
+  before_action :set_announcement, only: [:update, :show, :edit, :destroy]
 
 
   def index
@@ -15,7 +16,7 @@ class Api::AnnouncementsController < ApplicationController
   end
 
   def show
-    
+
     announcement = Announcement.find_by(id: params[:id])
     render json: announcement
   end
@@ -40,6 +41,10 @@ class Api::AnnouncementsController < ApplicationController
   end
 
   private
+
+  def set_announcement
+    @announcement= Announcement.find_by(id: params[:id])
+  end
 
   def announcement_params
     params.require(:announcement).permit(:title, :content)
