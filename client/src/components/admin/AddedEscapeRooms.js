@@ -9,7 +9,7 @@ const AddedEscapeRooms = (props) => {
   const results = props.escapeRooms.map(escaperoom => {
     return(
 
-      <li key={escaperoom.id}>{escaperoom.title}<span onClick={()=> handleClick(escaperoom)}>(x)</span></li>
+      <li key={escaperoom.id}>{escaperoom.title}<span onClick={() => handleClick(escaperoom)}>(x)</span></li>
      )
   });
 
