@@ -42,6 +42,7 @@ class Api::TopListsController < ApplicationController
 
   def set_list
     @list = TopList.find_by(id: params[:id])
+  end
 
   def list_params
     params.require(:top_list).permit(:title, :area, :year, posts_attributes: [:title])
