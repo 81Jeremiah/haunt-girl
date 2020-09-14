@@ -125,7 +125,7 @@ export const deletePost = postId => {
 export const fetchRecentPosts = () =>{
   return(dispatch) => {
       dispatch({type: 'LOADING_POSTS'});
-      return fetch('/api/posts/recentposts')
+      return fetch('api/posts/recentposts')
       .then(response => response.json())
       .then(posts => {
 
