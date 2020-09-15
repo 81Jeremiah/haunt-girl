@@ -6,6 +6,10 @@ import EscapeRoomSearch from '../../EscapeRoomSearch';
 import AddedEscapeRooms from '../../AddedEscapeRooms';
 import {removeFound} from '../../../../actions/searchActions';
 import DeleteButton from '../../buttons/DeleteButton';
+import { withRouter } from "react-router-dom";
+
+
+
 
 class TopListEditForm extends Component {
 
@@ -27,7 +31,10 @@ class TopListEditForm extends Component {
       // }
 
       this.props.updateList(this.state.id, {'top_list': this.state})
+
       this.props.history.push('/admin/toplists')
+
+
 
 
     }
@@ -121,4 +128,4 @@ class TopListEditForm extends Component {
 
 
 
-export default connect(null,{updateList, removeFound, deleteList})(TopListEditForm)
+export default withRouter(connect(null,{updateList, removeFound, deleteList})(TopListEditForm))
