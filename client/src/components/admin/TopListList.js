@@ -8,7 +8,7 @@ import {deleteList} from '../../actions/listActions';
 const TopListList = (props) =>{
 
   const handleClick = (list) => {
-    props.deleteEscapeRoom(list)
+    props.deleteList(list)
   }
 
   const listLists = props.toplists.map( toplist => {

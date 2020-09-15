@@ -6,8 +6,8 @@ import {deletePost} from '../../actions/postActions';
 const Reviews = (props) =>{
 
 
-  const handleClick = (escaperoom) => {
-    props.deleteEscapeRoom(escaperoom)
+  const handleClick = (review) => {
+    props.deletePost(review)
   }
 
 
