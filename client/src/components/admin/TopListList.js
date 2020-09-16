@@ -14,7 +14,7 @@ const TopListList = (props) =>{
   const listLists = props.toplists.map( toplist => {
     return(
       <li key={toplist.id}>
-        <Link to={`${toplist.id}/edit`}>{toplist.title}</Link>
+        <Link to={`toplists/${toplist.id}/edit`}>{toplist.title}</Link>
       <span onClick={() => handleClick(toplist.id)}>(x)</span>
 
     </li>
