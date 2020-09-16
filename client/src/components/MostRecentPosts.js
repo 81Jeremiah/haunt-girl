@@ -16,7 +16,7 @@ const MostRecentPosts = props =>{
           <div  className="top-meta"> <Link to={`/${category_url}`}>{category.name}</Link></div>
         <h3>{post.title}</h3>
           {ReactHtmlParser(post.content.substring(0,250))}
-        <Link to={`posts/${post.id}`} className="read-more">Read More  <img src={ doubleArrow } alt="#"/></Link>
+        <Link to={`reviews/${category_url}/${post.id}`} className="read-more">Read More  <img src={ doubleArrow } alt="#"/></Link>
         </div>
       </div>
   )}
