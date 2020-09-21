@@ -24,24 +24,27 @@ class TopListEditForm extends Component {
 
     handleSubmit = event =>{
       event.preventDefault()
-      const list = {title:this.state.title, area:this.state.area, posts_attributes:
-      posts_titles = new Map()
-      posts.forEach(post => {
-        posts_titles.set(posts.indexOf(post), {title: post})
+      const posts_titles = new Map()
+      this.state.posts.forEach(post => {
+        posts_titles.set(this.state.posts.indexOf(post), {title: post})
       })
-        posts_titles
-      )
-        {"1" : {title:'THE HAUNTED MORTUARY'},
-         "2" : {title:'EL PASO SHERIFF HAUNTED HOUSE'}
-        }
-      }
+      const list = new FormData();
+      list.append('[top_list]title', this.state.title)
+      list.append('[top_list]area', this.state.area)
+      list.append('[top_list]posts_titles', posts_titles)
+      // const list = {title:this.state.title, area:this.state.area,
+      //   posts_attributes:posts_titles
+      // }
 
-      this.props.updateList(this.state.id, {'top_list': list})
+      // )
+      //   {"1" : {title:'THE HAUNTED MORTUARY'},
+      //    "2" : {title:'EL PASO SHERIFF HAUNTED HOUSE'}
+      //   }
+      // }
+
+      this.props.updateList(this.state.id, list)
 
       this.props.history.push('/admin/toplists')
-
-
-
 
     }
 
