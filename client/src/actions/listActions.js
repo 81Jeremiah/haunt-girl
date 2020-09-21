@@ -52,6 +52,13 @@ export const updateList = (listId, list) => {
     return fetch(`/api/top_lists/${listId}`, {
       method: "PATCH",
       // headers: {
+      //           'Accept': 'application/json',
+      //           'Content-Type': 'multipart/form-data'
+            // },
+      // headers: {
+      //   'Content-Type': 'application/json'
+      // },
+      // headers: {
       //   "Content-Type": 'application/json',
       //   "Authorization": `Bearer ${localStorage.auth_token}`
       // },
