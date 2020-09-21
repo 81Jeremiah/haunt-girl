@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {updateInterview,deleteInterview} from '../../../../actions/interviewActions';
 import Form from 'react-bootstrap/Form';
 import DeleteButton from '../../buttons/DeleteButton';
+import { withRouter } from "react-router-dom";
 
 
 class InterviewEditForm extends Component{
@@ -18,9 +19,12 @@ class InterviewEditForm extends Component{
 
   handleSubmit = event =>{
     event.preventDefault()
-    const interview = this.state
+    const interview = new FormData()
+    interview.append('[interview]title', this.state.title)
+    interview.append('[interview]content', this.state.title)
+    interview.append('[interview]website', this.state.title)
     const interviewId = this.state.id
-    this.props.updateInterview(interviewId, {'interview': interview})
+    this.props.updateInterview(interviewId, interview)
     this.props.history.push('/admin/interviews')
   }
 
@@ -86,4 +90,4 @@ class InterviewEditForm extends Component{
  }
 }
 
-export default connect(null,{updateInterview, deleteInterview})(InterviewEditForm)
+export default withRouter(connect(null,{updateInterview, deleteInterview})(InterviewEditForm))
