@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {updateAnnouncement,deleteAnnouncement } from '../../../../actions/announcementActions';
 import Form from 'react-bootstrap/Form';
 import DeleteButton from '../../buttons/DeleteButton';
+import {withRouter} from 'react-router-dom';
 
 
 
@@ -18,10 +19,11 @@ class AnnouncementEditForm extends Component{
 
   handleSubmit = event =>{
     event.preventDefault()
-    const announcement = this.state
-
-
-    this.props.updateAnnouncement(this.state.id, {'announcement': announcement})
+    const announcement = new FormData()
+    announcement.append('announcement[title]', this.state.title)
+    announcement.append('announcement[content]', this.state.content)
+    this.props.updateAnnouncement(this.state.id, announcement)
+    this.props.history.push('/admin/announcements')
   }
 
   handleDelete = () => {
@@ -76,4 +78,4 @@ class AnnouncementEditForm extends Component{
  }
 }
 
-export default connect(null, {updateAnnouncement, deleteAnnouncement})(AnnouncementEditForm)
+export default withRouter(connect(null, {updateAnnouncement, deleteAnnouncement})(AnnouncementEditForm))
