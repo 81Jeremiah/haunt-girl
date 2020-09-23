@@ -3,6 +3,7 @@ import Editor from './Editor'
 import {connect} from 'react-redux';
 import {createAnnouncement} from '../../actions/announcementActions';
 import Form from 'react-bootstrap/Form';
+import {withRouter} from 'react-router-dom';
 
 class AnnouncementForm extends Component{
   state = {
@@ -17,9 +18,8 @@ class AnnouncementForm extends Component{
   handleSubmit = event =>{
     event.preventDefault()
     const announcement = this.state
-
-
     this.props.createAnnouncement({'announcement': announcement})
+    this.props.history.push('/admin/announcements')  
   }
 
   handleChange = event =>{
@@ -57,4 +57,4 @@ class AnnouncementForm extends Component{
  }
 }
 
-export default connect(null, {createAnnouncement})(AnnouncementForm)
+export default withRouter(connect(null, {createAnnouncement})(AnnouncementForm))
