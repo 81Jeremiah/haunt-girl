@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import {updateAward,deleteAward } from '../../../../actions/awardActions';
 import Form from 'react-bootstrap/Form';
 import DeleteButton from '../../buttons/DeleteButton';
+import { withRouter } from "react-router-dom";
+
 
 
 class SkeletonKeyEditForm extends Component{
@@ -20,12 +22,14 @@ class SkeletonKeyEditForm extends Component{
 
   handleSubmit = event =>{
     event.preventDefault()
-    const award = this.state
     const awardId = this.state.id
-    console.log(award)
-    console.log( {'award': award})
+    const award = new FormData();
+    award.append('[award]title', this.state.title)
+    award.append('[award]link_to_post', this.state.link_to_post)
+    award.append('[award]content', this.state.content)
+    award.append('[award]year', this.state.year)
 
-    this.props.updateAward(awardId, {'award': award})
+    this.props.updateAward(awardId, award)
     this.props.history.push('/admin/awards')
 
 
@@ -103,4 +107,4 @@ class SkeletonKeyEditForm extends Component{
  }
 }
 
-export default connect(null,{updateAward, deleteAward})(SkeletonKeyEditForm)
+export default withRouter(connect(null,{updateAward, deleteAward})(SkeletonKeyEditForm))
