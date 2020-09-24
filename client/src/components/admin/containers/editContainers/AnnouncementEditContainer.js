@@ -14,7 +14,7 @@ class AnnouncementEditContainer extends Component {
  componentDidMount(){
    const announcementId = this.props.match.params.id
    console.log(announcementId)
-   this.props.getAnnouncement(1)
+   this.props.getAnnouncement(announcementId)
 
  }
 
