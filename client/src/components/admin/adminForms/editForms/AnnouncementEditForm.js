@@ -16,7 +16,6 @@ class AnnouncementEditForm extends Component{
               id: ""
           };
 
-
   handleSubmit = event =>{
     event.preventDefault()
     const announcement = new FormData()

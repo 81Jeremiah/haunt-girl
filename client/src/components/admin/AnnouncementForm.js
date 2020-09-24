@@ -11,15 +11,14 @@ class AnnouncementForm extends Component{
       title: "",
       content: "",
 
-
-}
+  }
 
 
   handleSubmit = event =>{
     event.preventDefault()
     const announcement = this.state
     this.props.createAnnouncement({'announcement': announcement})
-    this.props.history.push('/admin/announcements')  
+    this.props.history.push('/admin/announcements')
   }
 
   handleChange = event =>{
