@@ -12,6 +12,9 @@ class InterviewContainer extends Component {
     this.props.fetchInterviews()
   }
 
+  componentDidUpdate(){
+    this.props.fetchInterviews()
+  }
 
 
   render(){

@@ -9,7 +9,11 @@ class PostContainer extends Component {
 
   componentDidMount(){
     this.props.fetchAllPosts()
-    }
+  }
+
+  componentDidUpdate(){
+    this.props.fetchAllPosts()
+  }
 
   render(){
     return(
