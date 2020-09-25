@@ -21,8 +21,8 @@ class InterviewEditForm extends Component{
     event.preventDefault()
     const interview = new FormData()
     interview.append('[interview]title', this.state.title)
-    interview.append('[interview]content', this.state.title)
-    interview.append('[interview]website', this.state.title)
+    interview.append('[interview]content', this.state.content)
+    interview.append('[interview]website', this.state.website)
     const interviewId = this.state.id
     this.props.updateInterview(interviewId, interview)
     this.props.history.push('/admin/interviews')
