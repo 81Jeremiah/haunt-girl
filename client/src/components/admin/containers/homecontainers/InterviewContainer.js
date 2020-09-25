@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect } from 'react';
 import { fetchInterviews } from '../../../../actions/interviewActions';
 import { connect } from 'react-redux';
 // import { withRouter, Redirect } from 'react-router-dom'
@@ -10,10 +10,19 @@ class InterviewContainer extends Component {
 
   componentDidMount(){
     this.props.fetchInterviews()
+
   }
 
-  componentDidUpdate(){
-    this.props.fetchInterviews()
+  // useEffect(() => {
+  //   this.props.fetchInterviews()
+  // });
+
+  componentDidUpdate(prevProps){
+    console.log(prevProps.interviews === this.props.interviews, prevProps.interviews,  this.props.interviews)
+    if (this.props.interviews !== prevProps.interviews){
+      console.log("something has changed")
+     // this.props.fetchInterviews()
+   }
   }
 
 
