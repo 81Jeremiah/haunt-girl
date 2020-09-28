@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom';
 import  {getAnnouncement} from '../../../../actions/announcementActions';
 import AnnouncementEditForm from '../../adminForms/editForms/AnnouncementEditForm';
-import AdminHeader from '../../AdminHeader'
+import AdminHeader from '../../AdminHeader';
 
 class AnnouncementEditContainer extends Component {
 

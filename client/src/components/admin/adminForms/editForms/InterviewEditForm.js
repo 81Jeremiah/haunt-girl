@@ -26,6 +26,7 @@ class InterviewEditForm extends Component{
     const interviewId = this.state.id
     this.props.updateInterview(interviewId, interview)
     this.props.history.push('/admin/interviews')
+    window.location.reload();
   }
 
   handleDelete = () => {

@@ -17,13 +17,14 @@ class InterviewContainer extends Component {
   //   this.props.fetchInterviews()
   // });
 
-  componentDidUpdate(prevProps){
-    console.log(prevProps.interviews === this.props.interviews, prevProps.interviews,  this.props.interviews)
-    if (this.props.interviews !== prevProps.interviews){
-      console.log("something has changed")
-     // this.props.fetchInterviews()
-   }
-  }
+  // componentDidUpdate(prevProps){
+  //   console.log(prevProps.interviews === this.props.interviews, prevProps.interviews,  this.props.interviews)
+  //   if (this.props.interviews !== prevProps.interviews){
+  //     console.log("something has changed")
+  //    // this.props.fetchInterviews()
+  //  }
+  // }
+
 
 
   render(){
@@ -36,7 +37,7 @@ class InterviewContainer extends Component {
       </div>
       <div>
 
-        <InterviewList interviews={this.props.interviews}/>
+        <InterviewList interviews={this.props.interviews} reloadPage={this.reloadPage}/>
         <Link to={`/admin/interviews/new`}> Create New </Link>
 
       </div>

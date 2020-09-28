@@ -11,9 +11,11 @@ class AnnouncementContainer extends Component {
     this.props.fetchAnnouncements()
     }
 
-  componentDidUpdate(){
-    this.props.fetchAnnouncements()
-  }
+  // componentDidUpdate(prevProps){
+  //   if (this.props !== prevProps){
+  //     this.props.fetchAnnouncements()
+  //  }
+  // }
 
   render(){
     return(

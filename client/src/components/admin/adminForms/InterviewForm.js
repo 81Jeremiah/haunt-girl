@@ -3,6 +3,8 @@ import Editor from '../Editor';
 import {connect} from 'react-redux';
 import {createInterview} from '../../../actions/interviewActions';
 import Form from 'react-bootstrap/Form';
+import { withRouter } from 'react-router-dom';
+
 
 class InterviewForm extends Component{
   state = {
@@ -18,6 +20,7 @@ class InterviewForm extends Component{
     event.preventDefault()
     const interview = this.state
     this.props.createInterview({'interview': interview})
+    this.props.history.push('/admin/interviews')
   }
 
   handleChange = event =>{
@@ -63,4 +66,4 @@ class InterviewForm extends Component{
  }
 }
 
-export default connect(null,{createInterview})(InterviewForm)
+export default withRouter(connect(null,{createInterview})(InterviewForm))

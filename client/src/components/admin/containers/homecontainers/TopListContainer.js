@@ -12,9 +12,11 @@ class TopListContainer extends Component {
     this.props.fetchLists()
   }
 
-  componentDidUpdate(){
-    this.props.fetchLists()
-  }
+  // componentDidUpdate(prevProps){
+  //   if (this.props !== prevProps){
+  //     this.props.fetchLists()
+  //   }
+  // }
 
 
   render(){

@@ -23,6 +23,8 @@ class AnnouncementEditForm extends Component{
     announcement.append('announcement[content]', this.state.content)
     this.props.updateAnnouncement(this.state.id, announcement)
     this.props.history.push('/admin/announcements')
+    window.location.reload();
+
   }
 
   handleDelete = () => {

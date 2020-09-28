@@ -11,9 +11,11 @@ class SkeletonKeyContainer extends Component {
     this.props.fetchWinners()
   }
 
-  componentDidUpdate(){
-    this.props.fetchWinners()
-  }
+  // componentDidUpdate(prevProps){
+  //   if (this.props !== prevProps){
+  //     this.props.fetchWinners()
+  //   }
+  // }
 
   render(){
     return(

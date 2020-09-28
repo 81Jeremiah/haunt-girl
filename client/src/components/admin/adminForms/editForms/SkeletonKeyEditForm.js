@@ -31,6 +31,7 @@ class SkeletonKeyEditForm extends Component{
 
     this.props.updateAward(awardId, award)
     this.props.history.push('/admin/awards')
+    window.location.reload();
 
 
   }

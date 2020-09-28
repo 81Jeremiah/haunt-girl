@@ -45,6 +45,7 @@ class TopListEditForm extends Component {
       this.props.updateList(this.state.id, list)
 
       this.props.history.push('/admin/toplists')
+      window.location.reload();
 
     }
 
