@@ -10,7 +10,7 @@ class Api::InterviewsController < ApplicationController
 
   def create
 
-    interview = Interview.create(award_params)
+    interview = Interview.create(interview_params)
     render json: interview
 
   end
