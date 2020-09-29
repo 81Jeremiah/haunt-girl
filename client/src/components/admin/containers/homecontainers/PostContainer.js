@@ -1,14 +1,21 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import Reviews from '../../Reviews';
-import {fetchAllPosts} from '../../../../actions/postActions';
 import { Link } from 'react-router-dom';
 import AdminHeader from '../../AdminHeader';
+import { fetchPosts } from '../actions/postActions';
+
 
 class PostContainer extends Component {
 
   componentDidMount(){
-    this.props.fetchAllPosts()
+    const route = this.props.match.path
+    var category = /[^/]*$/.exec(route)[0];
+
+    console.log(category)
+
+    this.props.fetchPosts(category)
+
   }
 
   // componentDidUpdate(prevProps){
@@ -38,4 +45,4 @@ const mapStateToProps = (state) =>{
   console.log(state)
   return {posts: state.posts.posts}
 }
-export default connect(mapStateToProps, {fetchAllPosts})(PostContainer)
+export default connect(mapStateToProps, {fetchPosts})(PostContainer)
