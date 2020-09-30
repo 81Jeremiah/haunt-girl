@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Reviews from '../../Reviews';
 import { Link } from 'react-router-dom';
 import AdminHeader from '../../AdminHeader';
-import { fetchPosts } from '../actions/postActions';
+import { fetchPosts } from '../../../../actions/postActions';
+
 
 
 class PostContainer extends Component {
