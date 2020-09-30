@@ -11,10 +11,10 @@ const AdminHeader = (props) => {
           <li className="header-logo"><Link to="/admin/home">THE HAUNT GIRL</Link></li>
           <li><Link to="/admin/posts/">Reviews </Link>
             <ul className="sub-menu">
-               <li><Link to="/admin/reviews/haunts">Haunts </Link></li>
-               <li><Link to="/admin/reviews/escaperooms">Escape Rooms</Link></li>
-               <li><Link to="admin/reviews/oddities">Oddities</Link></li>
-               <li><Link to="admin/reviews/immersives">Immersives</Link></li>
+               <li><Link to="/admin/posts/reviews/haunts">Haunts </Link></li>
+               <li><Link to="/admin/posts/reviews/escaperooms">Escape Rooms</Link></li>
+               <li><Link to="admin/posts/reviews/oddities">Oddities</Link></li>
+               <li><Link to="admin/posts/reviews/immersives">Immersives</Link></li>
             </ul>
           </li>
           <li><Link to="/admin/interviews/">Interviews</Link></li>
