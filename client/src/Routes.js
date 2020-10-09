@@ -11,6 +11,7 @@ import Login from './components/admin/Login';
 import SearchResults from './components/SearchResults';
 import interviewContainer from './containers/InterviewContainer';
 import FourOFourPage from './components/404Page';
+import TopRatedContainer from './containers/TopRatedContainer'
 
 import EditContainer from './components/admin/containers/EditContainer';
 import Home from './components/admin/Home';
@@ -56,7 +57,7 @@ const Routes = (props) => {
         <Route exact path="/searchresults" component={ SearchResults} />
         <Route exact path="/SkeletonKeyAwards" component={ SkeletonKeysContainer} />
         <Route exact path="/blog/announcements" component={ AnnouncementsContainer} />
-        <Route exact path="/blog/toprated" component={ AnnouncementsContainer} />
+        <Route exact path="/blog/toprated" component={ TopRatedContainer} />
         <Route exact path="/blog/tips" component={ AnnouncementsContainer} />
         <Route exact path="/interviews" component={ interviewContainer} />
         <Route render={ FourOFourPage } />
@@ -72,9 +73,9 @@ const Routes = (props) => {
         <Route exact path="/admin/posts/:id/edit" component={ EditContainer} />
         <Route exact path="/admin/posts" component={PostContainer } />
         <Route exact path="/admin/posts/reviews/escaperooms" component={PostContainer } />
-        <Route exact path="/admin/postsreviews/oddities" component={PostContainer } />
-        <Route exact path="/admin/postsreviews/immersives" component={PostContainer } />
-        <Route exact path="/admin/reviews/haunts" component={PostContainer } />
+        <Route exact path="/admin/posts/reviews/oddities" component={PostContainer } />
+        <Route exact path="/admin/posts/reviews/immersives" component={PostContainer } />
+        <Route exact path="/admin/posts/reviews/haunts" component={PostContainer } />
 
 
         <Route exact path="/admin/interviews/new" component={ InterviewForm } />
