@@ -13,7 +13,7 @@ const InterviewsList = (props) =>{
   const listInterviews = props.interviews.map( interview => {
     return(
       <li key={interview.id}>
-        <Link to={`${interview.id}/edit`}>{interview.title}</Link>
+        <Link to={`/admin/interviews/${interview.id}/edit`}>{interview.title}</Link>
        <span onClick={() => handleDelete(interview.id)}>(x)</span>
       </li>
     );
