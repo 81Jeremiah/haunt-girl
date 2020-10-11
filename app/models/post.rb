@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  has_many :top_list_posts
+  has_many :top_list_posts, dependent: :destroy
   has_many :top_lists, through: :top_list_posts
   belongs_to :category, optional: true
   belongs_to :city, optional: true
