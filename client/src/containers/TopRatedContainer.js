@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
-import TopList from './../TopList';
-
+import TopList from '../components/TopList';
+import { connect } from 'react-redux';
+import Navbar from '../components/Navbar'
 
 class TopRatedContainer extends Component{
 
@@ -9,6 +10,7 @@ class TopRatedContainer extends Component{
   render(){
     return(
       <div>
+        <Navbar />
         <TopList lists={this.props.list}/>
       </div>
     );
@@ -23,4 +25,4 @@ const mapStateToProps = state => {
 }
 
 
-export default TopRatedContainer
+export default connect(mapStateToProps)(TopRatedContainer)
