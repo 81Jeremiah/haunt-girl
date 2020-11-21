@@ -11,17 +11,25 @@ import StatesList from '../components/StatesList';
 import {fetchCities}  from '../actions/cityActions';
 import { Link } from 'react-router-dom';
 import CitiesList from '../components/CitiesList';
+import { resetState } from '../actions/postActions';
 
 class Posts extends Component {
 
+
+
   componentDidMount(){
-    const route = this.props.match.path
+    console.log("did you update????")
+    const route = this.props.match.path;
     var category = /[^/]*$/.exec(route)[0];
 
     console.log(category)
 
-    this.props.fetchPosts(category)
-    this.props.fetchStatesWithPosts(category)
+    this.props.fetchPosts(category);
+    this.props.fetchStatesWithPosts(category);
+  }
+
+  componentWillUnmount() {
+     this.props.resetState();
   }
 
   handleStateClick = (event) => {
@@ -80,11 +88,11 @@ class Posts extends Component {
 }
 
 const mapStateToProps = state => {
-  return {
+  return ({
     posts: state.posts.posts,
     states: state.states.states,
     cities: state.cities.cities
-  }
+  });
 }
 
-export default connect(mapStateToProps, { fetchCities, fetchPosts, fetchStatesWithPosts, narrowByState })(Posts);
+export default connect(mapStateToProps, { fetchCities, fetchPosts, fetchStatesWithPosts, narrowByState, resetState })(Posts);
