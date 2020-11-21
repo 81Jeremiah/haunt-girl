@@ -133,3 +133,9 @@ export const fetchRecentPosts = () =>{
       });
   }
 }
+
+export const resetState = () => {
+  return(dispatch) => {
+     dispatch({type: 'RESET_STATE'});
+  }  
+}
