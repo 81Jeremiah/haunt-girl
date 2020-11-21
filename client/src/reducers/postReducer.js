@@ -3,6 +3,7 @@ export default ( state =
     posts: [],
     post: {}
   }, action) => {
+
   switch(action.type){
 
     case 'LOADING_POSTS':
@@ -24,7 +25,11 @@ export default ( state =
       return {...state, loading: false, post: action.post}
 
     case 'UPDATE_POST':
-      return {...state, loading: false, post: action.post}
+      // return {...state, loading: false, post: action.post}
+      return state.map(post => post.id === action.post.id ? action.post : post)
+
+    case 'RESET_STATE':
+      return { loading: false, posts: [], post: {}}
 
     case 'DELETE_POST':
       let remainingPosts = this.state.posts.filter(post => post !== action.post)
