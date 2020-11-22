@@ -9,6 +9,11 @@ import { fetchPosts } from '../../../../actions/postActions';
 
 class PostContainer extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {path:this.props.match.path}
+  }
+
   componentDidMount(){
     const route = this.props.match.path
     var category = /[^/]*$/.exec(route)[0];
@@ -19,11 +24,13 @@ class PostContainer extends Component {
 
   }
 
-  // componentDidUpdate(prevProps){
-  //   if (this.props !== prevProps){
-  //     this.props.fetchAllPosts()
-  //   }
-  // }
+  componentDidUpdate(){
+    if(this.state.path !== this.props.match.path){
+      const route = this.props.match.path;
+      const category = /[^/]*$/.exec(route)[0];
+      this.props.fetchPosts(category);
+    }
+  }
 
   render(){
     return(
