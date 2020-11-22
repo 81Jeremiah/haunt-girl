@@ -15,17 +15,30 @@ import { resetState } from '../actions/postActions';
 
 class Posts extends Component {
 
+  constructor(props){
+    super(props)
+    this.state = {path: this.props.match.path}
 
+  }
 
   componentDidMount(){
     console.log("did you update????")
     const route = this.props.match.path;
-    var category = /[^/]*$/.exec(route)[0];
+    const category = /[^/]*$/.exec(route)[0];
 
     console.log(category)
 
     this.props.fetchPosts(category);
     this.props.fetchStatesWithPosts(category);
+  }
+
+  componentDidUpdate(){
+    if(this.state.path !== this.props.match.path){
+      const route = this.props.match.path;
+      const category = /[^/]*$/.exec(route)[0];
+      this.props.fetchPosts(category);
+      this.props.fetchStatesWithPosts(category);
+    }
   }
 
   componentWillUnmount() {
