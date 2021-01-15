@@ -37,7 +37,10 @@ return(
               <div className="trending-widget">
                 <div className="tw-item">
                   {/*<Instafeed /> */}
-                   <InstaGrid account="thehauntgirl" numberOfMediaElements={10} />
+                   <InstaGrid
+                     account="thehauntgirl"
+                     numberOfMediaElements={10}
+                     clientAccessToken = "443969603407336|ef9a75dd3990ae419419212aecf84da9"/>
                 </div>
               </div>
             </div>
