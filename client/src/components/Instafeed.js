@@ -27,7 +27,8 @@ import InstagramEmbed from 'react-instagram-embed';
   };
 
   const InstaGrid = ({ classes, media, account, status}: Props) => {
-
+  const token = process.env.REACT_APP_CLIENTACCESSTOKEN
+  console.log(token)
   return (
 
     <div>   {/* <Grid container spacing={32} className={classes.wrapper}> */}
@@ -42,6 +43,9 @@ import InstagramEmbed from 'react-instagram-embed';
           <InstagramEmbed
 
               url={postLink}
+              clientAccessToken={token}
+
+
               maxWidth={320}
               hideCaption={false}
               containerTagName='div'
